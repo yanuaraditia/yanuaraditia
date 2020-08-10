@@ -1,7 +1,5 @@
 ### Hi there 👋
 
-Here are some ideas to get you started:
-
 - 🔭 I’m currently working on [Tries Company](https://tries.co.id)
 - 🌱 I’m currently learning Laravel
 - 👯 I’m looking to collaborate on Muslim Peduli, Clandys
