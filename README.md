@@ -1,4 +1,4 @@
-<img align="right" src="https://github-readme-stats.vercel.app/api?username=yanuaraditia&show_icons=true"> 
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=yanuaraditia&show_icons=true&theme=nightowl"> 
 
 ## Hi there Yanuar Aditia
 
