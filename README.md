@@ -10,4 +10,4 @@
 I am a Software Engineer at Tries Company (Yogyakarta, Indonesia), I work for freelance also
 
 - Stack: `Javascript`, `PHP`, `SQL`, `Sass`
-- 🏢 I'm currently working on some `Laravel`,`Sass`,'SQL`,`RestAPI`
+- 🏢 I'm currently working on some `Laravel`,`Sass`,`SQL`,`RestAPI`
