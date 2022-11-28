@@ -4,7 +4,7 @@
       <div class="xl:w-8/12 mx-auto text-center">
         <div class="aspect-square mx-auto w-64 relative rounded-full mb-10">
           <span class="w-full border-red-500 border border-dashed absolute w-full h-full scale-110 rounded-full"></span>
-          <img src="~/assets/yan-reg.png" class="inline-block relative rounded-full shadow-lg" loading="lazy" alt="" />
+          <img src="~/assets/yan-reg.png" class="inline-block w-64 aspect-square relative rounded-full shadow-lg" loading="lazy" alt="" />
           <div class="absolute bg-red-50 flex place-items-center gap-5 shadow-lg p-2 rounded-full bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
             <div class="aspect-square w-8 h-8">
               <img src="~/assets/coffee-emoji.png" class="w-full">
