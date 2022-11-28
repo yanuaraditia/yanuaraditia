@@ -20,6 +20,9 @@ export default defineNuxtConfig({
         // @ts-ignore
         chunkSizeWarningLimit: 1600,
     },
+    css: [
+        '~/assets/css/main.css'
+    ],
     app: {
         head: {
             link         : [

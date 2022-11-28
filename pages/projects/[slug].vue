@@ -14,14 +14,14 @@
           </div>
           <div>
             <div class="font-semibold text-xl">Yanuar Aditia</div>
-            <div class="text-sm flex gap-3">
-              <span>Nov 26, 2018</span>
+            <div class="text-sm flex gap-3 dark:text-neutral-400">
+              <span v-text="formatDate(data.blog.sys.createdAt)"></span>
               <span>•</span>
               <span>5 minute read</span>
             </div>
           </div>
         </div>
-        <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-red-100 transition-all">
+        <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-red-100 dark:bg-neutral-800 transition-all">
           <img :src="data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full absolute left-7 top-7">
         </div>
         <div class="prose dark:prose-invert max-w-none" v-html="rendered"></div>
@@ -32,7 +32,13 @@
 
 <script>
 export default {
-  name: "slug"
+  name: "slug",
+  methods: {
+    formatDate(dateString) {
+      const options = { year: "numeric", month: "short", day: "numeric" }
+      return new Date(dateString).toLocaleDateString(undefined, options)
+    }
+  }
 }
 </script>
 

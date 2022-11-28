@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-red-50 text-neutral-800 min-h-screen">
-    <span class="bg-red-300 w-96 h-96 absolute rounded-full blur-3xl scale-150 -translate-x-1/4 -translate-y-1/4"></span>
+  <div class="bg-red-50 dark:bg-neutral-900 dark:text-white text-neutral-800 min-h-screen">
+    <span class="bg-red-300 dark:bg-red-900 dark:bg-opacity-20 w-96 h-96 absolute rounded-full blur-3xl scale-150 -translate-x-1/4 -translate-y-1/4"></span>
     <div class="relative">
       <Header/>
       <main>

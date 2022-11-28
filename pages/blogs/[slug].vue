@@ -15,8 +15,8 @@
           </div>
           <div>
             <div class="font-semibold text-xl">Yanuar Aditia</div>
-            <div class="text-sm flex gap-3">
-              <span>Nov 26, 2018</span>
+            <div class="text-sm flex gap-3 dark:text-neutral-400">
+              <span v-text="formatDate(data.blog.sys.createdAt)"></span>
               <span>•</span>
               <span>5 minute read</span>
             </div>
@@ -31,7 +31,13 @@
 
 <script>
 export default {
-  name: "slug"
+  name: "slug",
+  methods: {
+    formatDate(dateString) {
+      const options = { year: "numeric", month: "short", day: "numeric" }
+      return new Date(dateString).toLocaleDateString(undefined, options)
+    }
+  }
 }
 </script>
 
