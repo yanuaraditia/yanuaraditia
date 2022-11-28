@@ -16,6 +16,10 @@ export default defineNuxtConfig({
         preference: 'light',
         classSuffix: ''
     },
+    build: {
+        // @ts-ignore
+        chunkSizeWarningLimit: 1600,
+    },
     app: {
         head: {
             link         : [
