@@ -42,5 +42,11 @@ export default defineNuxtConfig({
                 },
             ]
         }
+    },
+    image: {
+        domains: [
+            'avatars0.githubusercontent.com',
+            'images.ctfassets.net'
+        ]
     }
 })

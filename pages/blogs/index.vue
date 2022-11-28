@@ -5,7 +5,7 @@
         <span>Blog</span>
       </h1>
       <p class="text-lg mb-10 xl:w-5/12">Software engineer specialized in backend development and micro-services ecosystems</p>
-      <div class="grid xl:grid-cols-3">
+      <div class="grid xl:grid-cols-3 gap-5">
         <div v-for="blog in data.blogs" :key="`dm-${blog.sys.id}`" class="relative group">
           <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl transition-all">
             <img :src="blog.fields.image.fields.file.url" alt="" class="w-full">
