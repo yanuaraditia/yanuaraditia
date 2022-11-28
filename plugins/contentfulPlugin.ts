@@ -1,8 +1,6 @@
-// import pkg from 'contentful'
-// const {createClient} = pkg
-//
-// Uncomment if you using local
-import {createClient} from "contentful";
+import pkg from 'contentful'
+const {createClient} = pkg
+// import {createClient} from "contentful"; // Uncomment if local
 
 export default defineNuxtPlugin(() => {
     return {
