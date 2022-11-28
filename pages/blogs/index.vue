@@ -25,16 +25,11 @@ export default {
 </script>
 
 <script setup>
-import {createClient} from "contentful";
-
-const client = createClient({
-  space: "m1s8s1116oid",
-  accessToken: "ITiGiToNRjGXCFS1D0OygkG6wluPq3uXZ2OOVC62FOI"
-});
+const {$client} = useNuxtApp()
 
 const {data} = await useAsyncData('data', () => {
   return Promise.all([
-      client.getEntries({
+      $client.getEntries({
         content_type: "blogs",
         order: '-sys.createdAt',
       })

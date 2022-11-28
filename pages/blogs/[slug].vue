@@ -40,16 +40,11 @@ import 'highlight.js/styles/qtcreator-dark.css'
 let md = ref("");
 let rendered = ref("");
 
-import {createClient} from "contentful";
-const client = createClient({
-  space: "m1s8s1116oid",
-  accessToken: "ITiGiToNRjGXCFS1D0OygkG6wluPq3uXZ2OOVC62FOI"
-});
-let title
+const {$client} = useNuxtApp()
 const route = useRoute()
 const {data} = await useAsyncData('blog', () => {
   return Promise.all([
-    client.getEntries({
+    $client.getEntries({
       content_type: "blogs",
       'fields.slug[in]': route.params.slug,
       order: '-sys.createdAt',

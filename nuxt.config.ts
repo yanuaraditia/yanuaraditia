@@ -6,6 +6,11 @@ export default defineNuxtConfig({
         '@nuxt/image-edge',
         '@nuxt/content',
     ],
+    runtimeConfig: {
+        public: {
+
+        }
+    },
     // @ts-ignore
     colorMode: {
         preference: 'light',
