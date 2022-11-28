@@ -4,6 +4,7 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
         '@nuxt/image-edge',
+        '@nuxt/content',
     ],
     // @ts-ignore
     colorMode: {

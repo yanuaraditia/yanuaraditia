@@ -40,6 +40,11 @@ export default {
   name: "about"
 }
 </script>
+<script setup>
+useHead({
+  title: "About"
+})
+</script>
 
 <style scoped>
 

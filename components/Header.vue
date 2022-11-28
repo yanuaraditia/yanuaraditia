@@ -1,9 +1,9 @@
 <template>
-  <header class="sticky z-50 top-0 h-16 transition-all" :class="[(isFixed || showNavbar ? 'bg-red-100' : 'bg-transparent')]">
+  <header class="sticky z-50 top-0 h-16 xl:h-20 transition-all" :class="[(isFixed || showNavbar ? 'bg-red-100' : 'bg-transparent')]">
     <div class="container xl:px-4 mx-auto xl:w-9/12">
       <div class="xl:flex">
         <div class="px-4 xl:px-0 flex xl:block place-items-center">
-          <nuxt-link to="/" class="block py-4">
+          <nuxt-link to="/" class="block py-4 xl:py-6">
             <span class="font-bold text-lg xl:text-xl">Yanuar Aditia</span>
           </nuxt-link>
           <button @click="showNavbar = !showNavbar" class="xl:hidden ml-auto aspect-square w-12 h-12 relative rounded-md overflow-hidden">
@@ -40,7 +40,7 @@ export default {
       showNavbar: false,
       navs: [
         {
-          label: "Projects",
+          label: "Project",
           to: "/projects"
         },
         {

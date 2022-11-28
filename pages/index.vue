@@ -42,6 +42,12 @@ export default {
 }
 </script>
 
+<script setup>
+useHead({
+  title: "Yanuar Aditia"
+})
+</script>
+
 <style scoped>
 
 </style>
