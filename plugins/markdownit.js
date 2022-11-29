@@ -1,6 +1,4 @@
 import { defineNuxtPlugin } from '#app';
-
-
 import hljs  from 'highlight.js';
 import mdit from 'markdown-it';
 
@@ -12,7 +10,6 @@ import def from 'markdown-it-deflist';
 import ins from 'markdown-it-ins';
 import container from 'markdown-it-container';
 
-
 const markdownit = new mdit({
     html:         true,
     xhtmlOut:     false,
@@ -22,9 +19,6 @@ const markdownit = new mdit({
     typographer:  true,
     quotes: '“”‘’',
     highlight: function (str, lang) {
-        hljs.addPlugin(new CopyButtonPlugin({
-            hook: (text, el) => text + "\nCopied from my cool website.",
-        }))
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return '<pre class="hljs"><code>' +
