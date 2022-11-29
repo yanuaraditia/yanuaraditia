@@ -22,6 +22,9 @@ const markdownit = new mdit({
     typographer:  true,
     quotes: '“”‘’',
     highlight: function (str, lang) {
+        hljs.addPlugin(new CopyButtonPlugin({
+            hook: (text, el) => text + "\nCopied from my cool website.",
+        }))
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return '<pre class="hljs"><code>' +

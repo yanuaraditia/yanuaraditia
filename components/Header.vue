@@ -15,7 +15,7 @@
             </svg>
           </button>
         </div>
-        <div :class="[(showNavbar ? '' : '-translate-x-full xl:translate-x-0')]" class="px-4 transition-all duration-200 xl:px-0 xl:ml-auto bg-red-100 dark:bg-neutral-900 xl:bg-transparent border-y xl:border-y-0 border-y-red-200 dark:border-y-neutral-800 xl:flex xl:gap-8 xl:place-items-center font-semibold xl:font-medium">
+        <div :class="[(showNavbar ? '' : '-translate-x-full xl:translate-x-0')]" class="px-4 transition-all duration-200 xl:px-0 xl:ml-auto bg-red-100 dark:bg-neutral-900 xl:bg-transparent dark:xl:bg-transparent border-y xl:border-y-0 border-y-red-200 dark:border-y-neutral-800 xl:flex xl:gap-8 xl:place-items-center font-semibold xl:font-medium">
           <HeaderNavLink v-for="(nav, key) in navs" :key="`nav-${key}`" :to="nav.to" :label="nav.label"/>
         </div>
       </div>
