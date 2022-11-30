@@ -26,7 +26,7 @@
             </nuxt-link>
           </div>
           <div>
-            <nuxt-link to="/about" class="block hover:bg-red-300 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 transition-all px-6 relative py-3.5 bg-red-200 text-red-700 rounded-full">
+            <nuxt-link to="/about" class="block hover:bg-red-300 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 transition-all px-6 relative py-3.5 bg-red-100 text-red-700 rounded-full">
               <span>About Me</span>
             </nuxt-link>
           </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link :to="to" class="block py-4 xl:py-6 hover:text-red-700 xl:py-0">
+    <nuxt-link :aria-label="label" :to="to" class="block py-4 xl:py-6 hover:text-red-700 xl:py-0">
       <span v-text="label"></span>
     </nuxt-link>
   </div>
