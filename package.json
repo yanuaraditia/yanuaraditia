@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^2.0.0",
+    "@nuxtjs/web-vitals": "^0.2.2",
     "contentful": "^9.2.13",
     "highlight.js": "11.6.0",
     "ipx": "^1.0.0-2",

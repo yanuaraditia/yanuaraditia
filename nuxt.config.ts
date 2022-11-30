@@ -5,6 +5,8 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxt/image-edge',
         '@nuxt/content',
+        '@nuxtjs/web-vitals'
+
     ],
     runtimeConfig: {
         public: {
