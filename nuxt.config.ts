@@ -8,6 +8,19 @@ export default defineNuxtConfig({
         '@nuxtjs/web-vitals'
 
     ],
+    buildModules: [
+        '@nuxtjs/google-fonts'
+    ],
+    googleFonts: {
+        families: {
+            Inter: [
+                300,400,500,600,700,800,900
+            ],
+            "JetBrains Mono": [
+                "0,300","0,400","0,500","0,600","0,700","1,300","1,400","1,500","1,600","1,700"
+            ]
+        }
+    },
     runtimeConfig: {
         public: {
 
@@ -35,10 +48,6 @@ export default defineNuxtConfig({
                     rel : 'icon',
                     type: 'image/x-icon',
                     href: '/favicon.ico'
-                },
-                {
-                    rel : 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap'
                 },
                 {
                     rel : 'preconnect',
