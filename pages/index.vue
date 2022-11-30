@@ -43,8 +43,27 @@ export default {
 </script>
 
 <script setup>
+const desc ="I’m from Indonesia and I have been working as a Software Engineer for more than 3 years. Currently I work for KiriminAja as Technical Lead since 2020. I am looking forward to collaborate with you!"
 useHead({
-  title: "Yanuar Aditia"
+  title: "Yanuar Aditia",
+  meta: [
+    {
+      content: desc,
+      name: "description"
+    },
+    {
+      content: desc,
+      name: "og:description"
+    },
+    {
+      content: "Yanuar Aditia",
+      name: "og:title"
+    },
+    {
+      content: "https://yan.my.id",
+      name: "og:url"
+    },
+  ]
 })
 </script>
 
