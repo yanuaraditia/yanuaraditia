@@ -8,7 +8,9 @@
       <div class="grid xl:grid-cols-3 gap-5">
         <div v-for="blog in data.blogs" :key="`dm-${blog.sys.id}`" class="relative group">
           <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl transition-all">
-            <img :src="blog.fields.image.fields.file.url" alt="" class="w-full">
+            <nuxt-img :src="blog.fields.image.fields.file.url" :alt="blog.fields.title"
+                      sizes="sm:464px lg:396px"
+                      class="w-full"/>
           </div>
           <span class="text-sm" v-text="blog.fields.blogCategory.fields.title"></span>
           <h4 class="text-lg font-bold group-hover:text-red-700" v-text="blog.fields.title"></h4>
