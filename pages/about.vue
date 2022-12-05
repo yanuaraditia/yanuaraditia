@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 xl:mt-14">
     <div class="container px-4 xl:w-9/12 mx-auto">
-      <img src="~/assets/gitanuar.jpg" class="w-full mb-10 rounded-2xl" alt="">
+      <img src="~/assets/gitanuar.png" class="w-full mb-10 rounded-2xl" alt="">
       <div class="grid xl:grid-cols-6 gap-10">
         <div class="xl:col-span-6">
           <h1 class="font-bold mb-5 text-3xl xl:text-5xl xl:w-8/12">
