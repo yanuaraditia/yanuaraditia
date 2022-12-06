@@ -75,7 +75,21 @@ if (typeof data['_rawValue'].blog === 'undefined') {
 rendered = useNuxtApp().$mdit.render(data['_rawValue'].blog.fields.content);
 
 useHead({
-  title: data['_rawValue'].blog.fields.title
+  title: data['_rawValue'].blog.fields.title,
+  meta: [
+    {
+      name: 'twitter:image',
+      content: data['_rawValue'].blog.fields.image.fields.file.url
+    },
+    {
+      name: 'og:image',
+      content: data['_rawValue'].blog.fields.image.fields.file.url
+    },
+    {
+      name: 'description',
+      content: data['_rawValue'].blog.fields.description
+    }
+  ]
 })
 </script>
 
