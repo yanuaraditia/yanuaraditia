@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-red-100 dark:bg-neutral-800 transition-all">
-          <nuxt-img :src="data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full absolute left-7 top-7"/>
+          <nuxt-img :src="`https://`+data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full absolute left-7 top-7"/>
         </div>
         <div class="prose dark:prose-invert max-w-none" v-html="rendered"></div>
       </div>

@@ -22,7 +22,7 @@
             </div>
           </div>
         </div>
-        <nuxt-img :src="data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
+        <nuxt-img :src="`https://`+data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
         <div class="prose dark:prose-invert max-w-none" v-html="rendered"></div>
       </div>
     </div>

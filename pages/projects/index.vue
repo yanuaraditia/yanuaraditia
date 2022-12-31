@@ -8,7 +8,7 @@
       <div class="grid xl:grid-cols-3 gap-10">
         <div v-for="blog in data.projects" :key="`dm-${blog.sys.id}`" class="relative group">
           <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-red-100 dark:bg-neutral-800 transition-all">
-            <nuxt-img :src="blog.fields.image.fields.file.url" alt="" class="w-full absolute left-7 top-7"/>
+            <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" alt="" class="w-full absolute left-7 top-7"/>
           </div>
           <h4 class="text-lg xl:text-xl mb-3 font-bold group-hover:text-red-700" v-text="blog.fields.title"></h4>
           <p v-text="blog.fields.description" class="text-sm dark:text-neutral-400"></p>
