@@ -51,11 +51,6 @@ export default defineNuxtConfig({
         }
     },
     image: {
-        screens: {
-            sm: 464,
-            lg: 396,
-            xl: 716
-        },
         domains: [
             'avatars0.githubusercontent.com',
             'images.ctfassets.net'
