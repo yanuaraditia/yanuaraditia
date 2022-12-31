@@ -5,12 +5,13 @@ import mdit from 'markdown-it';
 import sub from 'markdown-it-sub';
 import sup from 'markdown-it-sup';
 import fn from 'markdown-it-footnote';
+import tnc from "markdown-it-table-of-contents";
 import emo from 'markdown-it-emoji';
 import def from 'markdown-it-deflist';
 import ins from 'markdown-it-ins';
 import container from 'markdown-it-container';
 
-const markdownit = new mdit({
+const markdownItConfiguration = new mdit({
     html:         true,
     xhtmlOut:     false,
     breaks:       false,
@@ -35,13 +36,14 @@ const markdownit = new mdit({
     .use(fn)
     .use(emo)
     .use(def)
+    .use(tnc)
     .use(ins)
     .use(container,'codeblock',{marker:'@'});
 
-markdownit.linkify.set({ fuzzyEmail: false });
+markdownItConfiguration.linkify.set({ fuzzyEmail: false });
 
 
 
 export default defineNuxtPlugin(nuxtApp => {
-    nuxtApp.provide('mdit',markdownit);
+    nuxtApp.provide('mdit',markdownItConfiguration);
 });
