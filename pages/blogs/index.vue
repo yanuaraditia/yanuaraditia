@@ -7,7 +7,7 @@
       <p class="text-lg mb-10 xl:w-5/12">Software engineer specialized in backend development and micro-services ecosystems</p>
       <div class="grid xl:grid-cols-3 gap-7">
         <div v-for="blog in data.blogs" :key="`dm-${blog.sys.id}`" class="relative group">
-          <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl transition-all">
+          <div class="mb-3 aspect-video overflow-hidden rounded-xl border-2 border-transparent group-hover:border-red-700 group-hover:shadow-2xl transition-all">
             <nuxt-img :src="blog.fields.image.fields.file.url" :alt="blog.fields.title"
                       sizes="sm:464px lg:396px"
                       class="w-full"/>
