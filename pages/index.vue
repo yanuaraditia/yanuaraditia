@@ -6,7 +6,7 @@
         <div class="xl:order-2">
           <div class="mx-auto w-64 xl:w-96 relative bg-gradient-to-t from-red-100 to-red-200 dark:to-neutral-700 dark:from-neutral-800 rounded-2xl mb-10 px-5 pt-5">
             <nuxt-img src="/my-photo.png" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
-            <span class="w-full border-red-500 border-2 absolute h-full -left-5 -right-5 -top-5 -bottom-5 rounded-3xl -rotate-20"></span>
+            <span style="transform: rotate(-5deg)" class="w-full border-red-500 border-2 absolute h-full top-0 left-0 right-0 bottom-0 rounded-2xl"></span>
             <div class="absolute bg-red-50 flex place-items-center gap-5 shadow-lg p-2 rounded-2xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
               <div class="aspect-square w-8 h-8">
                 <nuxt-img src="/coffee-emoji.png" alt="Kopi Lambada" class="w-full" width="24" height="24"/>
