@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['-apple-system', 'Inter Tight', ...defaultTheme.fontFamily.sans],
+        'sans': ['-apple-system', 'Inter', ...defaultTheme.fontFamily.sans],
         'mono' : ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
       },
       colors: {

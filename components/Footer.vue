@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-5 xl:py-12">
+  <footer class="py-5 xl:py-12 relative">
     <div class="container px-4 mx-auto xl:w-9/12">
       <div class="xl:flex">
         <div class="mb-3 xl:mb-0">
