@@ -1,10 +1,11 @@
 <template>
-  <section class="py-16 xl:mt-14">
-    <div class="container px-4 xl:w-9/12 mx-auto">
+  <section class="py-16 xl:py-24 relative overflow-hidden">
+    <div class="container px-4 xl:w-9/12 mx-auto relative">
+      <nuxt-img src="/gitanuar.png" class="w-full blur-3xl top-64 absolute opacity-20" alt="Gitania & Yanuar"/>
       <nuxt-img src="/gitanuar.png" class="w-full mb-10 rounded-2xl" alt="Gitania & Yanuar"/>
       <div class="grid xl:grid-cols-6 gap-10">
         <div class="xl:col-span-6">
-          <h1 class="font-bold mb-5 text-3xl xl:text-5xl xl:w-8/12">
+          <h1 class="font-bold mb-5 text-3xl xl:leading-tight xl:text-5xl xl:w-8/12">
             <span>Hey there! My name is Yanuar Aditia, and Yanuar in short.</span>
           </h1>
         </div>

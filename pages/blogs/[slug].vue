@@ -1,9 +1,9 @@
 <template>
-  <section class="py-16 xl:mt-14">
+  <section class="py-16 xl:py-24">
     <div class="container px-4 xl:w-9/12 mx-auto">
       <div class="xl:mx-auto xl:w-7/12">
         <span v-text="data.blog.fields.blogCategory.fields.title"></span>
-        <h1 class="font-bold mb-5 mt-3 text-3xl xl:text-5xl">
+        <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
           <span v-text="data.blog.fields.title"></span>
         </h1>
         <p class="text-lg mb-7" v-text="data.blog.fields.description"></p>
@@ -22,7 +22,7 @@
             </div>
           </div>
         </div>
-        <nuxt-img :src="`https://`+ydata.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
+        <nuxt-img :src="data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
         <div class="prose dark:prose-invert max-w-none" v-html="rendered"></div>
       </div>
     </div>

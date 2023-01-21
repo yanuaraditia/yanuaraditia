@@ -1,7 +1,7 @@
 <template>
-  <header class="sticky z-50 top-0 h-16 xl:h-20 transition-all">
-    <div class="container xl:px-4 mx-auto xl:w-9/12" :class="[(isFixed ? 'xl:py-3' : '')]">
-      <div class="transition-all xl:flex" :class="[(isFixed ? 'xl:gap-5 xl:mx-auto xl:pr-10 xl:shadow-sm xl:bg-red-50 xl:bg-opacity-80 dark:xl:bg-opacity-80 xl:backdrop-blur-3xl xl:border xl:w-4/12 dark:xl:bg-neutral-800 xl:p-3 xl:rounded-full' : '')]">
+  <header class="sticky z-50 top-0 h-16 xl:h-20 transition-all xl:bg-transparent dark:xl:bg-transparent" :class="[(isFixed || showNavbar ? 'bg-red-100 dark:bg-neutral-900 xl:top-5' : '')]">
+    <div class="container xl:px-4 mx-auto xl:w-9/12" :class="[(isFixed ? '' : '')]">
+      <div class="transition-all xl:flex" :class="[(isFixed ? 'xl:gap-5 xl:ml-auto xl:border-neutral-200 dark:xl:border-neutral-700 xl:shadow-sm xl:bg-red-50 xl:bg-opacity-80 dark:xl:bg-opacity-80 xl:backdrop-blur-3xl xl:border xl:w-4/12 dark:xl:bg-neutral-800 xl:p-3 xl:rounded-full' : 'xl:border border-transparent')]">
         <div class="px-4 xl:px-0 flex xl:block place-items-center">
           <nuxt-link to="/" class="block" :class="[(isFixed ? 'py-2.5 xl:py-0' : 'py-4 xl:py-6')]">
             <nuxt-img src="/yan-reg.png" v-if="isFixed" class="inline-block w-10 aspect-square relative rounded-full shadow-lg" loading="lazy" alt="Yanuar Reg" />

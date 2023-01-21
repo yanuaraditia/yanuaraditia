@@ -1,13 +1,13 @@
 <template>
-  <section class="py-16 xl:py-28 relative border-b border-b-neutral-300 border-dashed dark:border-b-neutral-700">
+  <section class="py-16 xl:py-24 relative border-b border-b-neutral-300 border-dashed dark:border-b-neutral-700">
     <span class="bg-red-200 z-0 dark:bg-red-900 dark:bg-opacity-20 w-96 h-96 absolute rounded-full blur-3xl scale-150 bottom-0 left-0 -translate-x-1/2 translate-y-1/4"></span>
     <div class="container px-4 xl:w-9/12 mx-auto relative">
       <div class="grid xl:grid-cols-2 xl:items-center">
         <div class="xl:order-2">
-          <div class="aspect-square mx-auto w-64 xl:w-72 relative rounded-full mb-10">
-            <span class="w-full border-red-500 border border-dashed absolute w-full animate-pulse h-full scale-110 rounded-full"></span>
-            <nuxt-img src="/yan-reg.png" class="inline-block w-64 xl:w-72 aspect-square relative rounded-full shadow-lg" loading="lazy" alt="Yanuar Reg" />
-            <div class="absolute bg-red-50 flex place-items-center gap-5 shadow-lg p-2 rounded-full bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
+          <div class="mx-auto w-64 xl:w-96 relative bg-gradient-to-t from-red-100 to-red-200 dark:to-neutral-700 dark:from-neutral-800 rounded-2xl mb-10 px-5 pt-5">
+            <nuxt-img src="/my-photo.png" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
+            <span class="w-full border-red-500 border-2 absolute h-full -left-5 -right-5 -top-5 -bottom-5 rounded-3xl -rotate-20"></span>
+            <div class="absolute bg-red-50 flex place-items-center gap-5 shadow-lg p-2 rounded-2xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
               <div class="aspect-square w-8 h-8">
                 <nuxt-img src="/coffee-emoji.png" alt="Kopi Lambada" class="w-full" width="24" height="24"/>
               </div>
@@ -24,6 +24,29 @@
             <span class="font-semibold"> Indonesia</span>
           </h1>
           <p class="xl:text-lg mb-8 xl:w-9/12 text-neutral-600 dark:text-neutral-400">I have been working as a Software Engineer for +3 years. I am looking forward to collaborate with you!</p>
+          <ul class="grid gap-y-3 mb-10">
+            <li class="flex gap-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                 <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+              <span>Product must be authentic</span>
+            </li>
+            <li class="flex gap-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                 <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+              <span>Solve pain elegantly</span>
+            </li>
+            <li class="flex gap-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                 <path d="M5 12l5 5l10 -10"></path>
+              </svg>
+              <span>User testing, feedback, and validation</span>
+            </li>
+          </ul>
           <div class="inline-flex gap-3 mx-auto">
             <div>
               <nuxt-link to="/contact" class="block bg-red-600 text-white dark:hover:bg-red-300 hover:shadow-lg font-medium transition-all px-6 relative py-3 dark:bg-red-200 dark:text-red-900 rounded-full">

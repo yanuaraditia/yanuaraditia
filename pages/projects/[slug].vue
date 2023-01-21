@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 xl:mt-14">
+  <section class="py-16 xl:py-24">
     <div class="container px-4 xl:w-9/12 mx-auto">
       <div class="xl:mx-auto xl:w-7/12">
         <h1 class="font-bold mb-5 mt-3 text-3xl xl:text-5xl">
