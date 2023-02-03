@@ -1,11 +1,10 @@
-import * as pkg from 'contentful'
-const {createClient} = pkg
+import contentful from 'contentful'
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig()
     return {
         provide: {
-            client :createClient({
+            client: contentful.createClient({
                 space: config.public.space,
                 accessToken: config.public.accessToken
             })

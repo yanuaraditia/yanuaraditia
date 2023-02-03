@@ -20,7 +20,7 @@
     "@nuxtjs/google-fonts": "^2.0.0",
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/web-vitals": "^0.2.2",
-    "contentful": "^9.2.13",
+    "contentful": "^10.0.0-beta-v10.11",
     "highlight.js": "11.6.0",
     "markdown-it": "13.0.1",
     "markdown-it-container": "3.0.0",
