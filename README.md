@@ -1,42 +1,13 @@
-# Nuxt 3 Minimal Starter
+## Hi there Yanuar Aditia
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+I’m from Indonesia and I have been working as a Software Engineer for more than 3 years. Currently I work for KiriminAja as Technical Lead since 2020. I am looking forward to collaborate with you!
 
-## Setup
+<img src="https://komarev.com/ghpvc/?username=yanuaraditia&style=flat-square" alt="Yanuar" /><br>
 
-Make sure to install the dependencies:
+| **SUMARY**                                                                                                                                              | **LANGUAGES**                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![trisf github stats](https://github-readme-stats.vercel.app/api?username=yanuaraditia&show_icons=true)](https://github.com/yanuaraditia) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yanuaraditia)](https://github.com/yanuaraditia) |
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[![Instagram](https://img.shields.io/static/v1?label=Instagram&message=%20&logo=Instagram&style=flat-square&logoColor=red)](https://www.instagram.com/yanuaraditia/)
+[![Telegram](https://img.shields.io/static/v1?label=Telegram&message=%20&logo=Telegram&style=flat-square&logoColor=blue)](https://t.me/yanuaraditia)
+[![LinkedIn](https://img.shields.io/static/v1?label=LinkedIn&message=%20&logo=LinkedIn&style=flat-square&logoColor=blue)](https://www.linkedin.com/in/yanuaraditia/)
