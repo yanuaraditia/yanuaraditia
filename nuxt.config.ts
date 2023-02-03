@@ -3,9 +3,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
-        '@nuxt/image-edge',
-        '@nuxt/content',
-        '@nuxtjs/web-vitals'
+        '@nuxt/image-edge'
     ],
     runtimeConfig: {
         public: {
