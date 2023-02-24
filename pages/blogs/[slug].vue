@@ -2,11 +2,11 @@
   <section class="py-16 xl:py-24">
     <div class="container px-4 xl:w-9/12 mx-auto">
       <div class="xl:mx-auto xl:w-7/12">
-        <span v-text="data.blog.fields.blogCategory.fields.title"></span>
+        <span v-text="blog.fields.blogCategory.fields.title"></span>
         <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
-          <span v-text="data.blog.fields.title"></span>
+          <span v-text="blog.fields.title"></span>
         </h1>
-        <p class="text-lg mb-7" v-text="data.blog.fields.description"></p>
+        <p class="text-lg mb-7" v-text="blog.fields.description"></p>
         <div class="flex gap-3.5 mb-10 place-items-center">
           <div>
             <div class="aspect-square w-16 h-16 rounded-full overflow-hidden">
@@ -16,14 +16,14 @@
           <div>
             <div class="font-semibold text-xl">Yanuar Aditia</div>
             <div class="text-sm flex gap-3 dark:text-neutral-400">
-              <span v-text="formatDate(data.blog.sys.createdAt)"></span>
+              <span v-text="formatDate(blog.sys.createdAt)"></span>
               <span>•</span>
               <span>5 minute read</span>
             </div>
           </div>
         </div>
-        <nuxt-img :src="`https://`+data.blog.fields.image.fields.file.url" :alt="data.blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
-        <div class="prose dark:prose-invert max-w-none" v-html="rendered"></div>
+        <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
+        <div class="prose dark:prose-invert max-w-none" v-html="blog.contentRendered"></div>
       </div>
     </div>
   </section>
@@ -42,13 +42,14 @@ export default {
 </script>
 
 <script setup>
-import 'highlight.js/styles/qtcreator-dark.css'
-let md = ref("");
-let rendered = ref("");
+import 'highlight.js/styles/monokai-sublime.css'
+import {MarkedRenderer} from "~/utils/markedRenderer";
 
 const {$client} = useNuxtApp()
 const route = useRoute()
-const {data} = await useAsyncData('blog', () => {
+const blog = ref({})
+
+await useAsyncData('blog', () => {
   return Promise.all([
     $client.getEntries({
       content_type: "blogs",
@@ -56,35 +57,35 @@ const {data} = await useAsyncData('blog', () => {
       order: '-sys.createdAt',
     })
   ]).then(([blogs]) => {
-    return {
-      blog: blogs.items[0]
-    }
+    blog.value = blogs.items[0];
+
+    const render = MarkedRenderer(blog.value.fields.content)
+    blog.value.contentRendered = render.rendered
+    blog.value.toc = render.toc
   })
 })
 
-if (typeof data['_rawValue'].blog === 'undefined') {
+if (typeof blog === 'undefined') {
   throw createError({
     statusCode: 404,
     statusMessage: "Post not found"
   })
 }
 
-rendered = useNuxtApp().$mdit.render(data['_rawValue'].blog.fields.content);
-
 useHead({
-  title: data['_rawValue'].blog.fields.title,
+  title: blog.value.fields.title ?? '',
   meta: [
     {
       name: 'twitter:image',
-      content: data['_rawValue'].blog.fields.image.fields.file.url
+      content: blog.value.fields.image.fields.file.url
     },
     {
       name: 'og:image',
-      content: data['_rawValue'].blog.fields.image.fields.file.url
+      content: blog.value.fields.image.fields.file.url
     },
     {
       name: 'description',
-      content: data['_rawValue'].blog.fields.description
+      content: blog.value.fields.description
     }
   ]
 })
