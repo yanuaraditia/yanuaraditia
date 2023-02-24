@@ -42,7 +42,6 @@ export default {
 </script>
 
 <script setup>
-import 'highlight.js/styles/monokai-sublime.css'
 import {MarkedRenderer} from "~/utils/markedRenderer";
 
 const {$client} = useNuxtApp()
@@ -56,12 +55,11 @@ await useAsyncData('blog', () => {
       'fields.slug[in]': route.params.slug,
       order: '-sys.createdAt',
     })
-  ]).then(([blogs]) => {
+  ]).then( async ([blogs]) => {
     blog.value = blogs.items[0];
 
     const render = MarkedRenderer(blog.value.fields.content)
-    blog.value.contentRendered = render.rendered
-    blog.value.toc = render.toc
+    blog.value.contentRendered = await render
   })
 })
 
@@ -73,7 +71,7 @@ if (typeof blog === 'undefined') {
 }
 
 useHead({
-  title: blog.value.fields.title ?? '',
+  title: blog.value.fields.title,
   meta: [
     {
       name: 'twitter:image',
@@ -89,6 +87,7 @@ useHead({
     }
   ]
 })
+
 </script>
 
 <style scoped>

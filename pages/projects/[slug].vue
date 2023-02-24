@@ -59,12 +59,11 @@ await useAsyncData('blog', () => {
       'fields.slug[in]': route.params.slug,
       order: '-sys.createdAt',
     })
-  ]).then(([projects]) => {
+  ]).then(async ([projects]) => {
     project.value = projects.items[0];
 
     const render = MarkedRenderer(project.value.fields.content)
-    project.value.contentRendered = render.rendered
-    project.value.toc = render.toc
+    project.value.contentRendered = await render
   })
 })
 
