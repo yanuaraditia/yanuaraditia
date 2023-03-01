@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
-        '@nuxt/image-edge'
+        '@nuxt/image-edge',
+        '@pinia/nuxt',
     ],
     runtimeConfig: {
         public: {
@@ -28,18 +29,18 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: "en"
             },
-            link         : [
+            link: [
                 {
-                    rel : 'icon',
+                    rel: 'icon',
                     type: 'image/x-icon',
                     href: '/favicon.ico'
                 },
                 {
-                    rel : 'preconnect',
+                    rel: 'preconnect',
                     href: 'https://fonts.gstatic.com'
                 },
                 {
-                    rel : 'preconnect',
+                    rel: 'preconnect',
                     href: 'https://fonts.googleapis.com'
                 },
                 {

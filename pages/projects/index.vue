@@ -6,7 +6,7 @@
       </h1>
       <p class="text-lg mb-10 xl:w-5/12">Main and side-project portfolio. There all my professional project excluding professional</p>
       <div class="grid xl:grid-cols-3 gap-10">
-        <div v-for="blog in data.projects" :key="`dm-${blog.sys.id}`" class="relative group">
+        <div v-for="blog in projects" :key="`dm-${blog.sys.id}`" class="relative group">
           <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-red-100 dark:bg-neutral-800 transition-all">
             <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" alt="" class="w-full absolute left-7 top-7"/>
           </div>
@@ -25,20 +25,11 @@ export default {
 </script>
 
 <script setup>
-const {$client} = useNuxtApp()
+import {useProjectStore} from "~/stores/projectStore";
 
-const {data} = await useAsyncData('projects', () => {
-  return Promise.all([
-    $client.getEntries({
-      content_type: "project",
-      order: '-sys.createdAt',
-    })
-  ]).then(([projects]) => {
-    return {
-      projects: projects.items
-    }
-  })
-})
+const store = useProjectStore()
+await store.fetchProjects()
+const projects = computed(()=> store.getProjects)
 
 useHead({
   title: "Project"

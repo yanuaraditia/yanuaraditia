@@ -43,44 +43,27 @@ export default {
 </script>
 
 <script setup>
-import 'highlight.js/styles/monokai-sublime.css'
-import {MarkedRenderer} from "~/utils/markedRenderer";
+import {useProjectStore} from "~/stores/projectStore";
 
-const {$client} = useNuxtApp()
-let title
 const route = useRoute()
-
-const project = ref({})
-
-await useAsyncData('blog', () => {
-  return Promise.all([
-    $client.getEntries({
-      content_type: "project",
-      'fields.slug[in]': route.params.slug,
-      order: '-sys.createdAt',
-    })
-  ]).then(async ([projects]) => {
-    project.value = projects.items[0];
-
-    const render = MarkedRenderer(project.value.fields.content)
-    project.value.contentRendered = await render
-  })
-})
+const state = useProjectStore()
+await state.fetchProject(route.params.slug)
+const project = state.getProject
 
 useHead({
-  title: project.value.fields.title ?? '',
+  title: project.fields.title ?? '',
   meta: [
     {
       name: 'twitter:image',
-      content: project.value.fields.image.fields.file.url
+      content: project.fields.image.fields.file.url
     },
     {
       name: 'og:image',
-      content: project.value.fields.image.fields.file.url
+      content: project.fields.image.fields.file.url
     },
     {
       name: 'description',
-      content: project.value.fields.description
+      content: project.fields.description
     }
   ]
 })

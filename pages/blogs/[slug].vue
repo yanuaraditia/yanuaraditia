@@ -22,7 +22,8 @@
             </div>
           </div>
         </div>
-        <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title" class="w-full rounded-lg mb-5" loading="lazy"/>
+        <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
+                  class="w-full rounded-lg mb-5" loading="lazy"/>
         <div class="prose dark:prose-invert max-w-none" v-html="blog.contentRendered"></div>
       </div>
     </div>
@@ -34,7 +35,7 @@ export default {
   name: "slug",
   methods: {
     formatDate(dateString) {
-      const options = { year: "numeric", month: "short", day: "numeric" }
+      const options = {year: "numeric", month: "short", day: "numeric"}
       return new Date(dateString).toLocaleDateString(undefined, options)
     }
   }
@@ -42,26 +43,12 @@ export default {
 </script>
 
 <script setup>
-import {MarkedRenderer} from "~/utils/markedRenderer";
+import {useBlogStore} from "~/stores/blogStore";
 
-const {$client} = useNuxtApp()
 const route = useRoute()
-const blog = ref({})
-
-await useAsyncData('blog', () => {
-  return Promise.all([
-    $client.getEntries({
-      content_type: "blogs",
-      'fields.slug[in]': route.params.slug,
-      order: '-sys.createdAt',
-    })
-  ]).then( async ([blogs]) => {
-    blog.value = blogs.items[0];
-
-    const render = MarkedRenderer(blog.value.fields.content)
-    blog.value.contentRendered = await render
-  })
-})
+const state = useBlogStore()
+await state.fetchBlog(route.params.slug)
+const blog = state.getBlog
 
 if (typeof blog === 'undefined') {
   throw createError({
@@ -71,19 +58,19 @@ if (typeof blog === 'undefined') {
 }
 
 useHead({
-  title: blog.value.fields.title,
+  title: blog.fields.title,
   meta: [
     {
       name: 'twitter:image',
-      content: blog.value.fields.image.fields.file.url
+      content: blog.fields.image.fields.file.url
     },
     {
       name: 'og:image',
-      content: blog.value.fields.image.fields.file.url
+      content: blog.fields.image.fields.file.url
     },
     {
       name: 'description',
-      content: blog.value.fields.description
+      content: blog.fields.description
     }
   ]
 })
