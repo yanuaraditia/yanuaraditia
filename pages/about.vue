@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 xl:pt-10 xl:pb-20 relative overflow-hidden">
     <div class="container px-4 xl:w-9/12 mx-auto relative">
-      <img src="/gitanuar.png" loading="lazy" class="w-full mb-10 rounded-2xl" alt="Gitania & Yanuar"/>
+      <img src="~/assets/gitanuar.webp" loading="lazy" class="w-full mb-10 rounded-2xl" alt="Gitania & Yanuar"/>
       <div class="relative">
         <h1 class="font-bold mb-5 text-3xl xl:leading-tight xl:text-5xl xl:w-8/12">
           <span>Hey there! My name is Yanuar Aditia, and Yanuar in short.</span>

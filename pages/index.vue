@@ -4,11 +4,11 @@
       <div class="grid xl:grid-cols-2 xl:items-center">
         <div class="xl:order-2">
           <div class="mx-auto w-64 xl:w-96 relative bg-gradient-to-t from-neutral-100 to-neutral-200 shadow-lg dark:to-neutral-700 dark:from-neutral-800 rounded-2xl mb-10 px-5 pt-5">
-            <img src="/my-photo.png" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
+            <img src="~/assets/my-photo.webp" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
             <span style="transform: rotate(-5deg)" class="w-full border-blue-600 border-dashed dark:border-blue-300 border-2 absolute h-full top-0 left-0 right-0 bottom-0 rounded-2xl"></span>
             <div class="absolute bg-neutral-100 flex place-items-center gap-5 shadow-lg p-2 rounded-2xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
               <div class="aspect-square w-8 h-8">
-                <img src="/coffee-emoji.png" alt="Kopi Lambada" class="w-full" width="24" height="24"/>
+                <img src="~/assets/coffee-emoji.webp" alt="Kopi Lambada" class="w-full" width="24" height="24"/>
               </div>
             </div>
           </div>
