@@ -7,8 +7,17 @@ interface BlogState {
     blog: BlogObject | null
 }
 
+interface BlogCategoryObject {
+    fields: {
+        content: string,
+        title: string
+    }
+}
+
 interface BlogFieldsObject {
-    content: string
+    content: string,
+    title: string,
+    blogCategory: BlogCategoryObject
 }
 
 interface BlogObject {

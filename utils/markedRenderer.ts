@@ -3,6 +3,26 @@ import hljs from "highlight.js";
 
 import 'highlight.js/styles/androidstudio.css'
 
+interface LazyInterface {
+    name: string,
+    level: string,
+    renderer: any,
+    parser: {
+        renderer: {
+            image: any
+        }
+    }
+}
+
+export const loadingLazy = {
+  name: 'image',
+  level: 'inline',
+  renderer(token: any): any {
+    const html = this.parser.renderer.image(token.href, token.title, token.text);
+		return html.replace(/^<img /, '<img loading="lazy" ');
+  },
+} as LazyInterface;
+
 export const MarkedRenderer = (string: string) => {
     let renderer = new marked.Renderer()
     let tableOfContents = [] as any[]
@@ -26,5 +46,10 @@ export const MarkedRenderer = (string: string) => {
         },
         langPrefix: 'language-', // highlight.js css expects a top-level 'hljs' class.
     })
+
+    marked.use({
+        extensions: [loadingLazy]
+    })
+
     return marked(string)
 }

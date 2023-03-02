@@ -23,6 +23,7 @@
     "@nuxtjs/google-fonts": "^2.0.0",
     "@nuxtjs/web-vitals": "^0.2.2",
     "@pinia/nuxt": "^0.4.7",
+    "collect.js": "^4.34.3",
     "contentful": "^10.0.0-beta-v10.11",
     "pinia": "^2.0.32"
   }

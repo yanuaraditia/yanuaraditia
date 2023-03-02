@@ -1,16 +1,16 @@
 <template>
-  <section class="py-16 xl:py-24">
+  <section class="py-16 xl:py-20">
     <div class="container px-4 xl:w-9/12 mx-auto">
       <div class="xl:mx-auto xl:w-7/12">
-        <span v-text="blog.fields.blogCategory.fields.title"></span>
+        <span class="text-blue-600 font-medium" v-text="blog.fields.blogCategory.fields.title"></span>
         <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
           <span v-text="blog.fields.title"></span>
         </h1>
         <p class="text-lg mb-7" v-text="blog.fields.description"></p>
         <div class="flex gap-3.5 mb-10 place-items-center">
           <div>
-            <div class="aspect-square w-16 h-16 rounded-full overflow-hidden">
-              <img src="~/assets/yan-reg.png" class="w-full" alt="">
+            <div class="aspect-square w-16 p-1 border-2 border-blue-600 h-16 rounded-full overflow-hidden">
+              <img src="~/assets/yan-reg.png" class="rounded-full w-full" alt="">
             </div>
           </div>
           <div>
@@ -43,12 +43,10 @@ export default {
 </script>
 
 <script setup>
-import {useBlogStore} from "~/stores/blogStore";
+import {getSingle} from "~/repositories/blogRepository";
 
 const route = useRoute()
-const state = useBlogStore()
-await state.fetchBlog(route.params.slug)
-const blog = state.getBlog
+const blog = await getSingle(route.params.slug)
 
 if (typeof blog === 'undefined') {
   throw createError({

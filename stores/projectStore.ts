@@ -4,7 +4,16 @@ import {Ref} from "vue";
 
 interface ProjectState {
     projects: ProjectObject[],
-    project?: ProjectObject | null
+    project?: ProjectObject | null,
+    histories: HistoryState[]
+}
+
+interface HistoryState {
+    position: string,
+    place: string,
+    start: string,
+    end?: string,
+
 }
 
 interface ProjectFieldsObject {
@@ -22,13 +31,19 @@ interface ProjectObject {
 export const useProjectStore = defineStore('project', {
     state: () => ({
         projects: [],
-        project: null
+        project: null,
+        histories: []
     } as ProjectState),
     getters: {
         getProjects: state => state.projects,
-        getProject: state => state.project
+        getProject: state => state.project,
+        getHistories: state => state.histories
     },
     actions: {
+        async fetchHistories() {
+            const {data} = await useFetch('/api/works')
+            this.histories = data as any
+        },
         async fetchProject(slug: string | string[]) {
             const {$client} = useNuxtApp()
             await Promise.all([

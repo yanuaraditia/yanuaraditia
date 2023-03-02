@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-red-50 dark:bg-neutral-900 dark:text-white text-neutral-800 min-h-screen">
+  <NuxtLoadingIndicator/>
+  <div class="bg-neutral-50 dark:bg-neutral-900 dark:text-white text-neutral-800 min-h-screen">
     <div class="relative">
       <Header/>
       <main>

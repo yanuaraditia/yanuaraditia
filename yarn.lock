@@ -1892,6 +1892,11 @@ co@^4.6.0:
   resolved "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
   integrity sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==
 
+collect.js@^4.34.3:
+  version "4.34.3"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.34.3.tgz#8169aff62d18a973b2ea23ace76da03517463ac1"
+  integrity sha512-aFr67xDazPwthsGm729mnClgNuh15JEagU6McKBKqxuHOkWL7vMFzGbhsXDdPZ+H6ia5QKIMGYuGOMENBHnVpg==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
