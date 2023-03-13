@@ -1,8 +1,8 @@
 <template>
   <section class="py-16 xl:py-20">
-    <div class="absolute top-0 left-0 w-full h-96 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-72 xl:h-96 overflow-hidden">
       <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
-                    class="w-full rounded-lg mb-5 opacity-30" loading="lazy"/>
+                    class="w-full mb-5 opacity-30" loading="lazy"/>
       <span class="w-full bg-gradient-to-t bottom-0 from-neutral-900 -top-24 absolute left-0"></span>
     </div>
     <div class="container px-4 xl:w-9/12 mx-auto relative">
