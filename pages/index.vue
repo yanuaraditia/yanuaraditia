@@ -1,25 +1,27 @@
 <template>
-  <section class="py-16 xl:py-22 relative border-b border-b-neutral-300 border-dashed dark:border-b-neutral-700">
+  <section class="pb-16 pt-1 xl:pt-16 relative border-b border-b-neutral-300 border-dashed dark:border-b-neutral-700">
     <div class="container px-4 xl:w-9/12 mx-auto relative">
       <div class="grid xl:grid-cols-2 xl:items-center">
         <div class="xl:order-2">
-          <div class="mx-auto w-64 xl:w-96 relative bg-gradient-to-t from-neutral-100 to-neutral-200 shadow-lg dark:to-neutral-700 dark:from-neutral-800 rounded-2xl mb-10 px-5 pt-5">
-            <nuxt-img src="/assets/my-photo.webp" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
-            <span style="transform: rotate(-5deg)" class="w-full border-blue-600 border-dashed dark:border-blue-300 border-2 absolute h-full top-0 left-0 right-0 bottom-0 rounded-2xl"></span>
-            <div class="absolute bg-neutral-100 flex place-items-center gap-5 shadow-lg p-2 rounded-2xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
-              <div class="aspect-square w-8 h-8">
-                <img src="~/assets/coffee-emoji.webp" alt="Kopi Lambada" class="w-full" width="24" height="24"/>
+            <div class="mx-auto xl:w-96 mb-10 p-1 rounded-2xl bg-gradient-to-br shadow-lg xl:shadow-2xl from-purple-200 to-blue-400 dark:from-primary-300 dark:to-blue-800">
+              <div class="relative group bg-gradient-to-t text-center overflow-hidden from-neutral-300 to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 rounded-3xl xl:rounded-xl px-5 pt-5">
+                <span class="bg-blue-900 dark:bg-blue-400 group-hover:scale-150 transition-all absolute animate-pulse rounded-full bottom-0 translate-y-1/2 blur-3xl left-0 w-full aspect-square bottom-0"></span>
+                <nuxt-img src="/assets/my-photo.webp" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
+                <div class="absolute z-50 bg-neutral-100 flex place-items-center gap-5 shadow-lg p-2 rounded-xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
+                  <div class="aspect-square w-8 h-8">
+                    <nuxt-img src="/assets/coffee-emoji.webp" alt="Kopi Lambada" class="w-full" width="24px" height="24px"/>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
         </div>
         <div class="xl:order-1">
-          <h1 class="mb-5 font-medium xl:leading-tight text-3xl xl:text-5xl">
-            <span>Hi! </span>
+          <a class="inline-block px-3.5 border rounded-full py-1 text-sm font-medium mb-5 border-blue-600 border-dashed dark:border-blue-300 bg-blue-600 text-blue-600 dark:text-blue-300 bg-opacity-10" href="mailto:hi@yanuar.dev">hi@yanuar.dev</a>
+          <h1 class="mb-5 font-semibold xl:leading-tight text-3xl xl:text-5xl">
+            <span>👋 Hi! </span>
             <span class="text-blue-500">I'm Yanuar, </span>
-            <span>a </span>
-            <span class="font-bold">Junior Product Manager </span>
-            <span>based in Yogyakarta, ID</span>
+            <span>a Junior Product Manager </span>
+            <span>based in Yogyakarta 🇮🇩</span>
           </h1>
           <p class="xl:text-lg mb-8 xl:w-9/12 text-neutral-600 dark:text-neutral-400">I have been working as a Software Engineer for +3 years. I am looking forward to collaborate with you!</p>
           <ul class="grid gap-y-3 mb-10">

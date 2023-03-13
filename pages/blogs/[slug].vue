@@ -1,6 +1,11 @@
 <template>
   <section class="py-16 xl:py-20">
-    <div class="container px-4 xl:w-9/12 mx-auto">
+    <div class="absolute top-0 left-0 w-full h-96 overflow-hidden">
+      <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
+                    class="w-full rounded-lg mb-5 opacity-30" loading="lazy"/>
+      <span class="w-full bg-gradient-to-t bottom-0 from-neutral-900 -top-24 absolute left-0"></span>
+    </div>
+    <div class="container px-4 xl:w-9/12 mx-auto relative">
       <div class="xl:mx-auto xl:w-7/12">
         <span class="text-blue-600 font-medium" v-text="blog.fields.blogCategory.fields.title"></span>
         <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
@@ -22,8 +27,6 @@
             </div>
           </div>
         </div>
-        <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
-                  class="w-full rounded-lg mb-5" loading="lazy"/>
         <div class="prose dark:prose-invert max-w-none" v-html="blog.contentRendered"></div>
       </div>
     </div>

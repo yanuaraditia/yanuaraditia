@@ -51,6 +51,7 @@ export default defineNuxtConfig({
         }
     },
     image: {
+        provider: "vercel",
         domains: [
             'avatars0.githubusercontent.com',
             'images.ctfassets.net'

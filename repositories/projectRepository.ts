@@ -18,8 +18,6 @@ export const getSingle = async (slug: string | string[]) => {
 
 export const getAllHistories = async () => {
     const store = useProjectStore()
-    if (store.getHistories.length === 0) {
-        await store.fetchHistories()
-    }
+    await store.fetchHistories()
     return collect(store.getHistories).sortByDesc('start')
 }
