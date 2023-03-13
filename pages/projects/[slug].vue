@@ -10,7 +10,7 @@
         <div class="flex gap-3.5 mb-10 place-items-center">
           <div>
             <div class="aspect-square w-16 p-1 border-2 border-blue-600 h-16 rounded-full overflow-hidden">
-              <img src="~/assets/yan-reg.png" class="rounded-full w-full" alt="">
+              <img src="~/assets/yan-reg.webp" class="rounded-full w-full" alt="">
             </div>
           </div>
           <div>
