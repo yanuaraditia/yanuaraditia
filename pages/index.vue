@@ -4,7 +4,7 @@
       <div class="grid xl:grid-cols-2 xl:items-center">
         <div class="xl:order-2">
             <div class="mx-auto xl:w-96 mb-10 p-1 rounded-2xl bg-gradient-to-br shadow-lg xl:shadow-2xl from-purple-200 to-blue-400 dark:from-primary-300 dark:to-blue-800">
-              <div class="relative group bg-gradient-to-t text-center overflow-hidden from-neutral-300 to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 rounded-3xl xl:rounded-xl px-5 pt-5">
+              <div class="relative group bg-gradient-to-t text-center overflow-hidden from-neutral-300 to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 rounded-xl px-5 pt-5">
                 <span class="bg-blue-900 dark:bg-blue-400 group-hover:scale-150 transition-all absolute animate-pulse rounded-full bottom-0 translate-y-1/2 blur-3xl left-0 w-full aspect-square bottom-0"></span>
                 <nuxt-img src="/assets/my-photo.webp" class="inline-block w-64 xl:w-96 relative rounded-2xl" loading="lazy" alt="Yanuar Reg" />
                 <div class="absolute z-50 bg-neutral-100 flex place-items-center gap-5 shadow-lg p-2 rounded-xl bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
