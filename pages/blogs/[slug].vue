@@ -7,14 +7,14 @@
     </div>
     <div class="container px-4 xl:w-9/12 mx-auto relative">
       <div class="xl:mx-auto xl:w-7/12">
-        <span class="text-blue-600 font-medium" v-text="blog.fields.blogCategory.fields.title"></span>
+        <span class="text-primary-600 font-medium" v-text="blog.fields.blogCategory.fields.title"></span>
         <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
           <span v-text="blog.fields.title"></span>
         </h1>
         <p class="text-lg mb-7" v-text="blog.fields.description"></p>
         <div class="flex gap-3.5 mb-10 place-items-center">
           <div>
-            <div class="aspect-square w-16 p-1 border-2 border-blue-600 h-16 rounded-full overflow-hidden">
+            <div class="aspect-square w-16 p-1 border-2 border-primary-600 h-16 rounded-full overflow-hidden">
               <img src="~/assets/yan-reg.webp" class="rounded-full w-full" alt="">
             </div>
           </div>

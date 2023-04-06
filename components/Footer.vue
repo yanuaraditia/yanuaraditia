@@ -1,6 +1,6 @@
 <template>
   <footer class="py-5 xl:py-10 relative">
-    <div class="container px-4 mx-auto xl:w-9/12">
+    <div class="px-3 xl:px-7">
       <div class="xl:flex">
         <div class="mb-3 xl:mb-0">
           <span>&copy;</span>

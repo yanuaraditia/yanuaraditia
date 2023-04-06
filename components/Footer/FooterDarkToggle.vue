@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div @click="switchColor" class="border shadow-inner shadow-sm text-white rounded-full flex items-center cursor-pointer w-10 bg-blue h-6 relative" :class="[(isDark ? 'bg-blue-600 border-blue-600' : 'bg-neutral-600 border-neutral-700')]">
+    <div @click="switchColor" class="border shadow-inner shadow-sm text-white rounded-full flex items-center cursor-pointer w-10 bg-primary h-6 relative" :class="[(isDark ? 'bg-primary-600 border-primary-600' : 'bg-neutral-600 border-neutral-700')]">
       <div class="py-1 px-1 w-full flex gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

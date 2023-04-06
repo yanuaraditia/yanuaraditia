@@ -1,26 +1,40 @@
 <template>
-  <section class="py-16 xl:py-20">
-    <div class="container px-4 xl:w-9/12 mx-auto">
-      <h1 class="font-bold mb-5 text-3xl xl:text-5xl">
-        <span>Project</span>
-      </h1>
-      <p class="text-lg mb-10 xl:w-5/12">Main and side-project portfolio. There all my professional project excluding professional</p>
-      <div class="grid xl:grid-cols-3 gap-10">
-        <div v-for="blog in projects" :key="`dm-${blog.sys.id}`" class="relative group">
-          <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-gradient-to-br from-neutral-200 to-neutral-400 dark:from-neutral-600 dark:to-neutral-800 group-hover:shadow-lg group-hover:ring-2 group-hover:ring-blue-600 transition-all">
-            <nuxt-img loading="lazy" :src="`https://`+blog.fields.image.fields.file.url" alt="" class="w-full absolute left-7 top-7"/>
-          </div>
-          <h4 class="text-lg xl:text-xl mb-3 font-bold group-hover:text-blue-700" v-text="blog.fields.title"></h4>
-          <p v-text="blog.fields.description" class="text-sm dark:text-neutral-400"></p>
-          <nuxt-link :to="`/projects/${blog.fields.slug}`" class="absolute top-0 left-0 w-full h-full"></nuxt-link>
+    <section class="py-16 xl:py-20">
+        <div class="container px-4 xl:w-9/12 mx-auto">
+            <div class="grid xl:grid-cols-5 gap-10">
+                <div class="xl:col-span-2">
+                    <div class="xl:sticky xl:top-36">
+                        <h1 class="font-bold mb-5 text-3xl xl:text-5xl">
+                            <span>Project</span>
+                        </h1>
+                        <p class="text-lg mb-10">Main and side-project portfolio. There all my professional
+                            project excluding professional</p>
+                    </div>
+                </div>
+                <div class="xl:col-span-3">
+                    <div class="grid gap-10">
+                        <div v-for="blog in projects" :key="`dm-${blog.sys.id}`" class="relative group hover:shadow transition-all rounded-xl overflow-hidden">
+                            <div class="mb-3 aspect-video bg-gradient-to-br from-primary-50 to-primary-200 dark:from-neutral-material-600 dark:to-neutral-material-800">
+                                <nuxt-img loading="lazy" :src="`https://`+blog.fields.image.fields.file.url" alt=""
+                                          class="w-full absolute left-7 top-7"/>
+                            </div>
+                                <div class="bottom-0 flex left-0 p-4 rounded-xl right-0 bg-primary-500 bg-opacity-80 text-neutral-material-500 backdrop-blur-2xl absolute">
+                                    <h4 class=" font-bold"
+                                        v-text="blog.fields.title"></h4>
+                                    <svg width="24" height="24" class="ml-auto" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.497 3.002 7.555.001.121.014.088.02.104.034.09.04.063.036.063.042.064.05.063.058.094.11.072.11.053.114.035.105.016.065.01.053.01.148v7.504a1 1 0 0 1-1.993.117l-.007-.117v-5.09L4.706 20.708a1 1 0 0 1-1.32.083l-.094-.083a1 1 0 0 1-.083-1.32l.083-.095L17.583 5.002h-5.086a1 1 0 0 1-.993-.883l-.007-.117a1 1 0 0 1 1-1Z" fill="currentColor"/></svg>
+                                </div>
+                            <nuxt-link :to="`/projects/${blog.fields.slug}`"
+                                       class="absolute inset-0"></nuxt-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 <script>
 export default {
-  name: "index",
+    name: "index",
 }
 </script>
 
@@ -30,7 +44,7 @@ import {getAllProjects} from "~/repositories/projectRepository";
 const projects = await getAllProjects()
 
 useHead({
-  title: "Project"
+    title: "Project"
 })
 </script>
 

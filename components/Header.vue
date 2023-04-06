@@ -1,6 +1,6 @@
 <template>
   <header class="sticky z-50 top-0 h-16 xl:h-20 transition-all" :class="[(isFixed || showNavbar ? 'bg-neutral-50 dark:bg-neutral-900 xl:bg-opacity-50 xl:saturate-200 xl:backdrop-blur-2xl' : 'bg-transparent')]">
-    <div class="container xl:px-4 mx-auto xl:w-9/12">
+    <div class="px-3 xl:px-7">
       <div class="xl:flex">
         <div class="px-4 xl:px-0 flex xl:block place-items-center">
           <nuxt-link to="/" class="block py-4 xl:py-6">
@@ -19,7 +19,7 @@
           </button>
         </div>
         <div :class="[(showNavbar ? '' : '-translate-x-full xl:translate-x-0')]" class="px-3.5 transition-all xl:ml-auto">
-          <div class="overflow-hidden xl:h-full xl:shadow-none duration-200 xl:px-0 bg-white bg-opacity-80 dark:bg-opacity-80 dark:bg-neutral-900 xl:bg-transparent dark:xl:bg-transparent border xl:border-0 backdrop-blur dark:border-neutral-800 rounded-2xl shadow-lg xl:flex xl:gap-8 xl:place-items-center font-semibold xl:font-medium">
+          <div class="overflow-hidden xl:h-full xl:shadow-none duration-200 xl:px-0 bg-white bg-opacity-80 dark:bg-opacity-80 dark:bg-neutral-900 xl:bg-transparent dark:xl:bg-transparent border xl:border-0 backdrop-blur xl:backdrop-blur-0 dark:border-neutral-800 rounded-2xl shadow-lg xl:flex xl:gap-8 xl:place-items-center font-semibold xl:font-medium">
             <HeaderNavLink v-for="(nav, key) in navs" :key="`nav-${key}`" :to="nav.to" :label="nav.label"/>
           </div>
         </div>
