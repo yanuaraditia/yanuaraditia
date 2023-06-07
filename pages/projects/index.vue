@@ -13,22 +13,22 @@
 				</div>
 				<div class="xl:col-span-3">
 					<div class="grid gap-5">
-						<CardItem v-for="project in projects" :image="project.fields.image.fields.file.url" :title="project.fields.title"
-											:to="`/blogs/${project.fields.slug}`" :key="`nk-${project.sys.id}`"/>
+						<CardItem v-for="project in projects" :image="'https://'+project.fields.image.fields.file.url"
+											:title="project.fields.title"
+											:to="`/projects/${project.fields.slug}`" :key="`nk-${project.sys.id}`"/>
 					</div>
 				</div>
 			</div>
-
 		</Container>
 	</SectionBase>
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: "index",
 }
 </script>
 
-<script setup>
+<script setup lang="ts">
 import {getAllProjects} from "~/repositories/projectRepository";
 import Headline from "~/components/Typo/Headline.vue";
 import Container from "~/components/Section/Container.vue";

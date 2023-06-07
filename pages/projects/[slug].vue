@@ -31,23 +31,19 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "slug",
-  methods: {
-    formatDate(dateString) {
-      const options = { year: "numeric", month: "short", day: "numeric" }
-      return new Date(dateString).toLocaleDateString(undefined, options)
-    }
-  }
-}
-</script>
-
-<script setup>
+<script setup lang="ts">
+import {formatDate} from "~/utils/dateFormatter";
 import {getSingle} from "~/repositories/projectRepository";
 
 const route = useRoute()
 const project = await getSingle(route.params.slug)
+
+if (!project) {
+	throw createError({
+		statusCode: 404,
+		statusMessage: 'Project not found'
+	})
+}
 
 useHead({
   title: project.fields.title ?? '',

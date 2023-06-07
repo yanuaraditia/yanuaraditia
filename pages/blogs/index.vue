@@ -14,7 +14,8 @@
 				</div>
 				<div class="xl:col-span-3">
 					<div class="grid gap-5 lg:grid-cols-2">
-						<CardItem v-for="blog in blogs" :image="blog.fields.image.fields.file.url" :title="blog.fields.title"
+						<CardItem v-for="blog in blogs" :image="'https://'+blog.fields.image.fields.file.url"
+											:title="blog.fields.title"
 											:to="`/blogs/${blog.fields.slug}`" :key="`nk-${blog.sys.id}`"/>
 					</div>
 				</div>
@@ -22,13 +23,7 @@
 		</Container>
 	</section>
 </template>
-<script>
-export default {
-	name: "index",
-}
-</script>
-
-<script setup>
+<script setup lang="ts">
 import {getAllBlogs} from "~/repositories/blogRepository";
 import Headline from "~/components/Typo/Headline.vue";
 import Container from "~/components/Section/Container.vue";
@@ -39,7 +34,3 @@ useHead({
 	title: "Blog"
 })
 </script>
-
-<style scoped>
-
-</style>
