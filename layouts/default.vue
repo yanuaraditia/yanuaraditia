@@ -1,19 +1,22 @@
 <template>
   <NuxtLoadingIndicator/>
-  <div class="bg-neutral-50 dark:bg-neutral-material-800 dark:text-primary-50 text-neutral-material-500 min-h-screen">
+  <div class="bg-white dark:bg-neutral-900 dark:text-primary-50 min-h-screen">
     <div class="relative">
-      <Header/>
-      <main>
+			<Sidebar/>
+      <main class="order-1 pb-20 lg:pb-0 lg:order-2 lg:pl-[6rem]">
         <slot/>
-      </main>
-      <Footer/>
+				<Footer/>
+			</main>
     </div>
   </div>
 </template>
 
 <script>
+import Sidebar from "~/components/Sidebar.vue";
+
 export default {
-  name: "default"
+  name: "default",
+	components: {Sidebar}
 }
 </script>
 

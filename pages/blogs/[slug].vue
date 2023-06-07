@@ -1,16 +1,16 @@
 <template>
-  <section class="py-16 xl:py-20">
+	<SectionBase>
     <div class="absolute top-0 left-0 w-full h-72 xl:h-96 overflow-hidden">
       <nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
                     class="w-full mb-5 opacity-30" loading="lazy"/>
-      <span class="w-full bg-gradient-to-t bottom-0 from-neutral-50 dark:from-neutral-900 -top-24 absolute left-0"></span>
+      <span class="w-full bg-gradient-to-t bottom-0 from-white dark:from-neutral-900 -top-24 absolute left-0"></span>
     </div>
-    <div class="container px-4 xl:w-9/12 mx-auto relative">
-      <div class="xl:mx-auto xl:w-7/12">
+		<Container>
+      <div class="lg:mx-auto lg:w-8/12">
         <span class="text-primary-600 font-medium" v-text="blog.fields.blogCategory.fields.title"></span>
-        <h1 class="font-bold mb-5 mt-3 xl:leading-tight text-3xl xl:text-5xl">
+				<Headline>
           <span v-text="blog.fields.title"></span>
-        </h1>
+				</Headline>
         <p class="text-lg mb-7" v-text="blog.fields.description"></p>
         <div class="flex gap-3.5 mb-10 place-items-center">
           <div>
@@ -29,8 +29,8 @@
         </div>
         <div class="prose dark:prose-invert max-w-none" v-html="blog.contentRendered"></div>
       </div>
-    </div>
-  </section>
+		</Container>
+	</SectionBase>
 </template>
 
 <script>
@@ -47,6 +47,8 @@ export default {
 
 <script setup>
 import {getSingle} from "~/repositories/blogRepository";
+import Headline from "~/components/Typo/Headline.vue";
+import Container from "~/components/Section/Container.vue";
 
 const route = useRoute()
 const blog = await getSingle(route.params.slug)
