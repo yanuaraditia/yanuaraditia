@@ -8,7 +8,7 @@
 					<Headline>
 						<span>👋 Hi! </span>
 						<span class="text-primary-600 dark:text-primary-500">I'm Yanuar, </span>
-						<span>a Junior Product Manager </span>
+						<span>a Junior Product Designer </span>
 						<span>based in Yogyakarta 🇮🇩</span>
 					</Headline>
 					<p class="xl:text-lg mb-8 xl:w-9/12 text-neutral-600 dark:text-neutral-400">I have been working as a Web
