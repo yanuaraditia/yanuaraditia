@@ -35,7 +35,7 @@ export const MarkedRenderer = (string: string) => {
             level: level,
             text: text
         });
-        return `<h${level} id="${anchor}">${text}</h${level}>`
+        return `<h${level} class="font-display" id="${anchor}">${text}</h${level}>`
     }
 
     marked.setOptions({

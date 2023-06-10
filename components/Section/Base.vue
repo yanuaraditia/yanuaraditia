@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineProps<{
-	addClass?: string
+	addClass?: string,
+  overrideClass?: string
 }>()
 </script>
 
 <template>
 	<section :class="[
-			'py-7 lg:py-28',
+			(overrideClass ?? 'py-7 lg:py-28'),
 			addClass
 	]">
 		<slot/>

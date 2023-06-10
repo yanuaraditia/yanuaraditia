@@ -25,7 +25,7 @@ import ColorToggle from "~/components/Sidebar/ColorToggle.vue";
 						</svg>
 					</template>
 				</SidebarItem>
-				<SidebarItem to="/blogs" label="Blog">
+				<SidebarItem to="/blogs" label="Blog" :check-child="true">
 					<template #icon-inactive>
 
 						<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -43,7 +43,7 @@ import ColorToggle from "~/components/Sidebar/ColorToggle.vue";
 						</svg>
 					</template>
 				</SidebarItem>
-				<SidebarItem to="/projects" label="Project">
+				<SidebarItem to="/projects" label="Project" :check-child="true">
 					<template #icon-inactive>
 
 						<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -61,7 +61,7 @@ import ColorToggle from "~/components/Sidebar/ColorToggle.vue";
 						</svg>
 					</template>
 				</SidebarItem>
-				<SidebarItem to="/about" label="About">
+				<SidebarItem to="/about" label="About" :check-child="true">
 					<template #icon-inactive>
 
 						<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">

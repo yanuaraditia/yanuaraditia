@@ -1,7 +1,7 @@
 <template>
 	<SectionBase>
 		<div class="absolute top-0 left-0 w-full h-72 xl:h-96 overflow-hidden">
-			<nuxt-img :src="`https://`+blog.fields.image.fields.file.url" :alt="blog.fields.image.fields.title"
+			<nuxt-img :src="`https://`+blog.fields.image.fields.file.url+`?fm=webp`" :alt="blog.fields.image.fields.title"
 								class="w-full mb-5 opacity-30" loading="lazy"/>
 			<span class="w-full bg-gradient-to-t bottom-0 from-white dark:from-neutral-900 -top-24 absolute left-0"></span>
 		</div>

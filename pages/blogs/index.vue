@@ -1,27 +1,16 @@
 <template>
-	<section class="py-16 xl:py-20">
-		<Container>
-			<div class="grid xl:grid-cols-5 gap-10">
-				<div class="xl:col-span-2">
-					<div class="xl:sticky xl:top-36">
-						<Headline>
-							<span>Blog</span>
-						</Headline>
-						<p class="text-lg mb-10">Software engineer specialized in backend development and
-							micro-services
-							ecosystems</p>
-					</div>
-				</div>
-				<div class="xl:col-span-3">
-					<div class="grid gap-5 lg:grid-cols-2">
-						<CardItem v-for="blog in blogs" :image="'https://'+blog.fields.image.fields.file.url"
-											:title="blog.fields.title"
-											:to="`/blogs/${blog.fields.slug}`" :key="`nk-${blog.sys.id}`"/>
-					</div>
-				</div>
-			</div>
-		</Container>
-	</section>
+  <SectionBase>
+    <Container>
+      <Headline>
+        <span>Blog</span>
+      </Headline>
+      <div class="grid gap-5 lg:grid-cols-3">
+        <CardItem v-for="blog in blogs" :image="'https://'+blog.fields.image.fields.file.url+`?w=1080&fm=webp`"
+                  :title="blog.fields.title"
+                  :to="`/blogs/${blog.fields.slug}`" :key="`nk-${blog.sys.id}`"/>
+      </div>
+    </Container>
+  </SectionBase>
 </template>
 <script setup lang="ts">
 import {getAllBlogs} from "~/repositories/blogRepository";
@@ -31,6 +20,6 @@ import Container from "~/components/Section/Container.vue";
 const blogs = await getAllBlogs()
 
 useHead({
-	title: "Blog"
+  title: "Blog"
 })
 </script>

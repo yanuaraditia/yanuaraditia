@@ -10,16 +10,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import Sidebar from "~/components/Sidebar.vue";
-
-export default {
-  name: "default",
-	components: {Sidebar}
-}
-</script>
-
-<style scoped>
-
-</style>

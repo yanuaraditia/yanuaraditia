@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
 	label: string,
-	to: string
+	to: string,
+  checkChild?: boolean
 }>()
 
 const isActive = computed(() => {
 	const route = useRoute()
-	return props.to === route.fullPath
+	return props.checkChild ? route.fullPath.includes(props.to) : props.to === route.fullPath
 })
 </script>
 

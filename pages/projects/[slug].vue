@@ -1,48 +1,63 @@
 <template>
-  <section class="py-16 xl:py-20">
-    <div class="container px-4 xl:w-9/12 mx-auto">
-      <div class="xl:mx-auto xl:w-7/12">
-        <span class="text-primary-600 font-medium">Work</span>
-        <h1 class="font-bold mb-5 mt-3 text-3xl xl:text-5xl">
-          <span v-text="project.fields.title"></span>
-        </h1>
-        <p class="text-lg mb-7" v-text="project.fields.description"></p>
-        <div class="flex gap-3.5 mb-10 place-items-center">
-          <div>
-            <div class="aspect-square w-16 p-1 border-2 border-primary-600 h-16 rounded-full overflow-hidden">
-              <img src="~/assets/yan-reg.webp" class="rounded-full w-full" alt="">
-            </div>
-          </div>
-          <div>
-            <div class="font-semibold text-xl">Yanuar Aditia</div>
-            <div class="text-sm flex gap-3 dark:text-neutral-400">
-              <span v-text="formatDate(project.sys.createdAt)"></span>
-              <span>•</span>
-              <span>5 minute read</span>
-            </div>
-          </div>
+  <section-base override-class="pt-7 lg:pt-28 lg:pb-0" add-class="bg-neutral-800 dark:bg-neutral-950 text-white">
+    <Container>
+      <div class="mb-7 lg:mb-28">
+        <div class="text-lg flex gap-1 mb-5">
+          <h1 v-text="project.fields.title"></h1>
+          <span>—</span>
         </div>
-        <div class="mb-3 aspect-video overflow-hidden rounded-xl group-hover:shadow-2xl relative bg-gradient-to-br from-neutral-200 to-neutral-400 dark:from-neutral-600 dark:to-neutral-800 transition-all">
-          <nuxt-img loading="lazy" :src="`https://`+project.fields.image.fields.file.url" :alt="project.fields.image.fields.title" class="w-full absolute left-7 top-7"/>
-        </div>
-        <div class="prose dark:prose-invert max-w-none" v-html="project.contentRendered"></div>
+        <p class="font-display xl:leading-tight text-3xl xl:text-5xl" v-text="project.fields.description"></p>
       </div>
-    </div>
-  </section>
+    </Container>
+    <nuxt-img :src="`https://`+project.fields.image.fields.file.url" :alt="project.fields.image.fields.title"
+              class="w-full mb-5" loading="lazy"/>
+  </section-base>
+  <SectionBase>
+    <Container>
+      <div class="grid xl:grid-cols-5 gap-10">
+        <div class="xl:col-span-2">
+          <div class="grid gap-7 xl:gap-10 xl:sticky xl:top-36">
+            <div class="grid gap-3">
+              <h3 class="font-bold font-display text-xl" v-text="project.fields.title"></h3>
+              <p v-text="project.fields.projectDesc"></p>
+              <div>
+                <NuxtLink
+                    class="inline-block py-1 border-2 border-primary-800 text-primary-900 text-sm px-2.5 dark:text-white dark:border-neutral-700 rounded-full"
+                    :to="project.fields.webUrl">Visit
+                  Website
+                </NuxtLink>
+              </div>
+            </div>
+            <div class="grid gap-3">
+              <h3 class="font-bold font-display text-xl">Headquarters</h3>
+              <p v-text="project.fields.headquarters"></p>
+            </div>
+            <div class="grid gap-3">
+              <h3 class="font-bold font-display text-xl">Industry</h3>
+              <p v-text="project.fields.industry"></p>
+            </div>
+          </div>
+        </div>
+        <div class="xl:col-span-3">
+          <div class="prose dark:prose-invert max-w-none" v-html="project.contentRendered"></div>
+        </div>
+      </div>
+    </Container>
+  </SectionBase>
 </template>
 
 <script setup lang="ts">
-import {formatDate} from "~/utils/dateFormatter";
 import {getSingle} from "~/repositories/projectRepository";
+import Container from "~/components/Section/Container.vue";
 
 const route = useRoute()
 const project = await getSingle(route.params.slug)
 
 if (!project) {
-	throw createError({
-		statusCode: 404,
-		statusMessage: 'Project not found'
-	})
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Project not found'
+  })
 }
 
 useHead({
