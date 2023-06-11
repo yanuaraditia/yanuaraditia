@@ -1,5 +1,7 @@
 .dark {
     --tw-bg-opacity: 1;
+    --tw-code-color: white;
+    --tw-code-bg: rgb(38 38 38 / var(--tw-bg-opacity));
     background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 

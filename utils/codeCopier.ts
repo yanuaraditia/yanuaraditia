@@ -35,9 +35,8 @@ export const codeCopier = () => {
         // create the copy button
         const copy = document.createElement("button")
         copy.classList.add(
-            "bg-neutral-700",
-            "border",
-            "border-neutral-600",
+            "bg-primary-100",
+            "dark:bg-neutral-700",
             "p-2",
             "text-xs",
             "rounded-md",

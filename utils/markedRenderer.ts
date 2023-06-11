@@ -1,7 +1,7 @@
 import {marked} from "marked";
 import hljs from "highlight.js";
 
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/atom-one-light.css'
 
 interface LazyInterface {
     name: string,
