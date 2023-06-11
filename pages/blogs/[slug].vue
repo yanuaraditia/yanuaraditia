@@ -38,6 +38,7 @@ import {formatDate} from "~/utils/dateFormatter";
 import {getSingle} from "~/repositories/blogRepository";
 import Headline from "~/components/Typo/Headline.vue";
 import Container from "~/components/Section/Container.vue";
+import {codeCopier} from "~/utils/codeCopier";
 
 const route = useRoute()
 const blog = await getSingle(route.params.slug)
@@ -66,6 +67,10 @@ if (typeof blog === 'undefined' || !blog) {
 		]
 	})
 }
+
+onMounted(() => {
+  codeCopier()
+})
 
 
 </script>
