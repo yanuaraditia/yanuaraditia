@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require("tailwindcss/colors")
 const primaryColor = {
     '50': '#fdfff7',
     '100': '#f8fcf0',
@@ -23,7 +24,7 @@ module.exports = {
                     css: {
                         pre: {
                             color: `var(--tw-code-color, ${primaryColor["950"]})`,
-                            background: `var(--tw-code-bg, ${primaryColor["200"]})`,
+                            background: `var(--tw-code-bg, ${colors.neutral["100"]})`,
                             borderRadius: '2rem',
                         }
                     }

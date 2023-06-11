@@ -14,7 +14,7 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-	<div class="px-6">
+	<div class="px-6 hidden lg:block">
 		<div class="relative overflow-hidden group border dark:border-neutral-700 rounded-full aspect-square">
 			<div :class="[
 					'p-3 transition-all',
