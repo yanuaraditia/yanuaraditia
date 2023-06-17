@@ -18,7 +18,7 @@ const isActive = computed(() => {
 				(isActive ? 'text-green-950' : '')
 		]">
 			<span :class="[
-					(isActive ? 'scale-100 bg-primary-400' : 'scale-0 group-hover:scale-100 bg-neutral-200 dark:bg-neutral-700'),
+					(isActive ? 'scale-100 bg-primary-500' : 'scale-0 group-hover:scale-100 bg-neutral-200 dark:bg-neutral-700'),
 					'h-full top-0 absolute w-full transition-all rounded-full'
 			]"></span>
 			<div class="relative">

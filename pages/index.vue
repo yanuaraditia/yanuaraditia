@@ -27,15 +27,9 @@
               <span>User testing, feedback, and validation</span>
             </li>
           </ul>
-          <div
-              class="bg-primary-500 inline-flex items-center font-medium gap-3 pl-5 pr-4 rounded-full text-neutral-material-500 hover:bg-primary-600 transition-all py-3 text-lg relative">
-            <span>See my Work</span>
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M13.704 4.284a1 1 0 1 0-1.403 1.424L17.67 11H4a1 1 0 1 0 0 2h13.665L12.3 18.285a1 1 0 0 0 1.403 1.424l6.925-6.822a1.25 1.25 0 0 0 0-1.78l-6.925-6.823Z"
-                  fill="currentColor"/>
-            </svg>
-            <nuxt-link to="/projects" class="absolute inset-0"/>
+          <div class="flex flex-col lg:flex-row gap-3">
+            <ButtonPrimary to="/projects" label="See my work"/>
+            <ButtonPrimary to="/about" type="outline" label="About me"/>
           </div>
         </div>
       </div>
