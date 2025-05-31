@@ -18,6 +18,7 @@ const socials = [
 ]
 </script>
 <template>
+  <NuxtLoadingIndicator color="var(--color-primary)" />
   <div class="lg:ml-24 mb-16 lg:mb-0 px-6 py-6 lg:px-24 lg:py-12">
     <NuxtPage />
     <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
