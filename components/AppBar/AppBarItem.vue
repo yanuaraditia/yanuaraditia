@@ -1,13 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{
   label: string
-  to: string
+  to?: string
   icon: string
   activeIcon: string
 }>()
 
 const route = useRoute()
 const isActive = computed(() => {
+  if (!props.to) return
   if (props.to === '/') {
     return route.path === '/'
   }

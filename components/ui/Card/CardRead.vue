@@ -7,6 +7,7 @@ const props = defineProps<{
     color?: string
     url?: string
   }
+  fit?: boolean
 }>()
 </script>
 <template>
@@ -25,7 +26,10 @@ const props = defineProps<{
     >
       <NuxtImg
         :src="props.item.image"
-        class="h-fit w-fit"
+        :class="{
+          'w-full': !props.fit,
+          'w-fit': props.fit
+        }"
         alt="Project Image"
       />
     </div>

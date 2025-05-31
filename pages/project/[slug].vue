@@ -22,7 +22,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UiCardRead v-if="project" :item="project">
+  <UiCardRead v-if="project" :item="project" fit>
     <div class="mb-5" :style="{ viewTransitionName: 'project-stacks' }">
       <h3 class="font-display mb-2 text-sm font-semibold">Stacks:</h3>
       <div class="flex gap-2" :style="{ viewTransitionName: 'entry-subs' }">

@@ -1,27 +1,39 @@
 ---
-title: Tauri si calon pesaing Electron yang ditulis menggunakan Rust
+title: 'Tauri: The Upcoming Electron Competitor Written in Rust'
 image: /images/blog/tauri.png
-description: Siapa sih yang tidak tau electron.js? Framework development multi-platform desktop buat sejuta umat baik Linux, Mac, ataupun Windows? Kini ada saingannya lho yaitu tauri js
+description: "Who hasn't heard of electron.js? The go-to multi-platform desktop development framework for Linux, Mac, and Windows. Now, there's a new competitor: Tauri JS."
 date: 2022-12-6
 ---
 
-Ngobrolin tentang cross-platform desktop apps kita ngga bisa lepas dari nama-nama populer seperti electron.js maupun meteor.js. Electron adalah framework yang paling disukai untuk saat ini dengan total stars di github sejumlah +100k dan kita sama-sama tau kalau electron.js dikelola dan dikembangkan oleh github sebagai main contributornya. Tapi sebelum tauri hadir, electron banyak dikeluhkan karena mereka menggunakan chromium sebagai renderer aplikasi mereka ke desktop yang kita sama-sama tau kalo chrome itu rakus memory. Lalu gimana caranya buat mengatasi itu? Ada sebetulnya, yaa native code hehe ngga deng becanda. Adakah solusi lain?
+When talking about cross-platform desktop apps, we can't ignore popular names like electron.js and meteor.js. Electron is currently the most popular framework, with over 100k stars on GitHub, and we all know that electron.js is managed and developed by GitHub as the main contributor. However, before Tauri arrived, Electron was often criticized for using Chromium as its application renderer, which, as we know, is quite memory-hungry. So, how do we solve this? Well, you could use native code—just kidding. Is there another solution?
 
-Ada dong, yap namanya Tauri si pendatang baru yang dibuat menggunakan Rust sebagai compilernya, berbeda dengan electron yang menggunakan v8 sebagai engine serta chromium sebagai renderer, tauri menggunakan rust sebagai jantung dan menciptakan TAO dan WRY sebagai alat untuk berkomunikasi. Soo dibanding javascript tentu rust diunggulkan karena jauh lebih dekat dengan mesin yakan? Dari beberapa sumber sih menyebutkan kalau tauri unggul jauh dalam manajemen memori dan bundle size daripada electron, contohnya di sumber ini : https://www.levminer.com/blog/tauri-vs-electron, serta of course proses startup time tauri lebih cepat daripada electron. Oke sedikit intermezzonya, sekarang mari mengarah ke instalasinya
+Yes, there is! It's called Tauri, a newcomer built using Rust as its compiler. Unlike Electron, which uses the V8 engine and Chromium as its renderer, Tauri uses Rust at its core and introduces TAO and WRY as tools for communication. So, compared to JavaScript, Rust is much closer to the machine, right? According to several sources, Tauri excels in memory management and bundle size compared to Electron. For example, see this source: https://www.levminer.com/blog/tauri-vs-electron. Of course, Tauri also has a faster startup time than Electron. Okay, that's enough intermezzo—let's move on to installation.
 
 ### Development Experience
 
-Untuk instalasi lebih lengkap bisa kunjungi https://tauri.app, tapi yang jelas untuk tahap awal mereka mendukung kok untuk framework populer kaya
+For a more complete installation guide, visit https://tauri.app. But for starters, they already support popular frameworks like:
 
-- NextJS
-- SvelteKit
-- Vite
-- _framework lain_
+- [NextJS](https://nextjs.org/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [Vite](https://vitejs.dev/)
+- _other frameworks_
 
-### Apakah perlu migrate?
+### Should You Migrate?
 
-Buat temen-temen yang udah coba atau produce produk menggunakan electron.js apakah perlu buat migrate ke tauri? Jawabanku jelas iya, tapi dengan catatan yaitu
+For those who have tried or produced products using electron.js, should you migrate to Tauri? My answer is yes, but with some notes:
 
-- Tauri menggunakan Rust di beberapa kondisi, hanya basic memang tapi rust adalah bahasa tingkat tinggi yang tidak semua orang bisa memahami pengunaannya
-- Sponsorship tauri masih sedikit dibanding electron yang sudah lebih dulu ada, maka yaa butuh waktu buat develop ke arah yang mendekati fitur electron
-- Belum ada showcase company yang menggunakan tauri untuk salah satu teknologi mereka
+- Tauri uses Rust in some cases. It's basic, but Rust is a high-level language that not everyone is familiar with.
+- Tauri's sponsorship is still limited compared to Electron, which has been around longer, so it will take time to develop features that match Electron.
+- There are not yet any showcase companies using Tauri as one of their technologies.
+
+### References
+
+- [Tauri](https://tauri.app/)
+- [Electron.js](https://www.electronjs.org/)
+- [Rust](https://www.rust-lang.org/)
+- [TAO](https://github.com/tauri-apps/tao)
+- [WRY](https://github.com/tauri-apps/wry)
+- [NextJS](https://nextjs.org/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tauri vs Electron Comparison](https://www.levminer.com/blog/tauri-vs-electron)

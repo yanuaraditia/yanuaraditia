@@ -1,45 +1,45 @@
 ---
-title: Fleet dianggap pesaing baru Visual Studio Code? Ngga Overclaim?
-description: Setelah closed preview berubah menjadi public preview, seberapa bagus sih Fleet IDE yang digadang-gadang bakal menjadi pesaing Visual Studio Code, emang mampu?
+title: Is Fleet the New Competitor to Visual Studio Code? Not Overclaiming?
+description: After moving from closed preview to public preview, how good is Fleet IDE, which is said to be a competitor to Visual Studio Code? Can it really compete?
 image: /images/blog/fleet.png
 date: 2022-11-29
 ---
 
-Siapa tidak mengenal JetBrains? Perusahaan software yang sudah melanglang buana di dunia IDE, banyak yang sudah mereka buat seperti PHPStorm, IntellIj, WebStorm, RubyMine, GoLand, dan Android Studio yap gak salah denger meskipun Google adalah pemilik Android namun untuk urusan IDE mereka mempercayakan teknologinya ke JetBrains lho, dan sampe sekarang belum ada IDE android yang official dibuat full oleh google sendiri lho.
+Who doesn't know JetBrains? This software company has been around the world of IDEs for a long time. They've made many, such as PHPStorm, IntelliJ, WebStorm, RubyMine, GoLand, and even Android Studio. Yes, you heard that right—even though Google owns Android, when it comes to IDEs, they trust JetBrains' technology, and until now, there hasn't been an official Android IDE fully made by Google itself.
 
-Bahkan nih guys, Kotlin lang di design dan dikembangkan oleh mereka juga yaa secara ngga langsung mereka adalah big tech company right? Okelah kita terlalu melebar bahas JetBrains, gimana tentang Fleet? Yaap dominasi Vscode sebagai code editor gratis sejuta umat mungkin butuh waktu buat menjadi pesaing mereka, apalagi semenjak GitHub diakuisisi oleh Microsoft sontak salah satu pesaing mereka yaitu Atom telah disuntik mati oleh mereka.
+In fact, guys, the Kotlin language was also designed and developed by them, so indirectly, they're a big tech company, right? Okay, let's not get too sidetracked talking about JetBrains. What about Fleet? Well, VSCode's dominance as the free code editor for the masses might take time to be challenged, especially since GitHub was acquired by Microsoft, which led to one of their competitors, Atom, being discontinued.
 
-Yang tersisa hanya apa? Sublime? NPP? VIM? OMG terlalu minim plugin, memang sih simpel but yaa tak se powerful vscode. Lalu apa itu Fleet? Seperti perusahaan besar pada umumnya, JetBrains sebagai induk tentu ingin semua lini bisnis IDE bisa mereka libas, salah satunya adalah Polygot side. Apa itu polygot? Gampangnya sih sebuah IDE yang bisa buat modifikasi dan menjalankan tools coding dalam satu aplikasi yang sama, berbeda dengan IDE Jetbrains sebelumnya yang hanya terfokus pada satu bahasa program, polygot menjangkau itu semua.
+So what's left? Sublime? NPP? VIM? OMG, too few plugins. Sure, they're simple, but not as powerful as VSCode. So what is Fleet? Like most big companies, JetBrains as the parent wants to cover all IDE business lines, one of which is the Polyglot side. What is polyglot? Simply put, it's an IDE that lets you modify and run coding tools in the same application, unlike previous JetBrains IDEs that focused on a single programming language—polyglot covers them all.
 
-Kemunculan Fleet dimulai pada 29 November 2021 dari https://blog.jetbrains.com/blog/2021/11/29/welcome-to-fleet/ yang menjelaskan mereka akan merilis sebuah IDE dengan kemampuan untuk terintegrasi dengan seluruh layanan JetBrains, dan bagusnya IDE ini dikabarkan akan Gratis sampai artikel ini dibuat soo ya banyak yang penasaran dong terkait IDE ini, apalagi layanan jetbrains dikenal mahal bahkan bisa terhitung jutaan rupiah hanya untuk satu IDE.
+Fleet's debut started on November 29, 2021, from https://blog.jetbrains.com/blog/2021/11/29/welcome-to-fleet/, which explained they would release an IDE capable of integrating with all JetBrains services. The good news is, this IDE is said to be free as of this article's writing, so naturally, many are curious about it, especially since JetBrains services are known to be expensive—even costing millions of rupiah for just one IDE.
 
-Hal ini sontak memberikan angin segar bagi pencari alternatif vscode, apalagi di Fleet ada fitur Smart Mode yang memungkinkan untuk menghidupkan fitur indexing seperti IDE JetBrains yang lain secara Out Of The Box tanpa perlu install extension apapun. So yaah itulah sedikit gambaran tentang JetBrains. Sekarang apakah IDE itu sebagus yang diceritakan? Hopefully ya but wait...
+This brings fresh air for those looking for a VSCode alternative, especially since Fleet has a Smart Mode feature that enables indexing like other JetBrains IDEs out of the box, without needing to install any extensions. So that's a brief overview of JetBrains. Now, is the IDE as good as they say? Hopefully yes, but wait...
 
-### Cara Install
+### How to Install
 
-1. Buka halaman fleet ke https://www.jetbrains.com/fleet/ dan klik download
-2. Kamu akan dialihkan ke halaman download JetBrains Toolbox
-3. Download Aplikasinya dan install
+1. Go to the Fleet page at https://www.jetbrains.com/fleet/ and click download
+2. You will be redirected to the JetBrains Toolbox download page
+3. Download the application and install
 
 ### First Impression
 
-By default Fleet hanya terlihat sebagai sebuah code editor biasa seperti Sublime Text malahan, ngga ada fitur spesial seperti aplikasi vscode, lihatlah dibawah ini
+By default, Fleet just looks like an ordinary code editor, even more like Sublime Text—there's nothing special like in VSCode. Take a look below:
 
 ![fleet](/images/blog/fleet-preview.png)
 
-Biasa aja kan? Tapi eh tapi, perhatiin bagian toolbar kanan atas, ada icon flash kaya gledek?
+Looks plain, right? But wait, pay attention to the top right toolbar—there's a flash icon like lightning?
 
 ![smart mode](/images/blog/fleet-smart-mode.png)
 
-Mereka akan melakukan sync indexing semua baris code termasuk node modules untuk memberikan suggestions dan mapping ketika melakukan develop sebuah project, untuk pengembangan awal hanya beberapa bahasa program yang didukung oleh fleet, namun kedepannya bakal banyak lagi yang disupport, tertarik? Baca overall review gw dulu
+They will sync and index all lines of code, including node modules, to provide suggestions and mapping when developing a project. For now, only a few programming languages are supported by Fleet, but more will be supported in the future. Interested? Read my overall review first.
 
 ### Overall Review
 
-- Tools dan UI tidak se familiar IDE JetBrains pada umunya
-- Perlu waktu sedikit lama untuk menyesuaikan dari VSCode
-- Proses instalasi yang ribet, ngga bisa direct ke aplikasinya. Perlu pake toolbox
+- The tools and UI are not as familiar as typical JetBrains IDEs
+- It takes a bit of time to adjust from VSCode
+- The installation process is complicated; you can't go directly to the app. You have to use the toolbox
 
-Segitu aja sih pengalaman awal menggunakan Fleet sebagai JetBrains user dan VsCode user juga, menurut gw banyak yang perlu di improve buat saat ini masih belum bisa gw rekomendasiin kalau lu mau beralih. Oiya Fleet tersedia buat semua os ya
+That's all for my initial experience using Fleet as a JetBrains and VSCode user. In my opinion, there's still a lot to improve, and for now, I can't recommend switching yet. Oh, by the way, Fleet is available for all OS:
 
 - Linux
 - Windows

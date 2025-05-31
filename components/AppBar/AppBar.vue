@@ -5,8 +5,8 @@
     <AppBarItem
       to="/"
       label="Home"
-      icon="fluent:games-24-regular"
-      active-icon="fluent:games-24-filled"
+      icon="fluent:rocket-24-regular"
+      active-icon="fluent:rocket-24-filled"
     />
     <AppBarItem
       to="/project"
