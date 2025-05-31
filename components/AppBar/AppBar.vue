@@ -1,0 +1,30 @@
+<template>
+  <div
+    class="bg-surface-container shadow space-y-3 fixed top-1/2 left-4 -translate-y-1/2 px-2.5 py-3 rounded-full"
+  >
+    <AppBarItem
+      to="/"
+      label="Home"
+      icon="fluent:games-24-regular"
+      active-icon="fluent:games-24-filled"
+    />
+    <AppBarItem
+      to="/project"
+      label="Project"
+      icon="fluent:briefcase-24-regular"
+      active-icon="fluent:briefcase-24-filled"
+    />
+    <AppBarItem
+      to="/blog"
+      label="Blog"
+      icon="fluent:note-24-regular"
+      active-icon="fluent:note-24-filled"
+    />
+    <AppBarItem
+      to="/about"
+      label="About"
+      icon="fluent:animal-cat-24-regular"
+      active-icon="fluent:animal-cat-24-filled"
+    />
+  </div>
+</template>
