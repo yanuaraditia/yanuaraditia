@@ -11,7 +11,7 @@ collaborators:
     'anggi-susanto',
     'devararishivian'
   ]
-stacks: ['go', 'google-cloud', 'laravel']
+stacks: ['google-cloud', 'laravel', 'bootstrap', 'go']
 image: /images/project/kiriminaja-core.png
 url: https://kiriminaja.com
 ---
