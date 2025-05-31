@@ -12,18 +12,26 @@ if (!project.value) {
     statusMessage: 'Project not found'
   })
 }
+
+useSeoMeta({
+  title: project.value.title,
+  description: project.value.description,
+  ogImage: project.value.image ?? '',
+  ogUrl: project.value.path
+})
 </script>
 
 <template>
-  <UiCardRead :item="project">
+  <UiCardRead v-if="project" :item="project">
     <div class="mb-5" :style="{ viewTransitionName: 'project-stacks' }">
       <h3 class="font-display mb-2 text-sm font-semibold">Stacks:</h3>
-      <div class="flex gap-2">
+      <div class="flex gap-2" :style="{ viewTransitionName: 'entry-subs' }">
         <Icon
           v-for="stack in project?.stacks"
           :key="stack"
-          :name="`logos:${stack}`"
-          size="20px"
+          :name="`lineicons:${stack}`"
+          class="text-primary"
+          size="24px"
         />
       </div>
     </div>
@@ -40,7 +48,7 @@ if (!project.value) {
     </div>
   </UiCardRead>
 
-  <div class="prose max-w-none dark:prose-invert">
+  <div class="prose max-w-none dark:prose-invert xl:w-9/12 xl:my-24 mx-auto">
     <ContentRenderer v-if="project" :value="project" />
   </div>
 </template>

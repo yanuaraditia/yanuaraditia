@@ -1,21 +1,42 @@
 ---
-title: KiriminAja Dashboard Member App
+title: KiriminAja Dashboard Member
 description: The main dashboard application for KiriminAja members, providing a comprehensive view of their logistics operations.
 color: rgb(125, 62, 185)
 collaborators: ['FaizRA', 'yudayahya']
-stacks: ['nuxt-icon', 'typescript-icon', 'tailwindcss-icon', 'pinia']
+stacks: ['nuxt', 'typescript', 'tailwindcss', 'go']
 image: /images/project/kiriminaja.png
 url: https://app.kiriminaja.com
 ---
 
-Saya bergabung dengan tim KiriminAja mulai dari sebelum perusahaan ini didirikan yaitu pada bulan November 2020. Sebelumnya KiriminAja adalah sub-project dari PT. Selalu Siap Solusi (TRIES) sebelum pada akhirnya pt tersebut menjadi naungan utama KiriminAja dan TRIES berubah menjadi PT. Tries Digital Indonesia pada Desember 2020 setelah KiriminAja resmi berjalan sendiri.
-Pada fase awal tim hanya beranggotakan sekitar 12 orang yaitu termasuk Fariz GTJ – CEO, Muhammad Irfan H – CTO, Ilham Hary P – IT Manager, dan juga Daewu Bintara beserta tim lain seperti support dan sales.
+## Building a Robust Dashboard with a Semi-Microservice Architecture
 
-## Jobdesc
+KiriminAja Dashboard Member is designed to empower our users with a comprehensive and reliable view of their logistics operations. Our journey began with a traditional full-stack monolithic application, but as our user base and feature set grew, we faced challenges in scalability, maintainability, and deployment agility.
 
-Product Squad Lead: Main role saya saat ini adalah memastikan semua project dan flow pengembangan fitur berjalan sesuai kebutuhan bisnis dan operasional agar tetap berjalan, namun tidak sedikit saya juga sering ikut ambil bagian membantu kebutuhan teknis di lapangan seperti hot-fixing atau penambahan fitur-fitur kecil yang skalanya tidak dapat ter-cover oleh dev team. Kurang lebih stack yang kami pakai tiap hari adalah
+### Migrating from a Monolith to Semi-Microservices
 
-- Solid Principle
-- Agile
-- Jira, Confluence
-- Figma
+Initially, our monolithic architecture allowed for rapid prototyping and deployment. However, as the application matured, it became increasingly difficult to manage dependencies, scale specific components, and onboard new collaborators efficiently. To address these issues, we decided to migrate to a semi-microservice architecture.
+
+This approach allowed us to break down critical parts of the application—such as authentication, order management, and analytics—into independent services, while still maintaining a cohesive user experience. This hybrid model provided the flexibility and scalability of microservices without the operational overhead of a fully distributed system.
+
+### Technology Stack
+
+To support this transition, we adopted a modern technology stack:
+
+- **Nuxt.js**: For building a performant and modular frontend, leveraging server-side rendering and static site generation.
+- **TypeScript**: Ensuring type safety and maintainability across both frontend and backend codebases.
+- **Tailwind CSS**: Accelerating UI development with utility-first CSS, enabling rapid prototyping and consistent design.
+- **Pinia**: Managing application state in a scalable and modular way, replacing more cumbersome state management solutions.
+- **Go**: Powering our backend services, chosen for its performance, simplicity, and strong concurrency support.
+
+### Benefits Achieved
+
+By migrating to a semi-microservice architecture and leveraging these technologies, we achieved:
+
+- **Improved Scalability**: Individual services can be scaled independently based on demand.
+- **Faster Development Cycles**: Teams can work on different services or features in parallel, reducing bottlenecks.
+- **Enhanced Reliability**: Isolated services mean that failures in one component do not bring down the entire system.
+- **Easier Maintenance**: Smaller, focused codebases are easier to test, debug, and update.
+
+### Conclusion
+
+The KiriminAja Dashboard Member now delivers a robust, scalable, and maintainable platform for our users. Our technology choices and architectural evolution have positioned us to respond quickly to new business needs and continue providing a seamless logistics experience.

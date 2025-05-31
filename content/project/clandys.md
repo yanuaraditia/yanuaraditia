@@ -1,0 +1,40 @@
+---
+title: Clandys Back-Office
+description: Clandys is a back-office management system designed to streamline operations and improve efficiency in business processes.
+color: '#ffffff'
+collaborators: ['daewu14', 'ilhamhp-kaj']
+stacks: ['laravel', 'javascript', 'bootstrap', 'mysql']
+image: /images/project/clandys.png
+url: https://clandystore.com
+---
+
+## Project Overview
+
+Clandys Back-Office is my first major project, focused on transforming and modernizing an existing business management system. The primary goal was to migrate from the legacy "Voyager Laravel" admin panel to a more maintainable and scalable application built on the latest version of Laravel.
+
+## Pain Points Addressed
+
+- **Legacy Codebase:** The original system was built on outdated Laravel and Voyager versions, making updates and maintenance difficult.
+- **Limited Customization:** Voyager's structure restricted flexibility for custom features and integrations.
+- **Security Concerns:** Older dependencies posed security risks and lacked support for modern authentication and authorization.
+- **Performance Issues:** The legacy stack suffered from slow response times and inefficient database queries.
+- **Developer Experience:** The codebase was hard to understand and extend, slowing down development.
+
+## Solutions Implemented
+
+- **Full Migration to Latest Laravel:** Rebuilt the application using the latest Laravel version, ensuring long-term support and access to new features.
+- **Custom Admin Panel:** Developed a tailored admin interface, removing Voyager's limitations and enabling full control over business logic.
+- **Modern Authentication:** Integrated Laravel's built-in authentication and authorization for improved security.
+- **Optimized Database:** Refactored queries and structures for better performance and scalability.
+- **Clean Code Practices:** Adopted modern coding standards and best practices for easier maintenance and onboarding.
+
+## Technology Stack
+
+- **Laravel:** The core PHP framework powering the backend, chosen for its robustness, security, and active community.
+- **JavaScript:** Used for dynamic frontend interactions and enhancing user experience.
+- **Bootstrap:** Provides responsive and consistent UI components, speeding up frontend development.
+- **MySQL:** Reliable and scalable relational database for storing business data.
+
+## Conclusion
+
+Migrating Clandys Back-Office from Voyager Laravel to a modern Laravel stack has resulted in a more maintainable, secure, and efficient system. This project not only improved business operations but also provided valuable experience in handling real-world software migrations and adopting best practices.

@@ -3,7 +3,7 @@ title: BNI University MLJ
 description: A course management system for BNI University, providing students with access to course materials, schedules, and academic resources using the Machine Learning Journey (MLJ) platform.
 color: '#ffffff'
 collaborators: ['gunamaya']
-stacks: ['nuxt-icon', 'typescript-icon', 'go', 'pinia']
+stacks: ['nuxt', 'typescript', 'go', 'gemini']
 image: /images/project/bnu.png
 url: https://university.bni.co.id/
 ---

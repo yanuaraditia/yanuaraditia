@@ -1,51 +1,71 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Homepage',
+  description: 'Welcome to my personal website!',
+  ogUrl: '/'
+})
+
+const stacks = [
+  'vuejs',
+  'nuxt',
+  'typescript',
+  'tailwindcss',
+  'vite',
+  'laravel',
+  'mongodb',
+  'mysql',
+  'docker'
+]
+</script>
 <template>
   <div>
     <div
-      class="grid gap-3 lg:gap-12 lg:grid-cols-2 2xl:py-24"
+      class="grid gap-3 lg:gap-12 lg:grid-cols-2 2xl:py-20 lg:items-center"
       :style="{
         viewTransitionName: 'entry'
       }"
     >
+      <NuxtImg
+        src="/logo.png"
+        style="view-transition-name: entry-image"
+        class="lg:order-last"
+      />
       <div>
         <NuxtLink
           to="mailto:me@yan.ad"
-          class="inline-block border border-primary bg-secondary-container border-dashed px-3.5 rounded-full mb-3 py-1 text-sm"
-          >me@yan.ad</NuxtLink
+          class="inline-block border border-primary text-primary font-medium bg-secondary-container border-dashed px-3.5 rounded-full mb-3 py-1 text-sm"
         >
-        <h1
-          class="text-2xl xl:text-4xl 2xl:text-5xl mb-3 font-display font-bold leading-tight"
-          style="view-transition-name: entry-title"
-        >
+          me@yan.ad
+        </NuxtLink>
+        <UiHeading style="view-transition-name: entry-title">
           👋 Hi! I'm Yanuar Aditia, a
           <span class="text-primary">Software Engineer</span>
-        </h1>
+        </UiHeading>
         <p class="xl:text-lg mb-7 xl:w-9/12">
           I have been working as a Software Engineer for +7 years. I am looking
           forward to collaborate with you!
         </p>
-        <ul class="grid gap-y-3 mb-10">
-          <li class="flex gap-2 items-center">
-            <span class="text-primary">✓</span
-            ><span>Product must be authentic</span>
-          </li>
-          <li class="flex gap-2 items-center">
-            <span class="text-primary">✓</span><span>Solve pain elegantly</span>
-          </li>
-          <li class="flex gap-2 items-center">
-            <span class="text-primary">✓</span
-            ><span>User testing, feedback, and validation</span>
-          </li>
-        </ul>
-        <div class="flex flex-col lg:flex-row gap-3">
+        <div
+          class="flex gap-3 mb-6 flex-wrap text-primary"
+          style="view-transition-name: entry-subs"
+        >
+          <Icon
+            v-for="stack in stacks"
+            :key="stack"
+            :name="`lineicons:${stack}`"
+            size="28px"
+          />
+        </div>
+        <div class="flex gap-3 lg:mt-16">
           <NuxtLink
             to="/project"
-            class="px-6 py-3.5 border border-primary bg-primary text-on-primary rounded-full"
+            class="px-6 py-3.5 border border-primary bg-primary text-on-primary rounded-full font-semibold"
           >
-            See my Work
+            See my Project
           </NuxtLink>
           <NuxtLink
             to="/about"
-            class="px-6 py-3.5 border border-primary text-primary rounded-full"
+            class="px-6 py-3.5 border border-primary text-primary rounded-full font-semibold"
           >
             About me
           </NuxtLink>

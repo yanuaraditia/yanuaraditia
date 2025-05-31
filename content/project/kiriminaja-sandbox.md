@@ -2,20 +2,32 @@
 title: KiriminAja Sandbox App
 description: A feature that allows developers to test and experiment with KiriminAja's logistics platform in a controlled environment.
 color: rgb(125, 62, 185)
-collaborators: ['FaizRA', 'yudayahya']
-stacks: ['nuxt-icon', 'typescript-icon', 'tailwindcss-icon', 'pinia']
+collaborators: ['FaizRA', 'almibiakmal']
+stacks: ['go', 'nuxt', 'typescript', 'tailwindcss']
 image: /images/project/kiriminaja-sandbox.png
 url: https://developer.kiriminaja.com
 ---
 
-Saya bergabung dengan tim KiriminAja mulai dari sebelum perusahaan ini didirikan yaitu pada bulan November 2020. Sebelumnya KiriminAja adalah sub-project dari PT. Selalu Siap Solusi (TRIES) sebelum pada akhirnya pt tersebut menjadi naungan utama KiriminAja dan TRIES berubah menjadi PT. Tries Digital Indonesia pada Desember 2020 setelah KiriminAja resmi berjalan sendiri.
-Pada fase awal tim hanya beranggotakan sekitar 12 orang yaitu termasuk Fariz GTJ – CEO, Muhammad Irfan H – CTO, Ilham Hary P – IT Manager, dan juga Daewu Bintara beserta tim lain seperti support dan sales.
+## Overview
 
-## Jobdesc
+Developers working with logistics APIs often face the challenge of juggling multiple tools and environments. Traditionally, sandbox environments for testing and developer documentation are separated, forcing users to switch between different platforms to experiment with APIs and reference the necessary guides. This fragmented workflow can slow down development, increase the risk of errors, and create unnecessary friction during onboarding.
 
-Product Squad Lead: Main role saya saat ini adalah memastikan semua project dan flow pengembangan fitur berjalan sesuai kebutuhan bisnis dan operasional agar tetap berjalan, namun tidak sedikit saya juga sering ikut ambil bagian membantu kebutuhan teknis di lapangan seperti hot-fixing atau penambahan fitur-fitur kecil yang skalanya tidak dapat ter-cover oleh dev team. Kurang lebih stack yang kami pakai tiap hari adalah
+## Resolving Methods
 
-- Solid Principle
-- Agile
-- Jira, Confluence
-- Figma
+The KiriminAja Sandbox App was created to solve this problem by bringing both sandboxing capabilities and developer documentation into a single, unified application. With this integration, developers can seamlessly test KiriminAja's logistics APIs while having instant access to comprehensive documentation. This eliminates the need to constantly switch contexts, making the development process smoother and more efficient.
+
+### Tech Stacks Used
+
+To deliver a robust and user-friendly experience, we utilized a modern technology stack:
+
+- **Go**: Powers the backend services, providing high performance and reliability for API processing and sandbox logic.
+- **Nuxt**: Handles the frontend, offering a fast and interactive user interface.
+- **TypeScript**: Ensures type safety and maintainability across both frontend and backend codebases.
+- **Tailwind CSS**: Enables rapid UI development with a consistent and responsive design system.
+- **Pinia**: Manages state efficiently in the frontend, making data flow predictable and easy to debug.
+
+This combination allows us to build a scalable, maintainable, and developer-friendly platform.
+
+## Pain Reduced
+
+By streamlining the experience, the KiriminAja Sandbox App not only boosts productivity but also simplifies onboarding for new developers. Teams can quickly experiment, troubleshoot, and learn, all within one platform. This approach empowers developers to focus on building and innovating, rather than managing multiple tools, ultimately accelerating the adoption and integration of KiriminAja's logistics solutions.

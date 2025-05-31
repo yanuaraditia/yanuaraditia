@@ -31,9 +31,9 @@ const props = defineProps<{
     </div>
     <div class="lg:order-first p-3 lg:p-10">
       <div class="mb-5" :style="{ viewTransitionName: 'entry-title' }">
-        <h1 class="text-2xl xl:text-3xl mb-3 font-display font-bold">
+        <UiHeading>
           {{ props.item.title }}
-        </h1>
+        </UiHeading>
         <p class="text-lg">{{ props.item.description }}</p>
         <NuxtLink
           v-if="props.item.url"

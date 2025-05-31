@@ -7,15 +7,17 @@ const activeBlog = useState<string>(
   'active-blog',
   () => posts.value?.[0]?.id || ''
 )
+
+useSeoMeta({
+  title: 'Blog',
+  description: 'Read my latest blog posts and insights.',
+  ogUrl: '/blog'
+})
 </script>
 
 <template>
   <div>
-    <h1
-      class="text-2xl xl:text-4xl 2xl:text-5xl mb-3 font-display font-bold leading-tight"
-    >
-      Blog
-    </h1>
+    <UiHeading>Blog</UiHeading>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       <UiCard

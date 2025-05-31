@@ -3,18 +3,14 @@ title: KiriminAja Rollout Manager
 description: A platform that manages the rollout of new features and updates for KiriminAja, ensuring smooth transitions and minimal disruptions.
 color: rgb(125, 62, 185)
 collaborators: ['sofyan48', 'mrayhan19']
-stacks: ['kubernetes', 'nuxt-icon', 'argo-icon']
+stacks: ['kubernetes', 'nuxt', 'javascript']
 image: /images/project/rollout-manager.png
 ---
 
-Saya bergabung dengan tim KiriminAja mulai dari sebelum perusahaan ini didirikan yaitu pada bulan November 2020. Sebelumnya KiriminAja adalah sub-project dari PT. Selalu Siap Solusi (TRIES) sebelum pada akhirnya pt tersebut menjadi naungan utama KiriminAja dan TRIES berubah menjadi PT. Tries Digital Indonesia pada Desember 2020 setelah KiriminAja resmi berjalan sendiri.
-Pada fase awal tim hanya beranggotakan sekitar 12 orang yaitu termasuk Fariz GTJ – CEO, Muhammad Irfan H – CTO, Ilham Hary P – IT Manager, dan juga Daewu Bintara beserta tim lain seperti support dan sales.
+Releasing a new version of an application is often a challenging process for Product teams. One of the main pain points is ensuring that new features and updates are rolled out smoothly, without causing disruptions to users or introducing unexpected issues. Traditional deployment tools, while powerful, often lack the fine-grained control needed by Product teams to manage who can trigger, pause, or approve rollouts.
 
-## Jobdesc
+During the development of KiriminAja Rollout Manager, we identified a significant gap in existing solutions like Argo Rollouts: the absence of an Access Control List (ACL) mechanism. Argo Rollouts provides robust deployment strategies, but it does not natively support restricting rollout actions based on user roles or permissions. This limitation can lead to operational risks, as anyone with access could potentially trigger or modify a rollout, regardless of their responsibility or expertise.
 
-Product Squad Lead: Main role saya saat ini adalah memastikan semua project dan flow pengembangan fitur berjalan sesuai kebutuhan bisnis dan operasional agar tetap berjalan, namun tidak sedikit saya juga sering ikut ambil bagian membantu kebutuhan teknis di lapangan seperti hot-fixing atau penambahan fitur-fitur kecil yang skalanya tidak dapat ter-cover oleh dev team. Kurang lebih stack yang kami pakai tiap hari adalah
+To address this, we built a custom ACL system on top of the rollout process. Our ACL allows us to define specific roles—such as Product Owner, QA, or Developer—and assign permissions for each stage of the rollout. For example, only Product Owners can approve a full rollout to all users, while QA can pause or resume canary deployments for testing purposes. This ensures that only authorized team members can perform sensitive actions, reducing the risk of accidental disruptions and improving accountability.
 
-- Solid Principle
-- Agile
-- Jira, Confluence
-- Figma
+By integrating ACL with our rollout manager, we empower Product teams to have greater control and confidence during releases. This not only streamlines the deployment process but also aligns with organizational policies and compliance requirements. The result is a smoother, safer, and more collaborative release workflow for everyone involved.
