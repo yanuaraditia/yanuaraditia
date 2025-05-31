@@ -1,30 +1,30 @@
 <template>
   <div
-    class="bg-surface-container shadow gap-3 fixed bottom-5 left-1/2 -translate-x-1/2 lg:translate-x-0 py-2 px-3 lg:right-auto lg:bottom-auto lg:top-1/2 lg:left-4 flex flex-row lg:flex-col lg:-translate-y-1/2 lg:px-2.5 lg:py-3 rounded-full"
+    class="bg-surface-container shadow gap-3 fixed bottom-5 left-1/2 -translate-x-1/2 lg:translate-x-0 py-2 px-3 lg:right-auto lg:bottom-auto lg:top-1/2 lg:left-4 flex flex-row lg:flex-col lg:-translate-y-1/2 lg:px-2 lg:py-2.5 rounded-full"
   >
     <AppBarItem
       to="/"
       label="Home"
-      icon="fluent:rocket-24-regular"
-      active-icon="fluent:rocket-24-filled"
+      icon="solar:tea-cup-broken"
+      active-icon="solar:tea-cup-bold"
     />
     <AppBarItem
       to="/project"
       label="Project"
-      icon="fluent:briefcase-24-regular"
-      active-icon="fluent:briefcase-24-filled"
+      icon="solar:case-broken"
+      active-icon="solar:case-bold"
     />
     <AppBarItem
       to="/blog"
       label="Blog"
-      icon="fluent:note-24-regular"
-      active-icon="fluent:note-24-filled"
+      icon="solar:notes-broken"
+      active-icon="solar:notes-bold"
     />
     <AppBarItem
       to="/about"
       label="About"
-      icon="fluent:animal-cat-24-regular"
-      active-icon="fluent:animal-cat-24-filled"
+      icon="solar:cat-broken"
+      active-icon="solar:cat-bold"
     />
   </div>
 </template>

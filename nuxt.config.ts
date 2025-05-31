@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/icon',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    '@vueuse/nuxt'
   ],
 
   css: ['@/assets/css/main.css'],
