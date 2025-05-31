@@ -1,75 +1,8 @@
-# Nuxt Minimal Starter
+### Hi there 👋
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+- 🔭 I’m currently working on KiriminAja
+- 🌱 I’m currently learning Typescript, Vue, and React on FE. And familiar with Laravel for BE
+- 📫 How to reach me: yanuaraditia@outlook.com
+- 😄 Pronouns: Bahasa, English
 
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yanuaraditia&layout=donut-vertical)](https://github.com/yanuaraditia)
