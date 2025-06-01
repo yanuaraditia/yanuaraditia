@@ -8,14 +8,34 @@ image: /images/project/bnu.png
 url: https://university.bni.co.id/
 ---
 
-Saya bergabung dengan tim KiriminAja mulai dari sebelum perusahaan ini didirikan yaitu pada bulan November 2020. Sebelumnya KiriminAja adalah sub-project dari PT. Selalu Siap Solusi (TRIES) sebelum pada akhirnya pt tersebut menjadi naungan utama KiriminAja dan TRIES berubah menjadi PT. Tries Digital Indonesia pada Desember 2020 setelah KiriminAja resmi berjalan sendiri.
-Pada fase awal tim hanya beranggotakan sekitar 12 orang yaitu termasuk Fariz GTJ – CEO, Muhammad Irfan H – CTO, Ilham Hary P – IT Manager, dan juga Daewu Bintara beserta tim lain seperti support dan sales.
+## Machine Learning Journey at BNI Corporate University
 
-## Jobdesc
+At BNI Corporate University, our team at [@gunamaya](https://github.com/gunamaya) adopted the Machine Learning Journey (MLJ) approach to address the challenges of managing and delivering academic resources to students and faculty. The primary goal was to streamline access to course materials, schedules, and learning tools, ensuring a seamless educational experience.
 
-Product Squad Lead: Main role saya saat ini adalah memastikan semua project dan flow pengembangan fitur berjalan sesuai kebutuhan bisnis dan operasional agar tetap berjalan, namun tidak sedikit saya juga sering ikut ambil bagian membantu kebutuhan teknis di lapangan seperti hot-fixing atau penambahan fitur-fitur kecil yang skalanya tidak dapat ter-cover oleh dev team. Kurang lebih stack yang kami pakai tiap hari adalah
+### Problem Statement
 
-- Solid Principle
-- Agile
-- Jira, Confluence
-- Figma
+The university faced difficulties in efficiently distributing up-to-date course content and managing academic schedules. Manual processes led to delays, inconsistencies, and limited accessibility for students and lecturers.
+
+### Our Solution
+
+We designed and implemented a course management system leveraging the MLJ methodology. This approach enabled us to:
+
+- Automate the distribution of course materials
+- Provide real-time updates to schedules and resources
+- Enhance accessibility for students and faculty
+- Integrate analytics to monitor learning progress
+
+### Technology Stack
+
+To build a robust and scalable platform, we utilized the following technologies:
+
+- **Nuxt**: For a performant and SEO-friendly frontend
+- **TypeScript**: Ensuring type safety and maintainable code
+- **Go**: Powering the backend with high performance and concurrency
+- **Gemini**: Integrating advanced AI and machine learning capabilities
+
+### Impact
+
+The adoption of MLJ and our technology stack has significantly improved the learning experience at BNI Corporate University. Students now have reliable access to resources, and faculty can efficiently manage their courses, all within a unified platform.
+
+For more details, visit the [BNI University MLJ platform](https://university.bni.co.id/).
