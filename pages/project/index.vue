@@ -31,6 +31,7 @@ useSeoMeta({
         :image="project.image"
         :to="project.path"
         :color="project.color"
+        fit
         @mouseenter="activeBlog = project.id"
       >
         <div class="flex stack gap-2">

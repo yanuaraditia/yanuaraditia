@@ -23,5 +23,9 @@
     "tailwindcss": "^4.1.8",
     "vue": "^3.5.15",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/lineicons": "^1.2.4",
+    "@iconify-json/solar": "^1.2.2"
   }
 }
