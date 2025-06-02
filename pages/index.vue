@@ -33,7 +33,7 @@ const stacks = [
       <div>
         <NuxtLink
           to="mailto:me@yan.ad"
-          class="inline-block border border-primary text-primary font-medium bg-secondary-container border-dashed px-3.5 rounded-full mb-3 py-1 text-sm"
+          class="inline-block border border-primary text-primary font-medium bg-surface-container border-dashed px-3.5 rounded-full mb-3 py-1 text-sm"
         >
           me@yan.ad
         </NuxtLink>

@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true
   },
+  colorMode: {
+    preference: 'system',
+    classSuffix: '',
+    storage: 'cookie',
+    storageKey: 'gondes-mode'
+  },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
@@ -13,7 +19,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxt/eslint',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxtjs/color-mode'
   ],
 
   css: ['@/assets/css/main.css'],
