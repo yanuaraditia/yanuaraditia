@@ -26,7 +26,13 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
 
   icon: {
-    mode: 'svg'
+    mode: 'svg',
+    customCollections: [
+      {
+        prefix: 'yan',
+        dir: './assets/icons'
+      }
+    ]
   },
 
   vite: {

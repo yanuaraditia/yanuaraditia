@@ -20,7 +20,11 @@
     "@tailwindcss/vite": "^4.1.8",
     "@vueuse/nuxt": "13.3.0",
     "eslint": "^9.0.0",
+    "mathjs": "^15.0.0",
+    "motion-v": "^1.7.2",
     "nuxt": "^3.17.4",
+    "ogl": "^1.0.11",
+    "reka-ui": "^2.5.1",
     "tailwindcss": "^4.1.8",
     "vue": "^3.5.15",
     "vue-router": "^4.5.1"

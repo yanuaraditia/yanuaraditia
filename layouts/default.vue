@@ -1,39 +1,104 @@
 <script setup lang="ts">
-const socials = [
+import type { DockItemData } from '~/components/ui/Dock/types'
+const items: DockItemData[] = [
   {
-    name: 'GitHub',
-    icon: 'mdi:github',
-    url: 'https://github.com/yanuaraditia'
+    icon: '/icon/home.png',
+    label: 'Home',
+    to: '/'
   },
   {
-    name: 'LinkedIn',
-    icon: 'mdi:linkedin',
-    url: 'https://linkedin.com/in/yanuaraditia'
+    icon: '/icon/blog.png',
+    label: 'Blog',
+    to: '/blog'
   },
   {
-    name: 'Instagram',
-    icon: 'mdi:instagram',
-    url: 'https://instagram.com/_______yanuar'
+    icon: '/icon/project.png',
+    label: 'Projects',
+    to: '/project'
+  },
+  {
+    icon: '/icon/about.png',
+    label: 'About This Mac',
+    onClick: () => {
+      const { openWindow } = useWindowManager()
+      openWindow({
+        id: 'about-this-mac',
+        title: 'About This Mac',
+        component: 'AboutThisMacWindow',
+        width: 700,
+        height: 600
+      })
+    }
+  },
+  {
+    icon: '/icon/github.png',
+    label: 'GitHub',
+    onClick: () =>
+      navigateTo('https://github.com/yanuaraditia', {
+        external: true,
+        open: { target: '_blank' }
+      })
+  },
+  {
+    icon: '/icon/linkedin.png',
+    label: 'LinkedIn',
+    onClick: () =>
+      navigateTo('https://linkedin.com/in/yanuaraditia', {
+        external: true,
+        open: { target: '_blank' }
+      })
+  },
+  {
+    icon: '/icon/instagram.png',
+    label: 'Instagram',
+    onClick: () =>
+      navigateTo('https://instagram.com/_______yanuar', {
+        external: true,
+        open: { target: '_blank' }
+      })
   }
 ]
 </script>
 <template>
   <NuxtLoadingIndicator color="var(--color-primary)" />
-  <div class="lg:ml-24 mb-16 lg:mb-0 px-6 py-6 lg:px-24 lg:py-12">
-    <NuxtPage />
-    <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
-      <p>&copy; {{ new Date().getFullYear() }} by Yanuar Aditia</p>
-      <div class="flex gap-4 mt-4 lg:mt-0">
-        <NuxtLink
-          v-for="social in socials"
-          :key="social.name"
-          :to="social.url"
-          class="text-secondary hover:text-primary bg-surface-container hover:bg-surface-container-high rounded-full p-1 transition-colors"
-        >
-          <Icon :name="social.icon" size="20px" />
-        </NuxtLink>
-      </div>
-    </footer>
+
+  <!-- macOS Menu Bar -->
+  <UiAppBarMacOSMenuBar />
+
+  <!-- Background -->
+  <div class="fixed w-screen h-screen pointer-events-none">
+    <UiBgGradual
+      :hue-shift="0"
+      :noise-intensity="0"
+      :scanline-intensity="0"
+      :speed="0.5"
+      :scanline-frequency="0"
+      :warp-amount="0"
+      :resolution-scale="1"
+    />
   </div>
-  <AppBar />
+
+  <!-- Main Content -->
+  <div class="relative z-100 pt-7">
+    <NuxtPage />
+    <UiWindowContainer />
+    <UiDock :items="items" />
+  </div>
 </template>
+
+<style>
+/* Disable body scroll for desktop experience */
+html,
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Ensure consistent macOS desktop experience */
+#__nuxt {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+</style>
