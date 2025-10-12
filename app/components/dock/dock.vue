@@ -42,6 +42,21 @@ const items: DockItemData[] = [
     icon: '/images/icon/settings.png',
     label: 'About Me',
     to: '/about'
+  },
+  {
+    icon: '/images/icon/terminal.png',
+    label: 'Terminal',
+    to: '/terminal'
+  },
+  {
+    icon: '/images/icon/github.png',
+    label: 'GitHub',
+    to: '/github'
+  },
+  {
+    icon: '/images/icon/linkedin.png',
+    label: 'LinkedIn',
+    to: '/linkedin'
   }
 ]
 
@@ -82,12 +97,12 @@ const handleMouseLeave = () => {
   <!-- Guard SSR -->
   <div
     :style="{ height: currentHeight + 'px', scrollbarWidth: 'none' }"
-    class="mx-2 flex max-w-full items-center"
+    class="mx-2 flex fixed max-w-full items-center"
   >
     <div
       :class="
         cn(
-          'fixed bottom-2 left-1/2 transform backdrop-blur-2xl -translate-x-1/2 flex items-end w-fit gap-2 rounded-3xl border-outline-variant/30 border pb-2 px-3',
+          'fixed bottom-2 left-1/2 transform backdrop-blur-2xl shadow-xl -translate-x-1/2 flex items-end w-fit gap-2 rounded-3xl border-outline-variant/30 border pb-2 px-3',
           props.className
         )
       "

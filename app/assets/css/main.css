@@ -86,7 +86,7 @@
 
 html,
 body {
-  @apply bg-surface text-on-surface;
+  @apply bg-surface bg-[url('/images/cover.webp')] bg-cover text-on-surface;
 }
 
 .dark {
