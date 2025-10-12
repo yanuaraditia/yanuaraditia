@@ -16,22 +16,20 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <UiHeading>Blog</UiHeading>
+  <WindowTitle>Blog</WindowTitle>
 
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <UiCard
-        v-for="post in posts"
-        :key="post.id"
-        :title="post.title"
-        :description="post.description"
-        :image="post.image"
-        :to="post.path"
-        :class="{
-          'active-entry': activeBlog === post.id
-        }"
-        @mouseenter="activeBlog = post.id"
-      />
-    </div>
-  </div>
+  <WindowContent class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <UiCard
+      v-for="post in posts"
+      :key="post.id"
+      :title="post.title"
+      :description="post.description"
+      :image="post.image"
+      :to="post.path"
+      :class="{
+        'active-entry': activeBlog === post.id
+      }"
+      @mouseenter="activeBlog = post.id"
+    />
+  </WindowContent>
 </template>

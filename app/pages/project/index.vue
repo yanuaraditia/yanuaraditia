@@ -16,9 +16,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <UiHeading>Project</UiHeading>
-
+  <WindowTitle>Project</WindowTitle>
+  <WindowContent>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       <UiCard
         v-for="project in posts"
@@ -44,5 +43,5 @@ useSeoMeta({
         </div>
       </UiCard>
     </div>
-  </div>
+  </WindowContent>
 </template>

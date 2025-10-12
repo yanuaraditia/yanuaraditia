@@ -5,6 +5,7 @@ export type DockItemData = {
   label: string
   to: string
   className?: string
+  dockWindow?: DockWindow
 }
 
 export type DockProps = {
@@ -15,4 +16,13 @@ export type DockProps = {
   dockHeight?: number
   magnification?: number
   spring?: SpringOptions
+}
+
+export type DockWindow = {
+  width?: number
+  height?: number
+  minWidth?: number
+  minHeight?: number
+  maxWidth?: number
+  maxHeight?: number
 }

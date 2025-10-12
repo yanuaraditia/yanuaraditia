@@ -2,6 +2,8 @@
 <template>
   <NuxtLoadingIndicator color="var(--color-primary)" />
   <AppBar />
-  <NuxtPage />
+  <WindowLoader>
+    <NuxtPage />
+  </WindowLoader>
   <Dock />
 </template>

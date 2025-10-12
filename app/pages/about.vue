@@ -6,7 +6,8 @@ useSeoMeta({
 })
 </script>
 <template>
-  <div class="grid lg:flex gap-3 lg:items-start lg:gap-12">
+  <WindowTitle>About Me</WindowTitle>
+  <WindowContent class="grid lg:flex gap-3 lg:items-start lg:gap-12">
     <NuxtImg
       src="/me.jpeg"
       style="view-transition-name: entry-image"
@@ -15,10 +16,6 @@ useSeoMeta({
     />
 
     <div class="grow">
-      <UiHeading style="view-transition-name: entry-title">
-        I'm Yanuar Aditia, <br />
-        and you can call me <span class="text-primary">Yanuar</span> in short.
-      </UiHeading>
       <div class="prose dark:prose-invert max-w-none">
         <p>
           My name is Yanuar Aditia, a passionate Software Engineer with a strong
@@ -58,5 +55,5 @@ useSeoMeta({
         </p>
       </div>
     </div>
-  </div>
+  </WindowContent>
 </template>

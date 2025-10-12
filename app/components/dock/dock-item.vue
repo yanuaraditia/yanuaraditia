@@ -73,7 +73,10 @@ const labelContent = computed(() => {
     @focus="handleFocus"
     @blur="handleBlur"
   >
-    <NuxtLink :to="props.to">
+    <NuxtLink
+      :to="props.to"
+      :target="props.to?.includes('http') ? '_blank' : '_self'"
+    >
       <DockIcon :src="item.icon" />
 
       <DockLabel :isHovered="isHovered">

@@ -31,17 +31,19 @@ const readingTime = computed(() => {
 </script>
 
 <template>
-  <UiCardRead v-if="blog" :item="blog">
-    <div class="flex gap-1 items-center mb-2">
-      <Icon name="fluent:calendar-16-regular" size="24px" />
-      {{ formatDate(blog.date ?? '') }}
+  <WindowContent>
+    <UiCardRead v-if="blog" :item="blog">
+      <div class="flex gap-1 items-center mb-2">
+        <Icon name="fluent:calendar-16-regular" size="24px" />
+        {{ formatDate(blog.date ?? '') }}
+      </div>
+      <div class="flex gap-1 items-center">
+        <Icon name="fluent:timer-16-regular" size="24px" />
+        {{ readingTime ?? '-' }}
+      </div>
+    </UiCardRead>
+    <div class="prose max-w-none dark:prose-invert xl:w-9/12 xl:my-24 mx-auto">
+      <ContentRenderer v-if="blog" ref="content" :value="blog" />
     </div>
-    <div class="flex gap-1 items-center">
-      <Icon name="fluent:timer-16-regular" size="24px" />
-      {{ readingTime ?? '-' }}
-    </div>
-  </UiCardRead>
-  <div class="prose max-w-none dark:prose-invert xl:w-9/12 xl:my-24 mx-auto">
-    <ContentRenderer v-if="blog" ref="content" :value="blog" />
-  </div>
+  </WindowContent>
 </template>

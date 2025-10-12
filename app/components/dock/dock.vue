@@ -51,12 +51,12 @@ const items: DockItemData[] = [
   {
     icon: '/images/icon/github.png',
     label: 'GitHub',
-    to: '/github'
+    to: 'https://github.com/yanuaraditia'
   },
   {
     icon: '/images/icon/linkedin.png',
     label: 'LinkedIn',
-    to: '/linkedin'
+    to: 'https://linkedin.com/in/yanuaraditia'
   }
 ]
 
