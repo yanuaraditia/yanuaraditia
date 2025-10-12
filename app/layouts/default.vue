@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { DockItemData } from '~/components/dock/types'
+
 const socials = [
   {
     name: 'GitHub',
@@ -16,9 +18,38 @@ const socials = [
     url: 'https://instagram.com/_______yanuar'
   }
 ]
+
+const items: DockItemData[] = [
+  {
+    icon: '/images/icon/finder.png',
+    label: 'Dock',
+    to: '/'
+  },
+  {
+    icon: '/images/icon/home.png',
+    label: 'Home',
+    to: '/'
+  },
+  {
+    icon: '/images/icon/project.png',
+    label: 'Projects',
+    to: '/project'
+  },
+  {
+    icon: '/images/icon/blog.png',
+    label: 'Blog',
+    to: '/blog'
+  },
+  {
+    icon: '/images/icon/settings.png',
+    label: 'About Me',
+    to: '/about'
+  }
+]
 </script>
 <template>
   <NuxtLoadingIndicator color="var(--color-primary)" />
+
   <div class="lg:ml-24 mb-16 lg:mb-0 px-6 py-6 lg:px-24 lg:py-12">
     <NuxtPage />
     <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
@@ -35,5 +66,5 @@ const socials = [
       </div>
     </footer>
   </div>
-  <AppBar />
+  <Dock :items="items" />
 </template>

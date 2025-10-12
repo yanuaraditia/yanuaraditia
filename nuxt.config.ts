@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode'
   ],
 
-  css: ['@/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   icon: {
     mode: 'svg'

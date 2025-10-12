@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { formatDate } from '~/utlils/formatDate'
-
 const route = useRoute()
 const { slug } = route.params
 const { data: blog } = await useAsyncData(`blog-${slug}`, () =>
