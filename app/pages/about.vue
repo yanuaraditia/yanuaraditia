@@ -6,53 +6,45 @@ useSeoMeta({
 })
 </script>
 <template>
-  <WindowTitle>About Me</WindowTitle>
-  <WindowContent class="grid lg:flex gap-3 lg:items-start lg:gap-12">
-    <NuxtImg
-      src="/me.jpeg"
-      style="view-transition-name: entry-image"
-      class="rounded-2xl w-full lg:w-1/3 h-auto"
-      alt="Yanuar Aditia"
-    />
+  <WindowTitle>
+    <div
+      class="inline-flex border gap-3 p-1 border-outline-variant/30 rounded-lg"
+    >
+      <button>Overview</button>
+      <button>Work</button>
+      <button>Education</button>
+    </div>
+  </WindowTitle>
+  <WindowContent class="grid lg:flex gap-10 items-center lg:px-16 lg:py-16">
+    <div
+      class="shadow-xl p-2 bg-gradient-to-b from-surface-container to-surface-container-high rounded-full"
+    >
+      <NuxtImg
+        src="/me.jpeg"
+        style="view-transition-name: entry-image"
+        class="rounded-full w-32 h-32"
+        alt="Yanuar Aditia"
+      />
+    </div>
 
     <div class="grow">
-      <div class="prose dark:prose-invert max-w-none">
-        <p>
-          My name is Yanuar Aditia, a passionate Software Engineer with a strong
-          foundation in full-stack web development and a keen eye for UI/UX.
-          Born and raised in Kebumen, Central Java, I now reside in Yogyakarta.
-          I hold a bachelor’s degree in Informatics Engineering from the
-          University of Amikom Yogyakarta, where I specialized in database and
-          web technologies.
-        </p>
-        <p>
-          Throughout my academic journey, I actively participated in national
-          competitions, including winning the AMICTA competition with an
-          IoT-based parking lot solution. These experiences sharpened my
-          problem-solving skills and ability to deliver innovative, real-world
-          solutions.
-        </p>
-        <p>
-          Professionally, I have a proven track record as a full-stack web
-          developer at TRIES DIGITAL, where I architected and developed robust
-          back-end and front-end systems. My expertise includes Laravel, RESTful
-          APIs, and MySQL, enabling me to build scalable and maintainable
-          applications.
-        </p>
-        <p>
-          Currently, I serve as Software Development Lead at PT. Selalu Siap
-          Solusi (KiriminAja), where I drive technical strategy, lead
-          cross-functional teams, and deliver high-impact platforms. My role
-          involves researching and implementing modern tech stacks, optimizing
-          workflows, and mentoring fellow engineers to achieve project goals
-          efficiently.
-        </p>
-        <p>
-          I am deeply committed to continuous learning and growth, with a strong
-          interest in Product Management and UI/UX development. I thrive on
-          exploring new technologies and methodologies to create products that
-          deliver exceptional user experiences and business value.
-        </p>
+      <h1 class="text-2xl"><span class="font-bold">Yanuar</span> Aditia</h1>
+      <div class="text-sm">
+        <span>Version 11.00 Beta</span>
+      </div>
+      <div class="mt-5">
+        <div class="flex gap-3 items-center">
+          <div class="font-semibold">Location</div>
+          <div>Jakarta, Indonesia</div>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="font-semibold">Role</div>
+          <div>Full Stack Developer</div>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="font-semibold">Current Company</div>
+          <div>KiriminAja</div>
+        </div>
       </div>
     </div>
   </WindowContent>
