@@ -36,7 +36,7 @@ const socials = [
   <div
     class="2xl:max-w-6xl mx-auto flex min-h-screen items-center justify-center relative"
   >
-    <div class="p-4 lg:px-12 lg:py-24">
+    <div class="p-4 pt-24 lg:py-24">
       <NuxtPage />
       <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
         <p>&copy; {{ new Date().getFullYear() }} by Yanuar Aditia</p>
