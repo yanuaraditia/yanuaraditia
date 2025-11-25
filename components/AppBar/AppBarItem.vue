@@ -27,7 +27,7 @@ const icon = computed(() => {
       cn(
         'relative group flex items-center gap-1 font-medium px-3.5 py-2 rounded-full',
         {
-          'bg-secondary-container text-on-secondary-container': isActive,
+          'bg-primary text-on-primary': isActive,
           'bg-surface-container/40 backdrop-blur': !isActive
         }
       )

@@ -30,7 +30,17 @@ const stacks = [
       />
       <UiHeading style="view-transition-name: entry-title">
         👋 Hi! I'm Yanuar Aditia, a
-        <span class="text-primary">Software Engineer</span>
+        <UiEffectRotatingText
+          :texts="[
+            'Software Engineer',
+            'Gamer',
+            'Principal Engineer',
+            'Tech Lead'
+          ]"
+          class="text-primary"
+        >
+          Software Engineer
+        </UiEffectRotatingText>
       </UiHeading>
       <p class="xl:text-lg mb-7 xl:w-9/12">
         I have been working as a Software Engineer for +7 years. I am looking
@@ -49,16 +59,16 @@ const stacks = [
       </div>
       <div class="flex gap-3 lg:mt-10">
         <NuxtLink
-          to="/project"
-          class="px-4 py-2.5 border border-primary bg-primary text-on-primary rounded-lg font-semibold"
+          to="mailto:me@yan.ad"
+          class="px-4 py-2.5 border border-primary bg-primary text-on-primary rounded-lg font-medium"
         >
-          See my Project
+          Contact Me
         </NuxtLink>
         <NuxtLink
-          to="/about"
-          class="px-4 py-2.5 border border-primary text-primary rounded-lg font-semibold"
+          to="/project"
+          class="px-4 py-2.5 bg-surface-container/40 border border-outline-variant/40 backdrop-blur-lg text-primary rounded-lg font-medium"
         >
-          About me
+          See my Project
         </NuxtLink>
       </div>
     </div>

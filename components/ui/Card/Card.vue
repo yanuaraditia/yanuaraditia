@@ -7,6 +7,8 @@ const props = defineProps<{
   to: string
   fit?: boolean
 }>()
+
+const slots = useSlots()
 </script>
 <template>
   <div
@@ -27,11 +29,16 @@ const props = defineProps<{
       />
     </div>
     <div class="p-6 pt-3">
-      <div class="mb-3 title">
-        <h3 class="text-xl mb-3 font-display font-bold">
+      <div
+        class="title"
+        :class="{
+          'mb-3': slots.default
+        }"
+      >
+        <h3 class="text-xl mb-3 font-display font-bold line-clamp-1">
           {{ props.title }}
         </h3>
-        <p class="line-clamp-3">{{ props.description }}</p>
+        <p class="line-clamp-2">{{ props.description }}</p>
       </div>
       <slot />
     </div>
