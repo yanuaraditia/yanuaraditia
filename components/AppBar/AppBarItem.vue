@@ -19,6 +19,8 @@ const isActive = computed(() => {
 const icon = computed(() => {
   return isActive.value ? props.activeIcon : props.icon
 })
+
+const { isLoading } = useLoadingIndicator()
 </script>
 
 <template>
@@ -34,7 +36,10 @@ const icon = computed(() => {
     "
   >
     <div class="shrink-0">
-      <Icon :name="icon" size="20px" />
+      <Icon
+        :name="isLoading && isActive ? 'svg-spinners:bars-rotate-fade' : icon"
+        size="20px"
+      />
     </div>
     <span> {{ props.label }} </span>
     <NuxtLink :to="props.to" class="absolute inset-0" />
