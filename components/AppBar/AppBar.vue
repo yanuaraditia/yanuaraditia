@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-surface-container shadow gap-3 fixed bottom-5 left-1/2 -translate-x-1/2 lg:translate-x-0 py-2 px-3 lg:right-auto lg:bottom-auto lg:top-1/2 lg:left-4 flex flex-row lg:flex-col lg:-translate-y-1/2 lg:px-2 lg:py-2.5 rounded-full"
+    class="bg-surface-container/30 backdrop-blur-lg shadow gap-3 fixed bottom-5 left-1/2 -translate-x-1/2 py-2 px-2.5 flex flex-row rounded-full"
   >
     <AppBarItem
       to="/"
@@ -19,12 +19,6 @@
       label="Blog"
       icon="solar:notes-broken"
       active-icon="solar:notes-bold"
-    />
-    <AppBarItem
-      to="/about"
-      label="About"
-      icon="solar:cat-broken"
-      active-icon="solar:cat-bold"
     />
   </div>
 </template>

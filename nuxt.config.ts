@@ -41,7 +41,19 @@ export default defineNuxtConfig({
     }
   },
 
+  routeRules: {
+    '/about': {
+      redirect: '/'
+    },
+    '/me': {
+      redirect: '/'
+    }
+  },
+
   content: {
+    experimental: {
+      sqliteConnector: 'native'
+    },
     build: {
       markdown: {
         highlight: {
