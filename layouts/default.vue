@@ -13,7 +13,7 @@ const socials = [
   {
     name: 'Instagram',
     icon: 'mdi:instagram',
-    url: 'https://instagram.com/_______yanuar'
+    url: 'https://instagram.com/yan_ad_'
   }
 ]
 </script>
