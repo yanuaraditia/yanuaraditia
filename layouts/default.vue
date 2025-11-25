@@ -19,10 +19,24 @@ const socials = [
 </script>
 <template>
   <NuxtLoadingIndicator color="var(--color-primary)" />
+  <div class="fixed inset-0 opacity-30">
+    <UiEffectDither
+      :wave-speed="0.05"
+      :wave-frequency="3"
+      :wave-amplitude="0.3"
+      :wave-color="[0.5, 0.5, 0.5]"
+      :color-num="4"
+      :pixel-size="2"
+      :disable-animation="false"
+      :enable-mouse-interaction="true"
+      :mouse-radius="1"
+    />
+  </div>
+
   <div
-    class="px-6 py-6 lg:px-24 lg:py-12 2xl:max-w-6xl mx-auto flex min-h-screen items-center justify-center"
+    class="2xl:max-w-6xl mx-auto flex min-h-screen items-center justify-center relative"
   >
-    <div>
+    <div class="p-4 lg:px-12 lg:py-24">
       <NuxtPage />
       <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
         <p>&copy; {{ new Date().getFullYear() }} by Yanuar Aditia</p>

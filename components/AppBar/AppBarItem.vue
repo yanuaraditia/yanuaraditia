@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { cn } from '@/utlils/tailwind'
 const props = defineProps<{
   label: string
   to?: string
@@ -22,22 +23,20 @@ const icon = computed(() => {
 
 <template>
   <div
-    :class="{
-      'text-secondary': isActive,
-      'relative group flex flex-col items-center gap-0.5': true
-    }"
-  >
-    <div
-      :class="[
-        'p-3 block rounded-full',
+    :class="
+      cn(
+        'relative group flex items-center gap-1 font-medium px-3.5 py-2 rounded-full',
         {
           'bg-secondary-container text-on-secondary-container': isActive,
-          'group-hover:bg-surface-container-highest': !isActive
+          'bg-surface-container/40 backdrop-blur': !isActive
         }
-      ]"
-    >
-      <Icon :name="icon" size="24px" />
+      )
+    "
+  >
+    <div class="shrink-0">
+      <Icon :name="icon" size="20px" />
     </div>
+    <span> {{ props.label }} </span>
     <NuxtLink :to="props.to" class="absolute inset-0" />
   </div>
 </template>

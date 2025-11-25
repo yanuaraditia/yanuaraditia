@@ -20,6 +20,7 @@ export default defineContentConfig({
         color: z.string().optional(),
         description: z.string().optional(),
         collaborators: z.array(z.string()).optional(),
+        status: z.enum(['soon', 'running']).optional(),
         stacks: z.array(z.string()).optional(),
         image: z.string().optional(),
         date: z.date().optional(),

@@ -19,7 +19,7 @@
   }
 
   pre {
-    @apply border border-outline-variant;
+    @apply border border-outline-variant/30;
   }
 
   table {

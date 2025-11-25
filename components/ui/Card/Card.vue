@@ -10,7 +10,7 @@ const props = defineProps<{
 </script>
 <template>
   <div
-    class="rounded-2xl overflow-hidden relative group hover:bg-surface-container-high bg-surface-container grid gap-3"
+    class="rounded-2xl overflow-hidden relative group bg-surface-container/30 backdrop-blur border border-outline-variant/30 grid gap-3"
   >
     <div
       class="rounded-xl thumbnail aspect-video overflow-hidden flex items-center justify-center"

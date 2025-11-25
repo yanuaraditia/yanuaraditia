@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-surface-container/30 backdrop-blur-lg shadow gap-3 fixed bottom-5 left-1/2 -translate-x-1/2 py-2 px-2.5 flex flex-row rounded-full"
+    class="gap-3 fixed top-5 left-1/2 z-150 -translate-x-1/2 flex flex-row rounded-full"
   >
     <AppBarItem
       to="/"

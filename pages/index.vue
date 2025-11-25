@@ -25,7 +25,7 @@ const stacks = [
       <NuxtImg
         src="/me.jpeg"
         style="view-transition-name: entry-image"
-        class="rounded-2xl w-20 h-20 mb-3 border-2 border-white shadow-2xl"
+        class="rounded-2xl w-20 h-20 mb-3 lg:mb-10 border-2 border-white shadow-2xl"
         alt="Yanuar Aditia"
       />
       <UiHeading style="view-transition-name: entry-title">
@@ -47,16 +47,16 @@ const stacks = [
           size="28px"
         />
       </div>
-      <div class="flex gap-3 lg:mt-4">
+      <div class="flex gap-3 lg:mt-10">
         <NuxtLink
           to="/project"
-          class="px-6 py-3.5 border border-primary bg-primary text-on-primary rounded-full font-semibold"
+          class="px-4 py-2.5 border border-primary bg-primary text-on-primary rounded-lg font-semibold"
         >
           See my Project
         </NuxtLink>
         <NuxtLink
           to="/about"
-          class="px-6 py-3.5 border border-primary text-primary rounded-full font-semibold"
+          class="px-4 py-2.5 border border-primary text-primary rounded-lg font-semibold"
         >
           About me
         </NuxtLink>

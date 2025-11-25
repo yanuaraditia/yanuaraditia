@@ -12,7 +12,7 @@ const props = defineProps<{
 </script>
 <template>
   <div
-    class="rounded-2xl bg-surface-container p-3 grid lg:grid-cols-2 gap-3 lg:gap-12"
+    class="rounded-2xl bg-surface-container/30 backdrop-blur border border-outline-variant/30 p-3 grid lg:grid-cols-2 gap-3 lg:gap-12"
     :style="{
       viewTransitionName: 'entry'
     }"

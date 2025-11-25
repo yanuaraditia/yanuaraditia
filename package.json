@@ -19,9 +19,13 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.17",
     "@vueuse/nuxt": "14.0.0",
+    "clsx": "^2.1.1",
     "eslint": "^9.39.1",
+    "mathjs": "^15.1.0",
     "motion-v": "^1.7.4",
     "nuxt": "^4.2.1",
+    "ogl": "^1.0.11",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
