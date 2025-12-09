@@ -18,27 +18,19 @@ const props = defineProps<{
     }"
   >
     <div
-      class="flex bg-white aspect-video overflow-hidden items-center justify-center"
+      class="bg-white aspect-video overflow-hidden items-center justify-center"
     >
-      <NuxtImg
-        :src="props.item.image"
-        :class="{
-          'w-full': !props.fit,
-          'w-fit': props.fit
-        }"
-        alt="Project Image"
-      />
+      <NuxtImg :src="props.item.image" class="w-full" alt="Project Image" />
     </div>
-    <div>
+    <div class="mb-3">
       <div :style="{ viewTransitionName: 'entry-title' }">
         <UiHeading>
           {{ props.item.title }}
         </UiHeading>
-        <p class="text-lg">{{ props.item.description }}</p>
         <NuxtLink
           v-if="props.item.url"
           :to="props.item.url"
-          class="flex items-center gap-2 text-primary mt-3 font-bold"
+          class="flex items-center gap-2 text-primary mt-3 mb-5 font-bold"
         >
           <Icon name="fluent:link-multiple-24-filled" size="16px" />
           <span>{{ props.item.url }}</span>

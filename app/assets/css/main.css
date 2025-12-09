@@ -18,8 +18,21 @@
     font-weight: 400;
   }
 
+  a {
+    @apply no-underline hover:underline hover:text-primary;
+  }
+
   pre {
     @apply border border-outline-variant/30;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold!;
   }
 
   table {

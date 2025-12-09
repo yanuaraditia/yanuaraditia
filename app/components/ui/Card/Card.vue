@@ -15,7 +15,7 @@ const slots = useSlots()
     class="overflow-hidden relative group bg-linear-to-b from-surface-container-high hover:from-secondary-container transition-all grid gap-3"
   >
     <div
-      class="thumbnail aspect-video overflow-hidden grayscale-100 group-hover:grayscale-0 flex items-center justify-center"
+      class="thumbnail aspect-video overflow-hidden flex items-center justify-center"
       :style="{
         backgroundColor: props.color
       }"

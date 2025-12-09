@@ -2,7 +2,7 @@
 title: Debounce – What's the difference with throttle?
 description: Debounce means delaying the execution of a repeatedly called function until there is an idle condition within a specified time range.
 image: /images/blog/debounce.png
-date: 2023-06-10
+date: 202-06-10
 ---
 
 As a web developer, whether back-end or front-end, you’ve probably heard the term **Throttle** before, right? Simply put, throttle is used to limit the number of hits to an endpoint or application by a single user/client within a certain period. For example, if we want to limit the `api/user` endpoint to only be accessed 60 times per minute, we can use throttling technology. So, what is debounce?

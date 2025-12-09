@@ -43,7 +43,7 @@ const readingTime = computed(() => {
       {{ readingTime ?? '-' }}
     </div>
   </UiCardRead>
-  <div class="prose max-w-none dark:prose-invert xl:w-9/12 xl:my-24 mx-auto">
+  <div class="prose max-w-none dark:prose-invert xl:w-9/12 mx-auto">
     <ContentRenderer v-if="blog" ref="content" :value="blog" />
   </div>
 </template>
