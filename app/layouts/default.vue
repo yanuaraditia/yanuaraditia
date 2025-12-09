@@ -45,7 +45,7 @@ const socials = [
             v-for="social in socials"
             :key="social.name"
             :to="social.url"
-            class="text-secondary hover:text-primary bg-surface-container hover:bg-surface-container-high rounded-full p-1 transition-colors"
+            class="text-secondary hover:text-primary bg-surface-container hover:bg-surface-container-high p-1 transition-colors"
           >
             <Icon :name="social.icon" size="20px" />
           </NuxtLink>

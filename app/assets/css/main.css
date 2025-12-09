@@ -44,10 +44,10 @@
 }
 
 @theme {
-  --default-font-family: 'Inter', sans-serif;
+  --default-font-family: 'Jetbrains Mono', monospace;
   --default-border-color: #ccc4ce;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Lora', sans-serif;
+  --font-sans: 'Jetbrains Mono', monospace;
+  --font-display: 'Jetbrains Mono', monospace;
 
   --color-primary: #253d05;
   --color-on-primary: #ffffff;

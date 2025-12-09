@@ -12,17 +12,13 @@ const props = defineProps<{
 </script>
 <template>
   <div
-    class="rounded-2xl bg-surface-container/30 backdrop-blur border border-outline-variant/30 p-3 grid lg:grid-cols-2 gap-3 lg:gap-12"
+    class="grid gap-3 lg:gap-12 xl:w-9/12 xl:mx-auto lg:items-center"
     :style="{
       viewTransitionName: 'entry'
     }"
   >
     <div
-      :style="{
-        backgroundColor: props.item.color ?? '#ffffff',
-        viewTransitionName: 'entry-image'
-      }"
-      class="rounded-2xl flex h-full overflow-hidden items-center justify-center"
+      class="flex bg-white aspect-video overflow-hidden items-center justify-center"
     >
       <NuxtImg
         :src="props.item.image"
@@ -33,8 +29,8 @@ const props = defineProps<{
         alt="Project Image"
       />
     </div>
-    <div class="lg:order-first p-3 lg:p-10">
-      <div class="mb-5" :style="{ viewTransitionName: 'entry-title' }">
+    <div>
+      <div :style="{ viewTransitionName: 'entry-title' }">
         <UiHeading>
           {{ props.item.title }}
         </UiHeading>

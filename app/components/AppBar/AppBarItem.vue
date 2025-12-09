@@ -27,10 +27,9 @@ const { isLoading } = useLoadingIndicator()
   <div
     :class="
       cn(
-        'relative group flex items-center gap-1 font-medium px-3.5 py-2 rounded-full',
+        'relative group flex items-center gap-1 font-medium bg-linear-to-b px-3.5 py-3',
         {
-          'bg-primary text-on-primary': isActive,
-          'bg-surface-container/40 backdrop-blur': !isActive
+          'from-primary/30 text-primary': isActive
         }
       )
     "

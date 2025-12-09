@@ -17,23 +17,18 @@ const stacks = [
 </script>
 <template>
   <div
+    class="group"
     :style="{
       viewTransitionName: 'entry'
     }"
   >
     <div>
-      <NuxtImg
-        src="/me.jpeg"
-        style="view-transition-name: entry-image"
-        class="rounded-2xl w-20 h-20 mb-3 lg:mb-10 border-2 border-white shadow-2xl"
-        alt="Yanuar Aditia"
-      />
       <UiHeading style="view-transition-name: entry-title">
         👋 Hi! I'm Yanuar Aditia, a
         <UiEffectRotatingText
           :texts="[
             'Software Engineer',
-            'Gamer',
+            'Software Architect',
             'Principal Engineer',
             'Tech Lead'
           ]"
@@ -57,16 +52,16 @@ const stacks = [
           size="28px"
         />
       </div>
-      <div class="flex gap-3 lg:mt-10">
+      <div class="flex lg:mt-10 gap-3">
         <NuxtLink
           to="mailto:me@yan.ad"
-          class="px-4 py-2.5 border border-primary bg-primary text-on-primary rounded-lg font-medium"
+          class="px-4 py-2.5 border border-primary bg-primary text-on-primary font-medium"
         >
           Contact Me
         </NuxtLink>
         <NuxtLink
           to="/project"
-          class="px-4 py-2.5 bg-surface-container/40 border border-outline-variant/40 backdrop-blur-lg text-primary rounded-lg font-medium"
+          class="px-4 py-2.5 bg-surface-container/60 hover:bg-surface-container text-primary font-medium"
         >
           See my Project
         </NuxtLink>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="gap-3 fixed top-5 left-1/2 z-150 -translate-x-1/2 flex flex-row rounded-full"
+    class="fixed top-0 left-1/2 z-150 -translate-x-1/2 flex flex-row rounded-lg"
   >
     <AppBarItem
       to="/"
