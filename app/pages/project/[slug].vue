@@ -42,11 +42,11 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
 <template>
   <div v-if="project" :style="{ viewTransitionName: 'entry' }">
     <div
-      class="flex bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
     >
-      <header>
+      <header class="min-w-0">
         <p
-          class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
+          class="text-xs font-semibold uppercase tracking-wider text-super mb-3"
         >
           {{ isTeam ? 'Team Project' : 'Solo Project' }}
         </p>
@@ -97,7 +97,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               >
                 <Icon
                   :name="`lineicons:${stack}`"
-                  class="text-(--color-primary)"
+                  class="text-super"
                   size="14px"
                 />
                 {{ stack }}
@@ -153,7 +153,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
       </header>
       <div
         v-if="project.image"
-        class="chamfer-sm overflow-hidden aspect-video shrink-0"
+        class="chamfer-sm overflow-hidden aspect-video w-full"
         :style="{ backgroundColor: project.color || 'var(--muted)' }"
       >
         <NuxtImg
@@ -191,7 +191,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
           >
             <NuxtLink
               to="/project"
-              class="inline-flex items-center gap-2 text-sm hover:text-(--color-primary) transition-colors"
+              class="inline-flex items-center gap-2 text-sm hover:text-super transition-colors"
             >
               <Icon name="solar:arrow-left-linear" size="16px" />
               Back to all projects
@@ -200,7 +200,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               :href="editUrl"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-(--color-primary) transition-colors"
+              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-super transition-colors"
             >
               <Icon name="solar:pen-2-linear" size="14px" />
               Suggest an edit

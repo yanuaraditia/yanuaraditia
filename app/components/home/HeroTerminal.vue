@@ -210,8 +210,8 @@ onUnmounted(clear)
         :animate="
           current.stacks.includes(stack)
             ? {
-                color: 'var(--color-primary)',
-                border: '1px solid var(--color-primary)'
+                color: 'var(--color-super)',
+                border: '1px solid var(--color-super)'
               }
             : {
                 color: 'var(--color-on-surface-variant)'

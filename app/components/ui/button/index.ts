@@ -14,6 +14,8 @@ export const buttonVariants = cva(
 
         secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        super:
+          'bg-super text-super-foreground hover:bg-super/90 focus-visible:ring-super/40 shadow-[0_0_0_0_var(--color-super)] hover:shadow-[0_0_0_3px_color-mix(in_oklab,var(--color-super)_25%,transparent)]',
         accent: 'bg-accent text-accent-foreground hover:bg-accent/80',
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',

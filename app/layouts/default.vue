@@ -19,7 +19,7 @@ const socials = [
 </script>
 
 <template>
-  <NuxtLoadingIndicator color="var(--color-primary)" />
+  <NuxtLoadingIndicator color="var(--color-super)" />
 
   <!-- Outer wrapper: full-bleed background -->
   <div class="min-h-screen flex justify-center">

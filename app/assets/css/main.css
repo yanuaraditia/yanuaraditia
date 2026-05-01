@@ -121,6 +121,11 @@
   --color-on-primary: #ffffff;
   --color-primary-container: #5a7539;
   --color-on-primary-container: #ffffff;
+
+  /* shadcn-style brand accent — semantic alias of the material primary.
+     Use bg-super / text-super / text-super-foreground / border-super / ring-super. */
+  --color-super: #253d05;
+  --color-super-foreground: #ffffff;
   --color-secondary: #303924;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #667157;
@@ -156,6 +161,10 @@
   --color-on-primary: #172b00;
   --color-primary-container: #7d9a59;
   --color-on-primary-container: #000000;
+
+  /* dark-mode super (mirrors material primary) */
+  --color-super: #c7e79e;
+  --color-super-foreground: #172b00;
   --color-secondary: #d5e1c2;
   --color-on-secondary: #1f2814;
   --color-secondary-container: #8a9579;

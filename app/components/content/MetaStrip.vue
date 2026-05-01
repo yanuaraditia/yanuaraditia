@@ -38,7 +38,7 @@ const formatted = (d?: string | Date) => {
       :href="editUrl"
       target="_blank"
       rel="noopener"
-      class="inline-flex items-center gap-1.5 hover:text-(--color-primary) transition-colors"
+      class="inline-flex items-center gap-1.5 hover:text-super transition-colors"
     >
       <Icon name="solar:pen-2-linear" size="14px" />
       Edit this page

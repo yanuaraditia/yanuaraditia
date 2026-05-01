@@ -54,11 +54,11 @@ const formattedDate = computed(() => {
 <template>
   <div v-if="blog" :style="{ viewTransitionName: 'entry' }">
     <div
-      class="flex bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
     >
-      <header>
+      <header class="min-w-0">
         <p
-          class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
+          class="text-xs font-semibold uppercase tracking-wider text-super mb-3"
         >
           Article
         </p>
@@ -81,7 +81,7 @@ const formattedDate = computed(() => {
           >
             <Icon
               name="solar:calendar-linear"
-              class="text-(--color-primary)"
+              class="text-super"
               size="14px"
             />
             {{ formattedDate }}
@@ -93,7 +93,7 @@ const formattedDate = computed(() => {
           >
             <Icon
               name="solar:clock-circle-linear"
-              class="text-(--color-primary)"
+              class="text-super"
               size="14px"
             />
             {{ readingTime }}
@@ -102,7 +102,7 @@ const formattedDate = computed(() => {
       </header>
       <div
         v-if="blog.image"
-        class="chamfer-sm overflow-hidden aspect-video shrink-0 bg-muted"
+        class="chamfer-sm overflow-hidden aspect-video bg-muted w-full"
       >
         <NuxtImg
           :src="blog.image"
@@ -139,7 +139,7 @@ const formattedDate = computed(() => {
           >
             <NuxtLink
               to="/blog"
-              class="inline-flex items-center gap-2 text-sm hover:text-(--color-primary) transition-colors"
+              class="inline-flex items-center gap-2 text-sm hover:text-super transition-colors"
             >
               <Icon name="solar:arrow-left-linear" size="16px" />
               Back to all articles
@@ -148,7 +148,7 @@ const formattedDate = computed(() => {
               :href="editUrl"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-(--color-primary) transition-colors"
+              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-super transition-colors"
             >
               <Icon name="solar:pen-2-linear" size="14px" />
               Suggest an edit

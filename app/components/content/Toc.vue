@@ -148,7 +148,7 @@ const handleClick = (e: MouseEvent, id: string) => {
       <Motion
         as="span"
         aria-hidden="true"
-        class="absolute left-0 -ml-px w-px bg-(--color-primary) pointer-events-none"
+        class="absolute left-0 -ml-px w-px bg-super pointer-events-none"
         :initial="false"
         :animate="{
           top: indicator.top,
@@ -163,7 +163,7 @@ const handleClick = (e: MouseEvent, id: string) => {
           opacity: { duration: 0.18 }
         }"
         :style="{
-          boxShadow: '0 0 8px 0 var(--color-primary)'
+          boxShadow: '0 0 8px 0 var(--color-super)'
         }"
       />
 
@@ -173,7 +173,7 @@ const handleClick = (e: MouseEvent, id: string) => {
           :class="[
             'block py-2 pr-3 transition-colors duration-300',
             activeId === link.id
-              ? 'text-(--color-primary) font-medium'
+              ? 'text-super font-medium'
               : 'text-on-surface-variant hover:text-on-surface'
           ]"
           :style="{ paddingLeft: `${(link.depth - 1) * 8 + 8}px` }"

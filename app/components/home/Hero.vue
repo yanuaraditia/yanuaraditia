@@ -20,7 +20,7 @@ const stacks = [
         >
           <span class="block">Hi, I'm</span>
           <span class="block">Yanuar Aditia</span>
-          <span class="block text-(--color-primary)">
+          <span class="block text-super">
             <EffectRotatingText
               :texts="[
                 'Software Engineer',
