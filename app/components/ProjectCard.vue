@@ -14,9 +14,8 @@ defineProps<{
     :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
     :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
-    <NuxtLink
-      :to="project.path"
-      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
+    <article
+      class="group chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: text -->
@@ -42,11 +41,13 @@ defineProps<{
                 {{ project.active ? 'Active' : 'Inactive' }}
               </UiBadge>
             </div>
-            <h3
-              class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight mb-4"
-            >
-              {{ project.title }}
-            </h3>
+            <NuxtLink :to="project.path" class="block mb-4">
+              <h3
+                class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight"
+              >
+                {{ project.title }}
+              </h3>
+            </NuxtLink>
             <p
               v-if="project.description"
               class="text-on-surface-variant text-sm md:text-base line-clamp-3"
@@ -56,13 +57,15 @@ defineProps<{
           </div>
 
           <div class="flex items-center gap-4">
-            <UiButton size="sm" tabindex="-1">
-              View Project
-              <Icon
-                name="solar:round-arrow-right-linear"
-                size="14px"
-                class="transition-transform"
-              />
+            <UiButton as-child size="sm">
+              <NuxtLink :to="project.path">
+                View Project
+                <Icon
+                  name="solar:round-arrow-right-linear"
+                  size="14px"
+                  class="transition-transform"
+                />
+              </NuxtLink>
             </UiButton>
 
             <UiButton
@@ -90,17 +93,23 @@ defineProps<{
             backgroundColor: project.color || 'var(--color-surface-container)'
           }"
         >
-          <NuxtImg
-            v-if="project.image"
-            :src="project.image"
-            :alt="project.title"
-            class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-          />
+          <NuxtLink
+            :to="project.path"
+            class="absolute inset-0 block"
+            :aria-label="`View project ${project.title}`"
+          >
+            <NuxtImg
+              v-if="project.image"
+              :src="project.image"
+              :alt="project.title"
+              class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+            />
+          </NuxtLink>
 
           <!-- Floating stack chip (like vite+ "new" badge) -->
           <div
             v-if="project.stacks?.length"
-            class="absolute bottom-4 right-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
+            class="absolute bottom-4 right-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2 pointer-events-none"
           >
             <Icon
               v-for="stack in project.stacks.slice(0, 4)"
@@ -118,6 +127,6 @@ defineProps<{
           </div>
         </div>
       </div>
-    </NuxtLink>
+    </article>
   </Motion>
 </template>

@@ -40,7 +40,7 @@ const editUrl = computed(
 const formattedDate = computed(() => {
   if (!blog.value?.date) return ''
   try {
-    return new Date(blog.value.date).toLocaleDateString('en-US', {
+    return formatDate(blog.value.date, {
       year: 'numeric',
       month: 'long',
       day: 'numeric'

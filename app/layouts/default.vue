@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // Boot weather theme at layout level so every page benefits.
 useWeather()
+
+const currentYear = useState('footer-year', () => new Date().getFullYear())
 </script>
 
 <template>
@@ -31,7 +33,7 @@ useWeather()
       <footer
         class="border-t px-6 md:px-10 py-6 text-sm text-current/80 bg-background chamfer-sm-top"
       >
-        <p>&copy; {{ new Date().getFullYear() }} Yanuar Aditia</p>
+        <p>&copy; {{ currentYear }} Yanuar Aditia</p>
       </footer>
     </div>
   </div>

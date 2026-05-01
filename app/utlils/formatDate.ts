@@ -1,20 +1,37 @@
-// create a formatter for date to convert from 2023-01-01 into January 1, 2023
-export function formatDate(date: Date | string): string {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+const defaultDateOptions: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}
+
+function normalizeDate(date: Date | string): Date {
+  if (date instanceof Date) {
+    return date
   }
 
-  // If date is a string, convert it to a Date object
-  if (typeof date === 'string') {
-    date = new Date(date)
+  const dateOnlyMatch = date.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+
+  if (dateOnlyMatch) {
+    const [, year, month, day] = dateOnlyMatch
+
+    return new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)))
   }
 
-  // Check if the date is valid
-  if (isNaN(date.getTime())) {
+  return new Date(date)
+}
+
+export function formatDate(
+  date: Date | string,
+  options: Intl.DateTimeFormatOptions = defaultDateOptions
+): string {
+  const normalizedDate = normalizeDate(date)
+
+  if (isNaN(normalizedDate.getTime())) {
     throw new Error('Invalid date')
   }
 
-  return date.toLocaleDateString('en-US', options)
+  return new Intl.DateTimeFormat('en-US', {
+    ...options,
+    timeZone: 'UTC'
+  }).format(normalizedDate)
 }

@@ -84,11 +84,7 @@ const weatherIcon = computed(() => {
           :title="`${weather.description} · ${weather.temp}°C · ${weather.city}`"
           class="chamfer-sm hidden sm:inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 text-xs"
         >
-          <Icon
-            :name="weatherIcon"
-            size="14px"
-            :style="{ color: theme.super }"
-          />
+          <Icon :name="weatherIcon" class="size-3.5 text-primary" />
           <span class="capitalize font-medium">{{ theme.label }}</span>
           <span class="text-on-surface-variant"
             >{{ Math.round(weather.temp) }}°</span

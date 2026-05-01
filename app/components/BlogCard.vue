@@ -6,10 +6,11 @@ defineProps<{
   post: BlogCollectionItem
 }>()
 
-const formatDate = (d?: string | Date) => {
-  if (!d) return ''
+const formatPostDate = (date?: string | Date) => {
+  if (!date) return ''
+
   try {
-    return new Date(d).toLocaleDateString('en-US', {
+    return formatDate(date, {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
@@ -27,21 +28,26 @@ const formatDate = (d?: string | Date) => {
     :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
     :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
-    <NuxtLink
-      :to="post.path"
-      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
+    <article
+      class="group chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: visual panel -->
         <div
           class="relative overflow-hidden min-h-44 md:min-h-full aspect-video chamfer-sm bg-surface-container"
         >
-          <NuxtImg
-            v-if="post.image"
-            :src="post.image"
-            :alt="post.title"
-            class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-          />
+          <NuxtLink
+            :to="post.path"
+            class="absolute inset-0 block"
+            :aria-label="`Read article ${post.title}`"
+          >
+            <NuxtImg
+              v-if="post.image"
+              :src="post.image"
+              :alt="post.title"
+              class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+            />
+          </NuxtLink>
 
           <!-- Floating date chip -->
           <div
@@ -54,7 +60,7 @@ const formatDate = (d?: string | Date) => {
               class="text-primary"
             />
             <span class="text-xs text-on-surface font-mono">
-              {{ formatDate(post.date) }}
+              {{ formatPostDate(post.date) }}
             </span>
           </div>
         </div>
@@ -67,11 +73,13 @@ const formatDate = (d?: string | Date) => {
             >
               Article
             </p>
-            <h3
-              class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight mb-4"
-            >
-              {{ post.title }}
-            </h3>
+            <NuxtLink :to="post.path" class="block mb-4">
+              <h3
+                class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight"
+              >
+                {{ post.title }}
+              </h3>
+            </NuxtLink>
             <p
               v-if="post.description"
               class="text-on-surface-variant text-sm md:text-base line-clamp-3"
@@ -81,22 +89,19 @@ const formatDate = (d?: string | Date) => {
           </div>
 
           <div class="flex items-center justify-between gap-4">
-            <UiButton
-              variant="outline"
-              size="sm"
-              class="group-hover:text-primary"
-              tabindex="-1"
-            >
-              Read Article
-              <Icon
-                name="solar:round-arrow-right-linear"
-                size="14px"
-                class="transition-transform"
-              />
+            <UiButton as-child variant="outline" size="sm">
+              <NuxtLink :to="post.path" class="group-hover:text-primary">
+                Read Article
+                <Icon
+                  name="solar:round-arrow-right-linear"
+                  size="14px"
+                  class="transition-transform"
+                />
+              </NuxtLink>
             </UiButton>
           </div>
         </div>
       </div>
-    </NuxtLink>
+    </article>
   </Motion>
 </template>

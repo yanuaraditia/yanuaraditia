@@ -8,7 +8,7 @@ defineProps<{
 const formatted = (d?: string | Date) => {
   if (!d) return ''
   try {
-    return new Date(d).toLocaleDateString('en-US', {
+    return formatDate(d, {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
