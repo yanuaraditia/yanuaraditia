@@ -41,11 +41,7 @@ const formatDate = (d?: string | Date) => {
           v-if="post.date"
           class="absolute bottom-4 left-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
         >
-          <Icon
-            name="solar:calendar-linear"
-            size="14px"
-            class="text-super"
-          />
+          <Icon name="solar:calendar-linear" size="14px" class="text-super" />
           <span class="text-xs text-on-surface font-mono">
             {{ formatDate(post.date) }}
           </span>

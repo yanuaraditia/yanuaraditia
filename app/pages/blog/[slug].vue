@@ -79,11 +79,7 @@ const formattedDate = computed(() => {
             v-if="formattedDate"
             class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
           >
-            <Icon
-              name="solar:calendar-linear"
-              class="text-super"
-              size="14px"
-            />
+            <Icon name="solar:calendar-linear" class="text-super" size="14px" />
             {{ formattedDate }}
           </span>
 
