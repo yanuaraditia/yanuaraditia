@@ -36,60 +36,97 @@ const editUrl = computed(
   () =>
     `https://github.com/yanuaraditia/yan-ad/edit/main/content/blog/${slug}.md`
 )
+
+const formattedDate = computed(() => {
+  if (!blog.value?.date) return ''
+  try {
+    return new Date(blog.value.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  } catch {
+    return ''
+  }
+})
 </script>
 
 <template>
-  <article
-    v-if="blog"
-    class="bg-background border-t border-border/40"
-    :style="{ viewTransitionName: 'entry' }"
-  >
-    <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-10 py-10 lg:py-14">
-      <div class="grid lg:grid-cols-[14rem_minmax(0,1fr)_14rem] gap-10">
+  <div v-if="blog" :style="{ viewTransitionName: 'entry' }">
+    <div
+      class="flex bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+    >
+      <header>
+        <p
+          class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
+        >
+          Article
+        </p>
+        <h1
+          class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-tight"
+        >
+          {{ blog.title }}
+        </h1>
+        <p
+          v-if="blog.description"
+          class="mt-4 text-lg text-on-surface-variant leading-relaxed"
+        >
+          {{ blog.description }}
+        </p>
+
+        <div class="sticky top-24 flex gap-3 text-sm mt-8">
+          <span
+            v-if="formattedDate"
+            class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+          >
+            <Icon
+              name="solar:calendar-linear"
+              class="text-(--color-primary)"
+              size="14px"
+            />
+            {{ formattedDate }}
+          </span>
+
+          <span
+            v-if="readingTime"
+            class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+          >
+            <Icon
+              name="solar:clock-circle-linear"
+              class="text-(--color-primary)"
+              size="14px"
+            />
+            {{ readingTime }}
+          </span>
+        </div>
+      </header>
+      <div
+        v-if="blog.image"
+        class="chamfer-sm overflow-hidden aspect-video shrink-0 bg-muted"
+      >
+        <NuxtImg
+          :src="blog.image"
+          :alt="blog.title"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="bg-background chamfer-sm">
+      <div class="grid lg:grid-cols-4 lg:divide-x">
         <!-- Left: TOC -->
         <aside class="hidden lg:block">
-          <div class="sticky top-24">
+          <div class="sticky top-16">
             <ContentToc :links="tocLinks" />
           </div>
         </aside>
 
         <!-- Center: article -->
-        <div class="min-w-0">
+        <div class="lg:col-span-3 px-4 md:px-6 lg:px-10 py-10 lg:py-14">
           <ContentMetaStrip
             :date="blog.date"
             :reading-time="readingTime"
             :edit-url="editUrl"
           />
-
-          <header class="mt-8 mb-10">
-            <p
-              class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
-            >
-              Article
-            </p>
-            <h1
-              class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-tight"
-            >
-              {{ blog.title }}
-            </h1>
-            <p
-              v-if="blog.description"
-              class="mt-4 text-lg text-on-surface-variant leading-relaxed"
-            >
-              {{ blog.description }}
-            </p>
-          </header>
-
-          <div
-            v-if="blog.image"
-            class="chamfer-sm overflow-hidden bg-muted mb-10 aspect-video"
-          >
-            <NuxtImg
-              :src="blog.image"
-              :alt="blog.title"
-              class="w-full h-full object-cover"
-            />
-          </div>
 
           <div
             class="prose prose-lg max-w-none dark:prose-invert prose-headings:scroll-mt-24"
@@ -118,10 +155,7 @@ const editUrl = computed(
             </a>
           </footer>
         </div>
-
-        <!-- Right: spacer for centering balance (vite.dev style) -->
-        <aside class="hidden lg:block" />
       </div>
     </div>
-  </article>
+  </div>
 </template>

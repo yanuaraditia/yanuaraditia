@@ -40,67 +40,145 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
 </script>
 
 <template>
-  <article
-    v-if="project"
-    class="bg-background border-t border-border/40"
-    :style="{ viewTransitionName: 'entry' }"
-  >
-    <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-10 py-10 lg:py-14">
-      <div class="grid lg:grid-cols-[14rem_minmax(0,1fr)_16rem] gap-10">
+  <div v-if="project" :style="{ viewTransitionName: 'entry' }">
+    <div
+      class="flex bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+    >
+      <header>
+        <p
+          class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
+        >
+          {{ isTeam ? 'Team Project' : 'Solo Project' }}
+        </p>
+        <h1
+          class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-tight"
+        >
+          {{ project.title }}
+        </h1>
+        <p
+          v-if="project.description"
+          class="mt-4 text-lg text-on-surface-variant leading-relaxed"
+        >
+          {{ project.description }}
+        </p>
+
+        <div v-if="project.url" class="my-5">
+          <UiButton
+            as-child
+            variant="accent"
+            size="sm"
+            class="group-hover:text-primary"
+          >
+            <NuxtLink :href="project.url" target="_blank" rel="noopener">
+              <Icon name="solar:link-linear" size="16px" />
+              Visit project
+            </NuxtLink>
+          </UiButton>
+        </div>
+
+        <div class="sticky top-24 flex flex-col gap-6 text-sm">
+          <div
+            v-if="project.stacks?.length"
+            :style="{ viewTransitionName: 'project-stacks' }"
+          >
+            <p
+              class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
+            >
+              Tech Stack
+            </p>
+            <div
+              class="flex flex-wrap gap-2"
+              :style="{ viewTransitionName: 'entry-subs' }"
+            >
+              <span
+                v-for="stack in project.stacks"
+                :key="stack"
+                class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+              >
+                <Icon
+                  :name="`lineicons:${stack}`"
+                  class="text-(--color-primary)"
+                  size="14px"
+                />
+                {{ stack }}
+              </span>
+            </div>
+          </div>
+
+          <div v-if="project.collaborators?.length">
+            <p
+              class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
+            >
+              Teammates
+            </p>
+            <div class="flex -space-x-2">
+              <a
+                v-for="collaborator in project.collaborators"
+                :key="collaborator"
+                :href="`https://github.com/${collaborator}`"
+                target="_blank"
+                rel="noopener"
+                :title="collaborator"
+              >
+                <NuxtImg
+                  :src="`https://github.com/${collaborator}.png`"
+                  :alt="collaborator"
+                  class="size-8 rounded-full border-2 border-background"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div v-if="project.status">
+            <p
+              class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
+            >
+              Status
+            </p>
+            <span
+              class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 text-xs capitalize"
+            >
+              <span
+                class="size-1.5 rounded-full"
+                :class="
+                  project.status === 'running'
+                    ? 'bg-emerald-500'
+                    : 'bg-amber-500'
+                "
+              />
+              {{ project.status }}
+            </span>
+          </div>
+        </div>
+      </header>
+      <div
+        v-if="project.image"
+        class="chamfer-sm overflow-hidden aspect-video shrink-0"
+        :style="{ backgroundColor: project.color || 'var(--muted)' }"
+      >
+        <NuxtImg
+          :src="project.image"
+          :alt="project.title"
+          class="w-full h-full object-contain"
+        />
+      </div>
+    </div>
+    <div class="bg-background chamfer-sm">
+      <div class="grid lg:grid-cols-4 lg:divide-x">
         <!-- Left: TOC -->
         <aside class="hidden lg:block">
-          <div class="sticky top-24">
+          <div class="sticky top-16">
             <ContentToc :links="tocLinks" />
           </div>
         </aside>
 
         <!-- Center: article -->
-        <div class="min-w-0">
+        <div class="lg:col-span-3 px-4 md:px-6 lg:px-10 py-10 lg:py-14">
           <ContentMetaStrip
             :date="project.date"
             :reading-time="readingTime"
             :edit-url="editUrl"
           />
-
-          <header class="mt-8 mb-10">
-            <p
-              class="text-xs font-semibold uppercase tracking-wider text-(--color-primary) mb-3"
-            >
-              {{ isTeam ? 'Team Project' : 'Solo Project' }}
-            </p>
-            <h1
-              class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-tight"
-            >
-              {{ project.title }}
-            </h1>
-            <p
-              v-if="project.description"
-              class="mt-4 text-lg text-on-surface-variant leading-relaxed"
-            >
-              {{ project.description }}
-            </p>
-
-            <div v-if="project.url" class="mt-5">
-              <Button as-child variant="accent" size="sm">
-                <a :href="project.url" target="_blank" rel="noopener">
-                  <Icon name="solar:link-linear" size="16px" />
-                  Visit project
-                </a>
-              </Button>
-            </div>
-          </header>
-
-          <div
-            v-if="project.image"
-            class="chamfer-sm overflow-hidden mb-10 aspect-video"
-            :style="{ backgroundColor: project.color || 'var(--muted)' }"
-          >
-            <NuxtImg
-              :src="project.image"
-              :alt="project.title"
-              class="w-full h-full object-contain"
-            />
-          </div>
 
           <div
             class="prose prose-lg max-w-none dark:prose-invert prose-headings:scroll-mt-24"
@@ -129,85 +207,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
             </a>
           </footer>
         </div>
-
-        <!-- Right: project meta panel -->
-        <aside class="hidden lg:block">
-          <div class="sticky top-24 flex flex-col gap-6 text-sm">
-            <div
-              v-if="project.stacks?.length"
-              :style="{ viewTransitionName: 'project-stacks' }"
-            >
-              <p
-                class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
-              >
-                Stack
-              </p>
-              <div
-                class="flex flex-wrap gap-2"
-                :style="{ viewTransitionName: 'entry-subs' }"
-              >
-                <span
-                  v-for="stack in project.stacks"
-                  :key="stack"
-                  class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
-                >
-                  <Icon
-                    :name="`lineicons:${stack}`"
-                    class="text-(--color-primary)"
-                    size="14px"
-                  />
-                  {{ stack }}
-                </span>
-              </div>
-            </div>
-
-            <div v-if="project.collaborators?.length">
-              <p
-                class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
-              >
-                Teammates
-              </p>
-              <div class="flex -space-x-2">
-                <a
-                  v-for="collaborator in project.collaborators"
-                  :key="collaborator"
-                  :href="`https://github.com/${collaborator}`"
-                  target="_blank"
-                  rel="noopener"
-                  :title="collaborator"
-                >
-                  <NuxtImg
-                    :src="`https://github.com/${collaborator}.png`"
-                    :alt="collaborator"
-                    class="size-8 rounded-full border-2 border-background"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div v-if="project.status">
-              <p
-                class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
-              >
-                Status
-              </p>
-              <span
-                class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 text-xs capitalize"
-              >
-                <span
-                  class="size-1.5 rounded-full"
-                  :class="
-                    project.status === 'running'
-                      ? 'bg-emerald-500'
-                      : 'bg-amber-500'
-                  "
-                />
-                {{ project.status }}
-              </span>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
-  </article>
+  </div>
 </template>

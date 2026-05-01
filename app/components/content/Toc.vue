@@ -132,10 +132,12 @@ const handleClick = (e: MouseEvent, id: string) => {
 </script>
 
 <template>
-  <nav v-if="flatLinks.length" aria-label="Table of contents" class="text-sm">
-    <p
-      class="mb-3 text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
-    >
+  <nav
+    v-if="flatLinks.length"
+    aria-label="Table of contents"
+    class="text-sm py-2"
+  >
+    <p class="sr-only">
       {{ title ?? 'On this page' }}
     </p>
     <ul
@@ -169,12 +171,12 @@ const handleClick = (e: MouseEvent, id: string) => {
         <a
           :href="`#${link.id}`"
           :class="[
-            'block py-1.5 pr-2 transition-colors duration-300',
+            'block py-2 pr-3 transition-colors duration-300',
             activeId === link.id
               ? 'text-(--color-primary) font-medium'
               : 'text-on-surface-variant hover:text-on-surface'
           ]"
-          :style="{ paddingLeft: `${(link.depth - 1) * 8 + 4}px` }"
+          :style="{ paddingLeft: `${(link.depth - 1) * 8 + 8}px` }"
           @click="(e) => handleClick(e, link.id)"
         >
           {{ link.text }}
