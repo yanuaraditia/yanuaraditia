@@ -42,7 +42,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
 <template>
   <div v-if="project" :style="{ viewTransitionName: 'entry' }">
     <div
-      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-5 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
     >
       <header class="min-w-0">
         <p
@@ -76,7 +76,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
           </UiButton>
         </div>
 
-        <div class="sticky top-24 flex flex-col gap-6 text-sm">
+        <div class="flex flex-col gap-6 text-sm mt-6 md:sticky md:top-24">
           <div
             v-if="project.stacks?.length"
             :style="{ viewTransitionName: 'project-stacks' }"

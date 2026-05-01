@@ -30,12 +30,12 @@ const formatDate = (d?: string | Date) => {
   >
     <NuxtLink
       :to="post.path"
-      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-8 md:p-10"
+      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: visual panel -->
         <div
-          class="relative overflow-hidden min-h-56 md:min-h-full aspect-video chamfer-sm bg-surface-container"
+          class="relative overflow-hidden min-h-44 md:min-h-full aspect-video chamfer-sm bg-surface-container"
         >
           <NuxtImg
             v-if="post.image"

@@ -150,10 +150,12 @@ export const useWeather = () => {
   })
 
   // Persist the resolved key back to the cookie so the next visit is instant.
+  // Only write on the client — writing during SSR would conflict with the
+  // default value Nuxt already scheduled, producing the "overriding cookie" warning.
   watch(
     themeKey,
     (key) => {
-      if (key !== 'default') themeKeyCookie.value = key
+      if (import.meta.client && key !== 'default') themeKeyCookie.value = key
     },
     { immediate: true }
   )

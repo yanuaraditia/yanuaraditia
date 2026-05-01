@@ -3,7 +3,7 @@
 <template>
   <section class="chamfer-sm border-b bg-background">
     <div class="grid md:grid-cols-2 items-center lg:divide-x">
-      <div class="p-4 md:px-12 md:py-24">
+      <div class="px-5 py-10 md:px-12 md:py-24">
         <Heading
           style="view-transition-name: entry-title"
           class="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6"

@@ -54,7 +54,7 @@ const formattedDate = computed(() => {
 <template>
   <div v-if="blog" :style="{ viewTransitionName: 'entry' }">
     <div
-      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-4 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
+      class="grid md:grid-cols-2 gap-6 lg:gap-10 items-start bg-background p-5 md:p-6 lg:p-10 chamfer-sm-bottom border-b"
     >
       <header class="min-w-0">
         <p
@@ -74,7 +74,7 @@ const formattedDate = computed(() => {
           {{ blog.description }}
         </p>
 
-        <div class="sticky top-24 flex gap-3 text-sm mt-8">
+        <div class="flex flex-wrap gap-3 text-sm mt-8">
           <span
             v-if="formattedDate"
             class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"

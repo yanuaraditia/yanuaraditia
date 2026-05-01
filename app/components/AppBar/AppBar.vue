@@ -95,7 +95,7 @@ const weatherIcon = computed(() => {
           >
         </span>
 
-        <div class="flex gap-1">
+        <div class="hidden sm:flex gap-1">
           <a
             v-for="social in socials"
             :key="social.name"

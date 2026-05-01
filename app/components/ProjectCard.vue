@@ -17,7 +17,7 @@ defineProps<{
   >
     <NuxtLink
       :to="project.path"
-      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-8 md:p-10"
+      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: text -->
@@ -70,7 +70,7 @@ defineProps<{
 
         <!-- Right: visual panel -->
         <div
-          class="relative overflow-hidden min-h-56 aspect-video chamfer-sm md:min-h-full"
+          class="relative overflow-hidden min-h-44 md:min-h-56 aspect-video chamfer-sm md:min-h-full"
           :style="{
             backgroundColor: project.color || 'var(--color-surface-container)'
           }"

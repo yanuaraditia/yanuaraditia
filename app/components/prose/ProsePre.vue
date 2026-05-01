@@ -7,14 +7,18 @@
         @click="copy"
       />
     </button>
-    <pre ref="slotRef" :class="$props.class"><slot/></pre>
+    <pre
+      ref="slotRef"
+      :class="cn('my-0! border mb-2', props.class)"
+    ><slot/></pre>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import { cn } from '@/lib/utils'
 
-defineProps({
+const props = defineProps({
   code: {
     type: String,
     default: ''
