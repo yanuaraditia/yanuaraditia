@@ -12,8 +12,7 @@ defineProps<{
     tag="div"
     :initial="{ opacity: 0, filter: 'blur(12px)' }"
     :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
-    :transition="{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }"
-    :viewport="{ once: true, margin: '-80px' }"
+    :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
     <NuxtLink
       :to="project.path"
@@ -23,13 +22,26 @@ defineProps<{
         <!-- Left: text -->
         <div class="flex flex-col justify-between gap-6 md:col-span-2">
           <div>
-            <p
-              class="text-xs font-mono tracking-widest text-on-surface-variant uppercase mb-4"
-            >
-              {{
-                project.collaborators?.length ? 'Team Project' : 'Solo Project'
-              }}
-            </p>
+            <div class="flex gap-2 mb-4">
+              <UiBadge variant="outline">
+                {{
+                  (project.collaborators?.length || 0) > 1
+                    ? 'Team Project'
+                    : 'Solo Project'
+                }}
+              </UiBadge>
+              <UiBadge variant="outline">
+                <Icon
+                  :name="
+                    project.active
+                      ? 'solar:check-circle-linear'
+                      : 'solar:close-circle-linear'
+                  "
+                  size="12px"
+                />
+                {{ project.active ? 'Active' : 'Inactive' }}
+              </UiBadge>
+            </div>
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight mb-4"
             >
@@ -43,34 +55,37 @@ defineProps<{
             </p>
           </div>
 
-          <div class="flex items-center justify-between gap-4">
-            <UiButton
-              variant="accent"
-              size="sm"
-              class="group-hover:text-super"
-              tabindex="-1"
-            >
+          <div class="flex items-center gap-4">
+            <UiButton size="sm" tabindex="-1">
               View Project
               <Icon
-                name="lucide:arrow-up-right"
+                name="solar:round-arrow-right-linear"
                 size="14px"
-                class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                class="transition-transform"
               />
             </UiButton>
 
-            <span
-              v-if="project.status === 'soon'"
-              class="inline-flex items-center gap-1.5 chamfer-sm bg-tertiary-container text-on-tertiary-container px-2.5 py-1 text-xs font-medium"
+            <UiButton
+              v-if="project.github_url"
+              as-child
+              variant="outline"
+              size="sm"
             >
-              <Icon name="lucide:clock" size="12px" />
-              soon
-            </span>
+              <NuxtLink
+                :href="project.github_url"
+                target="_blank"
+                rel="noopener"
+              >
+                <Icon name="mdi:github" size="14px" />
+                GitHub
+              </NuxtLink>
+            </UiButton>
           </div>
         </div>
 
         <!-- Right: visual panel -->
         <div
-          class="relative overflow-hidden min-h-44 md:min-h-56 aspect-video chamfer-sm md:min-h-full"
+          class="relative overflow-hidden min-h-44 md:min-h-56 aspect-video chamfer-sm"
           :style="{
             backgroundColor: project.color || 'var(--color-surface-container)'
           }"

@@ -10,7 +10,7 @@
         >
           <span class="block">Hi, I'm</span>
           <span class="block">Yanuar Aditia</span>
-          <span class="block text-super">
+          <span class="block text-primary">
             <EffectRotatingText
               :texts="[
                 'Software Engineer',
@@ -33,7 +33,7 @@
           <UiButton as-child size="lg">
             <NuxtLink to="mailto:me@yan.ad">Contact Me</NuxtLink>
           </UiButton>
-          <UiButton variant="accent" as-child size="lg">
+          <UiButton variant="outline" as-child size="lg">
             <NuxtLink to="/project">See my Projects</NuxtLink>
           </UiButton>
         </div>

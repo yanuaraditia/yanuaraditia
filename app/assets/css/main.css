@@ -46,6 +46,7 @@
 @utility prose {
   --tw-prose-pre-bg: var(--color-surface);
   --tw-prose-td-borders: var(--color-outline);
+  --tw-prose-body: var(var(--color-on-surface-variant));
 
   code {
     &::before,
@@ -60,7 +61,7 @@
   }
 
   a {
-    @apply no-underline hover:underline hover:text-super;
+    @apply no-underline hover:underline hover:text-primary;
   }
 
   h1,
@@ -116,71 +117,9 @@
   --default-border-color: #ccc4ce;
   --font-sans: 'Bricolage Grotesque', monospace;
   --font-display: 'Bricolage Grotesque', monospace;
-
-  /* shadcn-style brand accent — the dynamic weather-driven brand token.
-     Use bg-super / text-super / text-super-foreground / border-super / ring-super. */
-  --color-super: #253d05;
-  --color-super-foreground: #ffffff;
-  --color-secondary: #303924;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #667157;
-  --color-on-secondary-container: #ffffff;
-  --color-tertiary: #083d3a;
-  --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #477572;
-  --color-on-tertiary-container: #ffffff;
-  --color-error: #740006;
-  --color-on-error: #ffffff;
-  --color-error-container: #cf2c27;
-  --color-on-error-container: #ffffff;
-  --color-surface: #f9faef;
-  --color-on-surface: #0f120c;
-  --color-on-surface-variant: #34382d;
-  --color-outline: #505449;
-  --color-inverse-surface: #2f312a;
-  --color-on-inverse-surface: #f1f2e6;
-  --color-inverse-primary: #b1d18a;
-  --color-surface-bright: #f9faef;
-  --color-surface-dim: #c6c7bd;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f4e9;
-  --color-surface-container: #e8e9de;
-  --color-surface-container-high: #dcded3;
-  --color-surface-container-highest: #d1d3c8;
-  --color-scrim: #000000;
-  --color-shadow: #000000;
 }
 
 .dark {
-  /* dark-mode super (weather-driven brand token) */
-  --color-super: #c7e79e;
-  --color-super-foreground: #172b00;
-  --color-secondary: #d5e1c2;
-  --color-on-secondary: #1f2814;
-  --color-secondary-container: #8a9579;
-  --color-on-secondary-container: #000000;
-  --color-tertiary: #b5e6e1;
-  --color-on-tertiary: #002b29;
-  --color-tertiary-container: #6b9995;
-  --color-on-tertiary-container: #000000;
-  --color-error: #ffd2cc;
-  --color-on-error: #540003;
-  --color-error-container: #ff5449;
-  --color-on-error-container: #000000;
-  --color-surface: #12140e;
-  --color-on-surface: #ffffff;
-  --color-on-surface-variant: #dbdecf;
-  --color-outline: #b0b3a6;
-  --color-inverse-surface: #e2e3d8;
-  --color-on-inverse-surface: #282b24;
-  --color-inverse-primary: #364f17;
-  --color-surface-bright: #43453d;
-  --color-surface-dim: #12140e;
-  --color-surface-container-lowest: #0c0f09;
-  --color-surface-container-low: #1c1e18;
-  --color-surface-container: #262922;
-  --color-surface-container-high: #31342c;
-  --color-surface-container-highest: #3c3f37;
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -294,5 +233,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  button {
+    @apply cursor-pointer;
   }
 }

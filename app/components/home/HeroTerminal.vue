@@ -206,17 +206,7 @@ onUnmounted(clear)
         v-for="(stack, i) in allStacks"
         :key="stack"
         tag="span"
-        class="rounded-lg size-10 inline-flex items-center justify-center bg-on-surface-variant"
-        :animate="
-          current.stacks.includes(stack)
-            ? {
-                color: 'var(--color-super)',
-                border: '1px solid var(--color-super)'
-              }
-            : {
-                color: 'var(--color-on-surface-variant)'
-              }
-        "
+        class="rounded-lg size-12 inline-flex items-center justify-center"
         :transition="{
           type: 'spring',
           damping: 18,
@@ -224,7 +214,7 @@ onUnmounted(clear)
           delay: current.stacks.includes(stack) ? i * 0.04 : 0
         }"
       >
-        <Icon :name="`lineicons:${stack}`" size="20px" />
+        <Icon :name="`lineicons:${stack}`" class="size-5 lg:size-7" />
       </Motion>
     </div>
   </Motion>

@@ -2,7 +2,11 @@
   <div class="relative">
     <button v-if="isSupported" class="absolute top-2 right-2 cursor-pointer">
       <Icon
-        :name="copied ? 'tabler:copy-check' : 'tabler:copy'"
+        :name="
+          copied
+            ? 'solar:clipboard-check-bold-duotone'
+            : 'solar:clipboard-add-line-duotone'
+        "
         size="20px"
         @click="copy"
       />

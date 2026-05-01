@@ -50,7 +50,7 @@ const weatherIcon = computed(() => {
       <div class="flex items-center gap-4">
         <NuxtLink
           to="/"
-          class="font-display font-bold tracking-tight text-lg text-on-surface hover:text-super transition-colors"
+          class="font-display font-bold tracking-tight text-lg text-primary"
         >
           yan.ad
         </NuxtLink>
@@ -103,7 +103,7 @@ const weatherIcon = computed(() => {
             :aria-label="social.name"
             target="_blank"
             rel="noopener"
-            class="size-8 inline-flex items-center justify-center rounded-md text-on-surface-variant hover:text-super hover:bg-surface-container transition-colors"
+            class="size-8 inline-flex items-center justify-center rounded-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
           >
             <Icon :name="social.icon" size="16px" />
           </a>

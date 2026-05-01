@@ -4,17 +4,22 @@ useWeather()
 </script>
 
 <template>
-  <NuxtLoadingIndicator color="var(--color-super)" />
-
   <!-- Outer wrapper: full-bleed background -->
-  <div class="min-h-screen flex justify-center">
-    <!-- Framed container: vertical borders running full-height create the cubical frame -->
+  <div
+    class="min-h-screen flex justify-center"
+    :style="{
+      backgroundImage:
+        'radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)',
+      backgroundSize: '20px 20px'
+    }"
+  >
     <div
       class="container mx-auto border-x border-border/30 flex flex-col bg-muted"
     >
       <!-- Top bar (sticky, full-width) -->
       <div class="sticky top-0 z-50">
         <AppBar />
+        <LoadingIndicator class="bottom-0" />
       </div>
 
       <!-- Page content -->

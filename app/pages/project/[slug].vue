@@ -46,7 +46,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
     >
       <header class="min-w-0">
         <p
-          class="text-xs font-semibold uppercase tracking-wider text-super mb-3"
+          class="text-xs font-semibold uppercase tracking-wider text-primary mb-3"
         >
           {{ isTeam ? 'Team Project' : 'Solo Project' }}
         </p>
@@ -65,9 +65,9 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
         <div v-if="project.url" class="my-5">
           <UiButton
             as-child
-            variant="accent"
+            variant="outline"
             size="sm"
-            class="group-hover:text-super"
+            class="group-hover:text-primary"
           >
             <NuxtLink :href="project.url" target="_blank" rel="noopener">
               <Icon name="solar:link-linear" size="16px" />
@@ -97,7 +97,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               >
                 <Icon
                   :name="`lineicons:${stack}`"
-                  class="text-super"
+                  class="text-primary"
                   size="14px"
                 />
                 {{ stack }}
@@ -174,12 +174,6 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
 
         <!-- Center: article -->
         <div class="lg:col-span-3 px-4 md:px-6 lg:px-10 py-10 lg:py-14">
-          <MetaStrip
-            :date="project.date"
-            :reading-time="readingTime"
-            :edit-url="editUrl"
-          />
-
           <div
             class="prose prose-lg max-w-none dark:prose-invert prose-headings:scroll-mt-24"
           >
@@ -191,7 +185,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
           >
             <NuxtLink
               to="/project"
-              class="inline-flex items-center gap-2 text-sm hover:text-super transition-colors"
+              class="inline-flex items-center gap-2 text-sm hover:text-primary transition-colors"
             >
               <Icon name="solar:arrow-left-linear" size="16px" />
               Back to all projects
@@ -200,7 +194,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               :href="editUrl"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-super transition-colors"
+              class="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
             >
               <Icon name="solar:pen-2-linear" size="14px" />
               Suggest an edit

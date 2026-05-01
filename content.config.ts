@@ -22,6 +22,9 @@ export default defineContentConfig({
         collaborators: z.array(z.string()).optional(),
         status: z.enum(['soon', 'running']).optional(),
         stacks: z.array(z.string()).optional(),
+        month: z.string().optional(),
+        active: z.boolean().optional(),
+        github_url: z.string().optional(),
         image: z.string().optional(),
         date: z.date().optional(),
         url: z.string().optional()

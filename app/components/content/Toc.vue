@@ -135,7 +135,7 @@ const handleClick = (e: MouseEvent, id: string) => {
   <nav
     v-if="flatLinks.length"
     aria-label="Table of contents"
-    class="text-sm py-2 lg:py-4"
+    class="text-sm py-2 lg:py-8"
   >
     <p class="sr-only">
       {{ title ?? 'On this page' }}
@@ -148,7 +148,7 @@ const handleClick = (e: MouseEvent, id: string) => {
       <Motion
         as="span"
         aria-hidden="true"
-        class="absolute left-0 -ml-px w-px bg-super pointer-events-none"
+        class="absolute left-0 -ml-px w-px bg-primary pointer-events-none"
         :initial="false"
         :animate="{
           top: indicator.top,
@@ -163,7 +163,7 @@ const handleClick = (e: MouseEvent, id: string) => {
           opacity: { duration: 0.18 }
         }"
         :style="{
-          boxShadow: '0 0 8px 0 var(--color-super)'
+          boxShadow: '0 0 8px 0 var(--color-primary)'
         }"
       />
 
@@ -173,7 +173,7 @@ const handleClick = (e: MouseEvent, id: string) => {
           :class="[
             'block py-2 px-4 lg:px-10 transition-colors duration-300',
             activeId === link.id
-              ? 'text-super font-medium'
+              ? 'text-primary'
               : 'text-on-surface-variant hover:text-on-surface'
           ]"
           @click="(e) => handleClick(e, link.id)"

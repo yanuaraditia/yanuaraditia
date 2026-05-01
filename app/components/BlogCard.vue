@@ -25,8 +25,7 @@ const formatDate = (d?: string | Date) => {
     tag="div"
     :initial="{ opacity: 0, filter: 'blur(12px)' }"
     :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
-    :transition="{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }"
-    :viewport="{ once: true, margin: '-80px' }"
+    :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
     <NuxtLink
       :to="post.path"
@@ -49,7 +48,11 @@ const formatDate = (d?: string | Date) => {
             v-if="post.date"
             class="absolute bottom-4 left-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
           >
-            <Icon name="solar:calendar-linear" size="14px" class="text-super" />
+            <Icon
+              name="solar:calendar-linear"
+              size="14px"
+              class="text-primary"
+            />
             <span class="text-xs text-on-surface font-mono">
               {{ formatDate(post.date) }}
             </span>
@@ -79,16 +82,16 @@ const formatDate = (d?: string | Date) => {
 
           <div class="flex items-center justify-between gap-4">
             <UiButton
-              variant="accent"
+              variant="outline"
               size="sm"
-              class="group-hover:text-super"
+              class="group-hover:text-primary"
               tabindex="-1"
             >
               Read Article
               <Icon
-                name="lucide:arrow-up-right"
+                name="solar:round-arrow-right-linear"
                 size="14px"
-                class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                class="transition-transform"
               />
             </UiButton>
           </div>

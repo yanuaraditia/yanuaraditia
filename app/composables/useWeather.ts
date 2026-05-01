@@ -1,7 +1,7 @@
 import type { WeatherResponse } from '~/../../server/api/weather.get'
 
 /**
- * Maps an OpenWeatherMap "main" condition to a brand `--color-super` palette.
+ * Maps an OpenWeatherMap "main" condition to a brand `--color-primary` palette.
  * Each entry returns `{ super, superForeground }` in hex.
  *
  * Light/Dark variants keep enough contrast for AA text.
@@ -27,56 +27,56 @@ type WeatherKey =
 const PALETTE: Record<WeatherKey, { light: WeatherTheme; dark: WeatherTheme }> =
   {
     'clear-day': {
-      light: { super: '#e08a00', superForeground: '#ffffff', label: 'Sunny' },
-      dark: { super: '#ffc266', superForeground: '#3a2300', label: 'Sunny' }
+      light: { super: '#ffb020', superForeground: '#ffffff', label: 'Sunny' },
+      dark: { super: '#ffd27a', superForeground: '#3a2300', label: 'Sunny' }
     },
     'clear-night': {
       light: {
-        super: '#3b3f7a',
+        super: '#4c52d9',
         superForeground: '#ffffff',
         label: 'Clear night'
       },
       dark: {
-        super: '#a8b0ff',
-        superForeground: '#10133a',
+        super: '#b8c0ff',
+        superForeground: '#0f123d',
         label: 'Clear night'
       }
     },
     clouds: {
-      light: { super: '#5b6b7c', superForeground: '#ffffff', label: 'Cloudy' },
-      dark: { super: '#b6c2cf', superForeground: '#1a2129', label: 'Cloudy' }
+      light: { super: '#7f9bb3', superForeground: '#ffffff', label: 'Cloudy' },
+      dark: { super: '#d2dde8', superForeground: '#1a2129', label: 'Cloudy' }
     },
     rain: {
-      light: { super: '#0f6cb6', superForeground: '#ffffff', label: 'Rainy' },
-      dark: { super: '#7cc4ff', superForeground: '#062338', label: 'Rainy' }
+      light: { super: '#1e90ff', superForeground: '#ffffff', label: 'Rainy' },
+      dark: { super: '#8fd0ff', superForeground: '#062338', label: 'Rainy' }
     },
     drizzle: {
-      light: { super: '#3a8ec8', superForeground: '#ffffff', label: 'Drizzle' },
-      dark: { super: '#9fd2f5', superForeground: '#0a2c41', label: 'Drizzle' }
+      light: { super: '#5bbcff', superForeground: '#ffffff', label: 'Drizzle' },
+      dark: { super: '#b8e3ff', superForeground: '#0a2c41', label: 'Drizzle' }
     },
     thunderstorm: {
       light: {
-        super: '#5b3aa8',
+        super: '#7a4dff',
         superForeground: '#ffffff',
         label: 'Thunderstorm'
       },
       dark: {
-        super: '#c5a8ff',
+        super: '#d6c2ff',
         superForeground: '#1d0d4a',
         label: 'Thunderstorm'
       }
     },
     snow: {
-      light: { super: '#4f7a9a', superForeground: '#ffffff', label: 'Snow' },
-      dark: { super: '#dfeefb', superForeground: '#1b2a36', label: 'Snow' }
+      light: { super: '#6fb6e6', superForeground: '#ffffff', label: 'Snow' },
+      dark: { super: '#eef7ff', superForeground: '#1b2a36', label: 'Snow' }
     },
     mist: {
-      light: { super: '#6b7a73', superForeground: '#ffffff', label: 'Mist' },
-      dark: { super: '#c2cec7', superForeground: '#1a221d', label: 'Mist' }
+      light: { super: '#8fa8a0', superForeground: '#ffffff', label: 'Mist' },
+      dark: { super: '#dbe7e1', superForeground: '#1a221d', label: 'Mist' }
     },
     default: {
-      light: { super: '#253d05', superForeground: '#ffffff', label: 'Sleman' },
-      dark: { super: '#c7e79e', superForeground: '#172b00', label: 'Sleman' }
+      light: { super: '#4caf0a', superForeground: '#ffffff', label: 'Sleman' },
+      dark: { super: '#d9f7b8', superForeground: '#172b00', label: 'Sleman' }
     }
   }
 
@@ -160,15 +160,12 @@ export const useWeather = () => {
     { immediate: true }
   )
 
-  // Apply tokens to <html> so every `bg-super`, `text-super`, etc. updates.
+  // Apply tokens to <html> so every `bg-primary`, `text-primary`, etc. updates.
   const applyTheme = () => {
     if (!import.meta.client) return
     const root = document.documentElement
-    root.style.setProperty('--color-super', theme.value.super)
-    root.style.setProperty(
-      '--color-super-foreground',
-      theme.value.superForeground
-    )
+    root.style.setProperty('--primary', theme.value.super)
+    root.style.setProperty('--primary-foreground', theme.value.superForeground)
   }
 
   watch([theme], () => applyTheme(), { immediate: true })

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden chamfer-sm bg-linear-to-br from-super via-super/60 to-tertiary text-super-foreground px-8 py-16 lg:py-24 text-center"
+    class="relative overflow-hidden chamfer-sm bg-linear-to-br from-primary via-primary/60 to-tertiary text-primary-foreground px-8 py-16 lg:py-24 text-center"
   >
     <!-- Radial highlight overlays -->
     <div
@@ -33,7 +33,7 @@
       <UiButton size="lg" variant="secondary" as-child>
         <NuxtLink to="mailto:me@yan.ad">
           Get in touch
-          <Icon name="lucide:arrow-right" size="16px" class="ml-1" />
+          <Icon name="solar:arrow-right-linear" size="16px" class="ml-1" />
         </NuxtLink>
       </UiButton>
     </div>
