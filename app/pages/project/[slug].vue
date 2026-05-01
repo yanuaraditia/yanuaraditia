@@ -77,7 +77,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
             class="group-hover:text-primary"
           >
             <NuxtLink :href="project.github_url" target="_blank" rel="noopener">
-              <Icon name="solar:github-linear" size="16px" />
+              <Icon name="mdi:github" size="16px" />
               View on GitHub
             </NuxtLink>
           </UiButton>
