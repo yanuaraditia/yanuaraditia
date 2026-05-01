@@ -46,7 +46,7 @@
 @utility prose {
   --tw-prose-pre-bg: var(--color-surface);
   --tw-prose-td-borders: var(--color-outline);
-  --tw-prose-body: var(var(--color-on-surface-variant));
+  --tw-prose-body: var(--color-on-surface-variant);
 
   code {
     &::before,
