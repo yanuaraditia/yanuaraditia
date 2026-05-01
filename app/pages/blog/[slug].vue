@@ -112,13 +112,13 @@ const formattedDate = computed(() => {
         <!-- Left: TOC -->
         <aside class="hidden lg:block">
           <div class="sticky top-16">
-            <ContentToc :links="tocLinks" />
+            <Toc :links="tocLinks" />
           </div>
         </aside>
 
         <!-- Center: article -->
         <div class="lg:col-span-3 px-4 md:px-6 lg:px-10 py-10 lg:py-14">
-          <ContentMetaStrip
+          <MetaStrip
             :date="blog.date"
             :reading-time="readingTime"
             :edit-url="editUrl"

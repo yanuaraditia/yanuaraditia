@@ -67,7 +67,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
             as-child
             variant="accent"
             size="sm"
-            class="group-hover:text-primary"
+            class="group-hover:text-super"
           >
             <NuxtLink :href="project.url" target="_blank" rel="noopener">
               <Icon name="solar:link-linear" size="16px" />
@@ -168,13 +168,13 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
         <!-- Left: TOC -->
         <aside class="hidden lg:block">
           <div class="sticky top-16">
-            <ContentToc :links="tocLinks" />
+            <Toc :links="tocLinks" />
           </div>
         </aside>
 
         <!-- Center: article -->
         <div class="lg:col-span-3 px-4 md:px-6 lg:px-10 py-10 lg:py-14">
-          <ContentMetaStrip
+          <MetaStrip
             :date="project.date"
             :reading-time="readingTime"
             :edit-url="editUrl"

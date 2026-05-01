@@ -1,7 +1,8 @@
 <template>
   <section
-    class="relative overflow-hidden chamfer-sm bg-linear-to-br from-primary via-primary-container to-tertiary text-on-primary px-8 py-16 lg:py-24 text-center"
+    class="relative overflow-hidden chamfer-sm bg-linear-to-br from-super via-super/60 to-tertiary text-super-foreground px-8 py-16 lg:py-24 text-center"
   >
+    <!-- Radial highlight overlays -->
     <div
       class="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
       style="

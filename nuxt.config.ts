@@ -48,6 +48,22 @@ export default defineNuxtConfig({
     },
     '/me': {
       redirect: '/'
+    },
+    '/api/weather': {
+      // Set swr for 10 minutes, matching the cache settings in server/api/weather.get.ts. This
+      // ensures the client gets a cached response immediately, while the server refreshes in the background.
+      swr: 60 * 10
+    }
+  },
+
+  runtimeConfig: {
+    weatherApiKey: process.env.NUXT_WEATHER_API_KEY,
+    public: {
+      weatherLocation: {
+        lat: -7.7172,
+        lon: 110.3554,
+        name: 'Sleman, Yogyakarta'
+      }
     }
   },
 

@@ -30,7 +30,7 @@ const props = defineProps<{
         <NuxtLink
           v-if="props.item.url"
           :to="props.item.url"
-          class="flex items-center gap-2 text-primary mt-3 mb-5 font-bold"
+          class="flex items-center gap-2 text-super mt-3 mb-5 font-bold"
         >
           <Icon name="fluent:link-multiple-24-filled" size="16px" />
           <span>{{ props.item.url }}</span>

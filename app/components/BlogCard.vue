@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Motion } from 'motion-v'
 import type { BlogCollectionItem } from '@nuxt/content'
 
 defineProps<{
@@ -20,71 +21,79 @@ const formatDate = (d?: string | Date) => {
 </script>
 
 <template>
-  <NuxtLink
-    :to="post.path"
-    class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden"
+  <Motion
+    tag="div"
+    :initial="{ opacity: 0, y: 32, filter: 'blur(12px)' }"
+    :while-in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
+    :transition="{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }"
+    :viewport="{ once: true, margin: '-80px' }"
   >
-    <div class="grid md:grid-cols-2">
-      <!-- Left: visual panel -->
-      <div
-        class="relative overflow-hidden min-h-56 md:min-h-full bg-surface-container"
-      >
-        <NuxtImg
-          v-if="post.image"
-          :src="post.image"
-          :alt="post.title"
-          class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-        />
-
-        <!-- Floating date chip -->
+    <NuxtLink
+      :to="post.path"
+      class="group block chamfer-sm border-b bg-background transition-colors overflow-hidden p-8 md:p-10"
+    >
+      <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
+        <!-- Left: visual panel -->
         <div
-          v-if="post.date"
-          class="absolute bottom-4 left-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
+          class="relative overflow-hidden min-h-56 md:min-h-full aspect-video chamfer-sm bg-surface-container"
         >
-          <Icon name="solar:calendar-linear" size="14px" class="text-super" />
-          <span class="text-xs text-on-surface font-mono">
-            {{ formatDate(post.date) }}
-          </span>
-        </div>
-      </div>
+          <NuxtImg
+            v-if="post.image"
+            :src="post.image"
+            :alt="post.title"
+            class="absolute inset-0 size-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+          />
 
-      <!-- Right: text -->
-      <div class="flex flex-col justify-between gap-6 p-8 md:p-10">
-        <div>
-          <p
-            class="text-xs font-mono tracking-widest text-on-surface-variant uppercase mb-4"
+          <!-- Floating date chip -->
+          <div
+            v-if="post.date"
+            class="absolute bottom-4 left-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
           >
-            Article
-          </p>
-          <h3
-            class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight mb-4"
-          >
-            {{ post.title }}
-          </h3>
-          <p
-            v-if="post.description"
-            class="text-on-surface-variant text-sm md:text-base line-clamp-3"
-          >
-            {{ post.description }}
-          </p>
+            <Icon name="solar:calendar-linear" size="14px" class="text-super" />
+            <span class="text-xs text-on-surface font-mono">
+              {{ formatDate(post.date) }}
+            </span>
+          </div>
         </div>
 
-        <div class="flex items-center justify-between gap-4">
-          <UiButton
-            variant="accent"
-            size="sm"
-            class="group-hover:text-primary"
-            tabindex="-1"
-          >
-            Read Article
-            <Icon
-              name="lucide:arrow-up-right"
-              size="14px"
-              class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </UiButton>
+        <!-- Right: text -->
+        <div class="flex flex-col justify-between gap-6 md:col-span-2">
+          <div>
+            <p
+              class="text-xs font-mono tracking-widest text-on-surface-variant uppercase mb-4"
+            >
+              Article
+            </p>
+            <h3
+              class="text-2xl md:text-3xl lg:text-4xl font-bold font-display tracking-tight leading-tight mb-4"
+            >
+              {{ post.title }}
+            </h3>
+            <p
+              v-if="post.description"
+              class="text-on-surface-variant text-sm md:text-base line-clamp-3"
+            >
+              {{ post.description }}
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between gap-4">
+            <UiButton
+              variant="accent"
+              size="sm"
+              class="group-hover:text-super"
+              tabindex="-1"
+            >
+              Read Article
+              <Icon
+                name="lucide:arrow-up-right"
+                size="14px"
+                class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </UiButton>
+          </div>
         </div>
       </div>
-    </div>
-  </NuxtLink>
+    </NuxtLink>
+  </Motion>
 </template>

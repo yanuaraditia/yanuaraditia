@@ -15,13 +15,13 @@ Fleet's debut started on November 29, 2021, from https://blog.jetbrains.com/blog
 
 This brings fresh air for those looking for a VSCode alternative, especially since Fleet has a Smart Mode feature that enables indexing like other JetBrains IDEs out of the box, without needing to install any extensions. So that's a brief overview of JetBrains. Now, is the IDE as good as they say? Hopefully yes, but wait...
 
-### How to Install
+## How to Install
 
 1. Go to the Fleet page at https://www.jetbrains.com/fleet/ and click download
 2. You will be redirected to the JetBrains Toolbox download page
 3. Download the application and install
 
-### First Impression
+## First Impression
 
 By default, Fleet just looks like an ordinary code editor, even more like Sublime Text—there's nothing special like in VSCode. Take a look below:
 
@@ -33,7 +33,7 @@ Looks plain, right? But wait, pay attention to the top right toolbar—there's a
 
 They will sync and index all lines of code, including node modules, to provide suggestions and mapping when developing a project. For now, only a few programming languages are supported by Fleet, but more will be supported in the future. Interested? Read my overall review first.
 
-### Overall Review
+## Overall Review
 
 - The tools and UI are not as familiar as typical JetBrains IDEs
 - It takes a bit of time to adjust from VSCode

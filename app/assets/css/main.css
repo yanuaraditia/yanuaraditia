@@ -60,7 +60,7 @@
   }
 
   a {
-    @apply no-underline hover:underline hover:text-primary;
+    @apply no-underline hover:underline hover:text-super;
   }
 
   h1,
@@ -117,12 +117,7 @@
   --font-sans: 'Bricolage Grotesque', monospace;
   --font-display: 'Bricolage Grotesque', monospace;
 
-  --color-primary: #253d05;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #5a7539;
-  --color-on-primary-container: #ffffff;
-
-  /* shadcn-style brand accent — semantic alias of the material primary.
+  /* shadcn-style brand accent — the dynamic weather-driven brand token.
      Use bg-super / text-super / text-super-foreground / border-super / ring-super. */
   --color-super: #253d05;
   --color-super-foreground: #ffffff;
@@ -157,12 +152,7 @@
 }
 
 .dark {
-  --color-primary: #c7e79e;
-  --color-on-primary: #172b00;
-  --color-primary-container: #7d9a59;
-  --color-on-primary-container: #000000;
-
-  /* dark-mode super (mirrors material primary) */
+  /* dark-mode super (weather-driven brand token) */
   --color-super: #c7e79e;
   --color-super-foreground: #172b00;
   --color-secondary: #d5e1c2;
