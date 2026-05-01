@@ -53,6 +53,24 @@ export default defineNuxtConfig({
       // Set swr for 10 minutes, matching the cache settings in server/api/weather.get.ts. This
       // ensures the client gets a cached response immediately, while the server refreshes in the background.
       swr: 60 * 10
+    },
+    // Static assets — immutable, cache for 1 year
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable'
+      }
+    },
+    // Public images
+    '/images/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable'
+      }
+    },
+    // Fonts proxied by @nuxt/fonts
+    '/__nuxt_fonts/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable'
+      }
     }
   },
 
