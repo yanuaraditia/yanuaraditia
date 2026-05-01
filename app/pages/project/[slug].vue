@@ -20,20 +20,11 @@ useSeoMeta({
   ogUrl: project.value.path
 })
 
-const content = useTemplateRef('content')
-const readingTime = computed(() => {
-  if (!content.value || !content.value.$el) return ''
-  const text = (content.value.$el as HTMLElement).innerText || ''
-  const words = text.split(/\s+/).filter(Boolean).length
-  const minutes = Math.max(1, Math.ceil(words / 200))
-  return `${minutes} min read`
-})
-
 const tocLinks = computed(() => project.value?.body?.toc?.links ?? [])
 
 const editUrl = computed(
   () =>
-    `https://github.com/yanuaraditia/yan-ad/edit/main/content/project/${slug}.md`
+    `https://github.com/yanuaraditia/yan-ad/edit/main/content/project/${project.value?.id}.md`
 )
 
 const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
@@ -62,8 +53,12 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
           {{ project.description }}
         </p>
 
-        <div v-if="project.url" class="my-5">
+        <div
+          v-if="project.url || project.github_url"
+          class="my-5 flex flex-wrap gap-3"
+        >
           <UiButton
+            v-if="project.url"
             as-child
             variant="outline"
             size="sm"
@@ -72,6 +67,18 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
             <NuxtLink :href="project.url" target="_blank" rel="noopener">
               <Icon name="solar:link-linear" size="16px" />
               Visit project
+            </NuxtLink>
+          </UiButton>
+          <UiButton
+            v-if="project.github_url"
+            as-child
+            variant="outline"
+            size="sm"
+            class="group-hover:text-primary"
+          >
+            <NuxtLink :href="project.github_url" target="_blank" rel="noopener">
+              <Icon name="solar:github-linear" size="16px" />
+              View on GitHub
             </NuxtLink>
           </UiButton>
         </div>
