@@ -33,7 +33,7 @@ const readingTime = computed(() => {
 </script>
 
 <template>
-  <UiCardRead v-if="blog" :item="blog">
+  <CardRead v-if="blog" :item="blog">
     <div class="flex gap-1 items-center mb-2">
       <Icon name="fluent:calendar-16-regular" size="24px" />
       {{ formatDate(blog.date ?? '') }}
@@ -42,7 +42,7 @@ const readingTime = computed(() => {
       <Icon name="fluent:timer-16-regular" size="24px" />
       {{ readingTime ?? '-' }}
     </div>
-  </UiCardRead>
+  </CardRead>
   <div class="prose max-w-none dark:prose-invert xl:w-9/12 mx-auto">
     <ContentRenderer v-if="blog" ref="content" :value="blog" />
   </div>

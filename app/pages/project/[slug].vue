@@ -22,7 +22,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UiCardRead v-if="project" :item="project" fit>
+  <CardRead v-if="project" :item="project" fit>
     <div class="mb-5" :style="{ viewTransitionName: 'project-stacks' }">
       <h3 class="font-display mb-2 text-sm font-semibold">Stacks:</h3>
       <div class="flex gap-2" :style="{ viewTransitionName: 'entry-subs' }">
@@ -46,7 +46,7 @@ useSeoMeta({
         />
       </div>
     </div>
-  </UiCardRead>
+  </CardRead>
 
   <div class="prose max-w-none dark:prose-invert xl:w-9/12 xl:my-24 mx-auto">
     <ContentRenderer v-if="project" :value="project" />

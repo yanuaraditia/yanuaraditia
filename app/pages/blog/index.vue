@@ -16,11 +16,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <UiHeading>Blog</UiHeading>
+  <section
+    class="border-b chamfer-sm bg-background px-6 md:px-16 py-16 lg:py-24"
+  >
+    <Heading>Blog</Heading>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <UiCard
+      <Card
         v-for="post in posts"
         :key="post.id"
         :title="post.title"
@@ -33,5 +35,5 @@ useSeoMeta({
         @mouseenter="activeBlog = post.id"
       />
     </div>
-  </div>
+  </section>
 </template>

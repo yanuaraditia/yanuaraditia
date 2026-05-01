@@ -17,41 +17,43 @@ const socials = [
   }
 ]
 </script>
+
 <template>
   <NuxtLoadingIndicator color="var(--color-primary)" />
-  <div class="fixed inset-0 opacity-30">
-    <UiEffectDither
-      :wave-speed="0.05"
-      :wave-frequency="3"
-      :wave-amplitude="0.3"
-      :wave-color="[0.5, 0.5, 0.5]"
-      :color-num="4"
-      :pixel-size="2"
-      :disable-animation="false"
-      :enable-mouse-interaction="true"
-      :mouse-radius="1"
-    />
-  </div>
 
-  <div
-    class="2xl:max-w-6xl mx-auto flex min-h-screen items-center justify-center relative"
-  >
-    <div class="p-4 pt-24 lg:py-24">
-      <NuxtPage />
-      <footer class="mt-6 lg:mt-10 lg:flex lg:justify-between">
-        <p>&copy; {{ new Date().getFullYear() }} by Yanuar Aditia</p>
-        <div class="flex gap-4 mt-4 lg:mt-0">
+  <!-- Outer wrapper: full-bleed background -->
+  <div class="min-h-screen flex justify-center">
+    <!-- Framed container: vertical borders running full-height create the cubical frame -->
+    <div
+      class="container mx-auto border-x border-border/30 flex flex-col bg-muted"
+    >
+      <!-- Top bar (sticky, full-width) -->
+      <div class="sticky top-0 z-50">
+        <AppBar />
+      </div>
+
+      <!-- Page content -->
+      <main class="flex-1">
+        <NuxtPage />
+      </main>
+
+      <!-- Footer with top border to close the frame -->
+      <footer
+        class="border-t px-6 md:px-10 py-6 text-sm text-current/80 bg-background chamfer-sm-top flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+      >
+        <p>&copy; {{ new Date().getFullYear() }} Yanuar Aditia</p>
+        <div class="flex gap-2">
           <NuxtLink
             v-for="social in socials"
             :key="social.name"
             :to="social.url"
-            class="text-secondary hover:text-primary bg-surface-container hover:bg-surface-container-high p-1 transition-colors"
+            :aria-label="social.name"
+            class="size-8 inline-flex items-center justify-center rounded-md text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
           >
-            <Icon :name="social.icon" size="20px" />
+            <Icon :name="social.icon" size="18px" />
           </NuxtLink>
         </div>
       </footer>
     </div>
   </div>
-  <AppBar />
 </template>

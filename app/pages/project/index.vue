@@ -1,11 +1,6 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('project', () =>
-  queryCollection('project').all()
-)
-
-const activeBlog = useState<string>(
-  'active-entry',
-  () => posts.value?.[0]?.id || ''
+const { data: projects } = await useAsyncData('project', () =>
+  queryCollection('project').order('id', 'ASC').all()
 )
 
 useSeoMeta({
@@ -16,33 +11,20 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <UiHeading>Project</UiHeading>
-
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <UiCard
-        v-for="project in posts"
-        :key="project.id"
-        :class="{
-          'active-entry': activeBlog === project.id
-        }"
-        :title="project.title"
-        :description="project.description"
-        :image="project.image"
-        :to="project.path"
-        :color="project.color"
-        fit
-        @mouseenter="activeBlog = project.id"
-      >
-        <div class="flex stack gap-2">
-          <Icon
-            v-for="stack in project?.stacks"
-            :key="stack"
-            :name="`lineicons:${stack}`"
-            size="20px"
-          />
-        </div>
-      </UiCard>
+  <section class="border-b">
+    <div
+      class="text-center chamfer-sm border-b flex justify-between lg:items-center bg-background p-6 lg:p-10"
+    >
+      <h1 class="text-3xl font-bold font-display tracking-tight">Projects</h1>
+      <p class="text-on-surface-variant text-base md:text-lg">
+        Explore my projects and the technologies I used to build them.
+      </p>
     </div>
-  </div>
+
+    <ProjectCard
+      v-for="project in projects"
+      :key="project.id"
+      :project="project"
+    />
+  </section>
 </template>

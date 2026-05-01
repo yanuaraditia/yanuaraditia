@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/utlils/tailwind'
+
 const props = defineProps<{
   label: string
   to?: string
@@ -9,38 +10,28 @@ const props = defineProps<{
 
 const route = useRoute()
 const isActive = computed(() => {
-  if (!props.to) return
-  if (props.to === '/') {
-    return route.path === '/'
-  }
+  if (!props.to) return false
+  if (props.to === '/') return route.path === '/'
   return route.path === props.to || route.path.startsWith(props.to)
 })
 
-const icon = computed(() => {
-  return isActive.value ? props.activeIcon : props.icon
-})
+const icon = computed(() => (isActive.value ? props.activeIcon : props.icon))
 
 const { isLoading } = useLoadingIndicator()
 </script>
 
 <template>
-  <div
+  <NuxtLink
+    :to="props.to"
     :class="
       cn(
-        'relative group flex items-center gap-1 font-medium bg-linear-to-b px-3.5 py-3',
-        {
-          'from-primary/30 text-primary': isActive
-        }
+        'relative inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors',
+        isActive
+          ? 'text-primary'
+          : 'text-on-surface-variant hover:text-on-surface'
       )
     "
   >
-    <div class="shrink-0">
-      <Icon
-        :name="isLoading && isActive ? 'svg-spinners:bars-rotate-fade' : icon"
-        size="20px"
-      />
-    </div>
-    <span> {{ props.label }} </span>
-    <NuxtLink :to="props.to" class="absolute inset-0" />
-  </div>
+    <span>{{ props.label }}</span>
+  </NuxtLink>
 </template>
