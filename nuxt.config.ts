@@ -5,12 +5,6 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   site: { url: 'https://yan.ad', title: 'Yanuar Aditia' },
-  colorMode: {
-    preference: 'system',
-    classSuffix: '',
-    storage: 'cookie',
-    storageKey: 'gondes-mode'
-  },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
@@ -21,7 +15,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/eslint',
     '@vueuse/nuxt',
-    '@nuxtjs/color-mode',
     'shadcn-nuxt',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -50,7 +43,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: 'en',
+        class: 'dark'
       }
     }
   },
@@ -122,5 +116,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  ogImage: {
+    zeroRuntime: true
   }
 })

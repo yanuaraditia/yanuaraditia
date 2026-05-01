@@ -42,7 +42,7 @@
 
       <!-- Right-side: animated terminal (desktop only) -->
       <div
-        class="hidden lg:flex h-full items-center justify-center relative bg-linear-to-t from-current/2 px-6 py-12"
+        class="hidden lg:flex h-full items-center justify-center relative bg-linear-to-t from-primary/5 px-6 py-12"
         style="view-transition-name: entry-subs"
       >
         <HomeHeroTerminal />

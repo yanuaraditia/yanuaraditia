@@ -2,9 +2,7 @@ import type { WeatherResponse } from '~/../../server/api/weather.get'
 
 /**
  * Maps an OpenWeatherMap "main" condition to a brand `--color-primary` palette.
- * Each entry returns `{ super, superForeground }` in hex.
- *
- * Light/Dark variants keep enough contrast for AA text.
+ * Each entry returns `{ super, superForeground }` in hex for the site's fixed dark theme.
  */
 type WeatherTheme = {
   super: string
@@ -24,61 +22,29 @@ type WeatherKey =
   | 'mist'
   | 'default'
 
-const PALETTE: Record<WeatherKey, { light: WeatherTheme; dark: WeatherTheme }> =
-  {
-    'clear-day': {
-      light: { super: '#ffb020', superForeground: '#ffffff', label: 'Sunny' },
-      dark: { super: '#ffd27a', superForeground: '#3a2300', label: 'Sunny' }
-    },
-    'clear-night': {
-      light: {
-        super: '#4c52d9',
-        superForeground: '#ffffff',
-        label: 'Clear night'
-      },
-      dark: {
-        super: '#b8c0ff',
-        superForeground: '#0f123d',
-        label: 'Clear night'
-      }
-    },
-    clouds: {
-      light: { super: '#7f9bb3', superForeground: '#ffffff', label: 'Cloudy' },
-      dark: { super: '#d2dde8', superForeground: '#1a2129', label: 'Cloudy' }
-    },
-    rain: {
-      light: { super: '#1e90ff', superForeground: '#ffffff', label: 'Rainy' },
-      dark: { super: '#8fd0ff', superForeground: '#062338', label: 'Rainy' }
-    },
-    drizzle: {
-      light: { super: '#5bbcff', superForeground: '#ffffff', label: 'Drizzle' },
-      dark: { super: '#b8e3ff', superForeground: '#0a2c41', label: 'Drizzle' }
-    },
-    thunderstorm: {
-      light: {
-        super: '#7a4dff',
-        superForeground: '#ffffff',
-        label: 'Thunderstorm'
-      },
-      dark: {
-        super: '#d6c2ff',
-        superForeground: '#1d0d4a',
-        label: 'Thunderstorm'
-      }
-    },
-    snow: {
-      light: { super: '#6fb6e6', superForeground: '#ffffff', label: 'Snow' },
-      dark: { super: '#eef7ff', superForeground: '#1b2a36', label: 'Snow' }
-    },
-    mist: {
-      light: { super: '#8fa8a0', superForeground: '#ffffff', label: 'Mist' },
-      dark: { super: '#dbe7e1', superForeground: '#1a221d', label: 'Mist' }
-    },
-    default: {
-      light: { super: '#4caf0a', superForeground: '#ffffff', label: 'Sleman' },
-      dark: { super: '#d9f7b8', superForeground: '#172b00', label: 'Sleman' }
-    }
-  }
+const PALETTE: Record<WeatherKey, WeatherTheme> = {
+  'clear-day': { super: '#ffd27a', superForeground: '#3a2300', label: 'Sunny' },
+  'clear-night': {
+    super: '#b8c0ff',
+    superForeground: '#0f123d',
+    label: 'Clear night'
+  },
+  clouds: { super: '#d2dde8', superForeground: '#1a2129', label: 'Cloudy' },
+  rain: { super: '#8fd0ff', superForeground: '#062338', label: 'Rainy' },
+  drizzle: { super: '#b8e3ff', superForeground: '#0a2c41', label: 'Drizzle' },
+  thunderstorm: {
+    super: '#d6c2ff',
+    superForeground: '#1d0d4a',
+    label: 'Thunderstorm'
+  },
+  snow: { super: '#eef7ff', superForeground: '#1b2a36', label: 'Snow' },
+  mist: {
+    super: 'oklch(78.9% 0.154 211.53)',
+    superForeground: 'oklch(35.9% 0.144 278.697)',
+    label: 'Mist'
+  },
+  default: { super: '#d9f7b8', superForeground: '#172b00', label: 'Sleman' }
+}
 
 const conditionToKey = (
   condition: string | undefined,
@@ -113,8 +79,6 @@ const conditionToKey = (
 }
 
 export const useWeather = () => {
-  const colorMode = useColorMode()
-
   // Persisted last-known theme key. On SSR, Nuxt reads this from the incoming
   // request cookie so the correct color is available before the API call.
   // maxAge matches the server SWR cache (10 min).
@@ -145,8 +109,7 @@ export const useWeather = () => {
   })
 
   const theme = computed<WeatherTheme>(() => {
-    const isDark = colorMode.value === 'dark'
-    return PALETTE[themeKey.value][isDark ? 'dark' : 'light']
+    return PALETTE[themeKey.value]
   })
 
   // Persist the resolved key back to the cookie so the next visit is instant.
@@ -169,11 +132,6 @@ export const useWeather = () => {
   }
 
   watch([theme], () => applyTheme(), { immediate: true })
-
-  watch(
-    () => colorMode.value,
-    () => nextTick(applyTheme)
-  )
 
   return {
     weather: readonly(weather),

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden chamfer-sm bg-linear-to-br from-primary via-primary/60 to-tertiary text-primary-foreground px-8 py-16 lg:py-24 text-center"
+    class="relative overflow-hidden chamfer-sm bg-background text-primary px-8 py-16 lg:py-24 text-center"
   >
     <!-- Radial highlight overlays -->
     <div
@@ -9,12 +9,12 @@
         background:
           radial-gradient(
             circle at 30% 20%,
-            rgba(255, 255, 255, 0.6),
+            var(--color-primary),
             transparent 60%
           ),
           radial-gradient(
             circle at 80% 80%,
-            rgba(255, 255, 255, 0.3),
+            var(--color-primary),
             transparent 50%
           );
       "
@@ -30,7 +30,7 @@
         Have an idea, a product to ship, or a team to scale? I'd love to hear
         about it.
       </p>
-      <UiButton size="lg" variant="secondary" as-child>
+      <UiButton size="lg" variant="default" as-child>
         <NuxtLink to="mailto:me@yan.ad">
           Get in touch
           <Icon name="solar:arrow-right-linear" size="16px" class="ml-1" />
