@@ -11,7 +11,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <section class="border-b">
+  <section>
     <div
       class="text-center chamfer-sm border-b flex justify-between lg:items-center bg-background p-6 lg:p-10"
     >

@@ -1,6 +1,8 @@
 <template>
-  <header class="border-b bg-background backdrop-blur-md chamfer-sm-bottom">
-    <div class="flex items-center justify-between h-14 px-6 md:px-10">
+  <header class="bg-muted h-16">
+    <div
+      class="flex items-center bg-background border-b chamfer-sm-bottom justify-between h-full px-6 md:px-10"
+    >
       <NuxtLink
         to="/"
         class="font-display font-bold tracking-tight text-lg text-on-surface hover:text-primary transition-colors"
