@@ -47,6 +47,14 @@ export default defineNuxtConfig({
     }
   },
 
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
+  },
+
   routeRules: {
     '/about': {
       redirect: '/'
