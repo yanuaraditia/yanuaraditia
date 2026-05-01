@@ -23,8 +23,8 @@ const formatDate = (d?: string | Date) => {
 <template>
   <Motion
     tag="div"
-    :initial="{ opacity: 0, y: 32, filter: 'blur(12px)' }"
-    :while-in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
+    :initial="{ opacity: 0, filter: 'blur(12px)' }"
+    :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
     :transition="{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }"
     :viewport="{ once: true, margin: '-80px' }"
   >
