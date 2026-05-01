@@ -9,7 +9,7 @@
           class="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6"
         >
           <span class="block">Hi, I'm</span>
-          <span class="block">Yanuar Aditia</span>
+          <span class="block">Yanuar, a</span>
           <span class="block text-primary">
             <EffectRotatingText
               :texts="[
@@ -25,8 +25,9 @@
         </Heading>
 
         <p class="text-lg md:text-xl max-w-xl mb-8">
-          I have been building products for +7 years. I focus on scalable web
-          platforms, developer experience, and clean architecture.
+          I have been breaking and fixing the internet for almost 10 years. I
+          specialize in scalable web platforms, developer experience, and
+          architecture that doesn't make future-me cry.
         </p>
 
         <div class="flex flex-wrap gap-3">
