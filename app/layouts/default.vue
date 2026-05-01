@@ -14,7 +14,7 @@ useWeather()
     }"
   >
     <div
-      class="container mx-auto border-x border-border/30 flex flex-col bg-muted"
+      class="container mx-auto lg:border-x border-border/20 flex flex-col bg-muted"
     >
       <!-- Top bar (sticky, full-width) -->
       <div class="sticky top-0 z-50">

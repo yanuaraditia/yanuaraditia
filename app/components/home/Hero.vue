@@ -6,7 +6,7 @@
       <div class="px-5 py-10 md:px-12 md:py-24">
         <Heading
           style="view-transition-name: entry-title"
-          class="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6"
+          class="text-3xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6"
         >
           <span class="block">Hi, I'm</span>
           <span class="block">Yanuar, a</span>

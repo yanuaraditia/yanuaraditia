@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true
   },
+  site: { url: 'https://yan.ad', title: 'Yanuar Aditia' },
   colorMode: {
     preference: 'system',
     classSuffix: '',
@@ -21,7 +22,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
-    'shadcn-nuxt'
+    'shadcn-nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    'nuxt-og-image',
+    'nuxt-ai-ready'
   ],
 
   css: ['@/assets/css/main.css'],
