@@ -28,7 +28,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eslint": "^9.39.1",
-    "lucide-vue-next": "^1.0.0",
     "mathjs": "^15.2.0",
     "motion-v": "^1.10.3",
     "nuxt": "^4.4.4",
@@ -38,10 +37,7 @@
     "reka-ui": "^2.9.6",
     "shadcn-nuxt": "2.6.2",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.4",
-    "unstorage": "^1.15.0",
-    "vue": "^3.5.33",
-    "vue-router": "^4.6.4"
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "@iconify-json/lineicons": "^1.2.6",
