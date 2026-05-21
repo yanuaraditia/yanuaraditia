@@ -12,7 +12,7 @@ const { data: posts } = await useAsyncData('home-posts', () =>
 <template>
   <section id="articles">
     <div
-      class="chamfer-sm border-b flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
+      class="border-b flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
     >
       <h2 class="text-3xl font-bold font-display text-primary tracking-tight">
         Latest Articles

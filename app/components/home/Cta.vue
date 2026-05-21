@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden chamfer-sm bg-background text-primary px-8 py-16 lg:py-24 text-center"
+    class="relative overflow-hidden bg-background text-primary px-8 py-16 lg:py-24 text-center"
   >
     <!-- Radial highlight overlays -->
     <div

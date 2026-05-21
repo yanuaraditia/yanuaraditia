@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as math from 'mathjs'
-import { cn } from '@/utlils/tailwind'
+import { cn } from '~/utils/tailwind'
 import type { CSSProperties, StyleValue } from 'vue'
 
 export type GradualBlurProps = {

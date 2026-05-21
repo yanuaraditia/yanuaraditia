@@ -24,7 +24,7 @@ const tocLinks = computed(() => project.value?.body?.toc?.links ?? [])
 
 const editUrl = computed(
   () =>
-    `https://github.com/yanuaraditia/yan-ad/edit/main/content/project/${project.value?.id}.md`
+    `https://github.com/yan-ad/yan-ad/edit/main/content/project/${project.value?.id}.md`
 )
 
 const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
@@ -100,7 +100,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               <span
                 v-for="stack in project.stacks"
                 :key="stack"
-                class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+                class="inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
               >
                 <Icon
                   :name="`lineicons:${stack}`"
@@ -143,7 +143,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
               Status
             </p>
             <span
-              class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 text-xs capitalize"
+              class="inline-flex items-center gap-1.5 bg-muted px-2.5 py-1 text-xs capitalize"
             >
               <span
                 class="size-1.5 rounded-full"
@@ -160,7 +160,7 @@ const isTeam = computed(() => (project.value?.collaborators?.length ?? 0) > 0)
       </header>
       <div
         v-if="project.image"
-        class="chamfer-sm overflow-hidden aspect-video w-full"
+        class="overflow-hidden aspect-video w-full"
         :style="{ backgroundColor: project.color || 'var(--muted)' }"
       >
         <NuxtImg

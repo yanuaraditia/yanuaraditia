@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Boot weather theme at layout level so every page benefits.
-useWeather()
-
 const currentYear = useState('footer-year', () => new Date().getFullYear())
 </script>
 

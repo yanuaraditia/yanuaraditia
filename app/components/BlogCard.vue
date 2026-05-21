@@ -29,16 +29,16 @@ const formatPostDate = (date?: string | Date) => {
     :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
     <article
-      class="group chamfer-sm border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
+      class="group border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: visual panel -->
         <div
-          class="relative overflow-hidden min-h-44 md:min-h-full aspect-video chamfer-sm bg-surface-container"
+          class="relative overflow-hidden min-h-44 md:min-h-full aspect-video bg-surface-container"
         >
           <NuxtLink
             :to="post.path"
-            class="absolute inset-0 block"
+            class="absolute inset-0 block overflow-hidden rounded-2xl"
             :aria-label="`Read article ${post.title}`"
           >
             <NuxtImg
@@ -52,7 +52,7 @@ const formatPostDate = (date?: string | Date) => {
           <!-- Floating date chip -->
           <div
             v-if="post.date"
-            class="absolute bottom-4 left-4 chamfer-sm bg-background/90 backdrop-blur-md ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
+            class="absolute bottom-4 rounded-2xl left-4 bg-background/30 backdrop-blur-lg ring-1 ring-border/40 px-3 py-2 flex items-center gap-2"
           >
             <Icon
               name="solar:calendar-linear"

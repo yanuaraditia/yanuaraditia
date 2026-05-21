@@ -13,7 +13,7 @@ useSeoMeta({
 <template>
   <section>
     <div
-      class="chamfer-sm border-b flex flex-col gap-2 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
+      class="border-b flex flex-col gap-2 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
     >
       <h1 class="text-3xl font-bold font-display tracking-tight">Projects</h1>
       <p class="text-on-surface-variant text-base md:text-lg">
@@ -21,10 +21,12 @@ useSeoMeta({
       </p>
     </div>
 
-    <ProjectCard
-      v-for="project in projects"
-      :key="project.id"
-      :project="project"
-    />
+    <div class="lg:grid lg:grid-cols-2 lg:gap-x-px">
+      <ProjectCard
+        v-for="project in projects"
+        :key="project.id"
+        :project="project"
+      />
+    </div>
   </section>
 </template>

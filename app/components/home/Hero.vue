@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="chamfer-sm border-b bg-background">
+  <section class="border-b bg-background">
     <div class="grid md:grid-cols-2 items-center lg:divide-x">
       <div class="px-5 py-10 md:px-12 md:py-24">
         <Heading

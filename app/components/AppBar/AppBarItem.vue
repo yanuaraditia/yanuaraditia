@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '@/utlils/tailwind'
+import { cn } from '~/utils/tailwind'
 
 const props = defineProps<{
   label: string

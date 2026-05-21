@@ -33,8 +33,7 @@ const readingTime = computed(() => {
 const tocLinks = computed(() => blog.value?.body?.toc?.links ?? [])
 
 const editUrl = computed(
-  () =>
-    `https://github.com/yanuaraditia/yan-ad/edit/main/content/blog/${slug}.md`
+  () => `https://github.com/yan-ad/yan-ad/edit/main/content/blog/${slug}.md`
 )
 
 const formattedDate = computed(() => {
@@ -77,7 +76,7 @@ const formattedDate = computed(() => {
         <div class="flex flex-wrap gap-3 text-sm mt-8">
           <span
             v-if="formattedDate"
-            class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+            class="inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
           >
             <Icon
               name="solar:calendar-linear"
@@ -89,7 +88,7 @@ const formattedDate = computed(() => {
 
           <span
             v-if="readingTime"
-            class="chamfer-sm inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
+            class="inline-flex items-center gap-1.5 bg-muted px-2.5 py-1.5 text-xs"
           >
             <Icon
               name="solar:clock-circle-linear"
@@ -102,7 +101,7 @@ const formattedDate = computed(() => {
       </header>
       <div
         v-if="blog.image"
-        class="chamfer-sm overflow-hidden aspect-video bg-muted w-full"
+        class="overflow-hidden aspect-video bg-muted w-full"
       >
         <NuxtImg
           :src="blog.image"

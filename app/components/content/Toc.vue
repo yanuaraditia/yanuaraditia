@@ -174,7 +174,11 @@ const handleClick = (e: MouseEvent, id: string) => {
             'block py-2 px-4 lg:px-10 transition-colors duration-300',
             activeId === link.id
               ? 'text-primary'
-              : 'text-on-surface-variant hover:text-on-surface'
+              : 'text-on-surface-variant hover:text-on-surface',
+            {
+              'pl-6 lg:pl-6': link.depth === 2,
+              'pl-10 lg:pl-10': link.depth === 3
+            }
           ]"
           @click="(e) => handleClick(e, link.id)"
         >

@@ -5,4 +5,4 @@
 - 📫 How to reach me: me@yan.ad
 - 😄 Pronouns: Bahasa, English
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yanuaraditia&layout=donut-vertical)](https://github.com/yanuaraditia)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yan-ad&layout=donut-vertical)](https://github.com/yan-ad)

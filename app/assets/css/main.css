@@ -3,44 +3,6 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Diagonal chamfer (45° cut) corners — replaces rounded-md with a triangle-cut silhouette */
-@utility chamfer-sm {
-  clip-path: polygon(
-    4px 0,
-    calc(100% - 4px) 0,
-    100% 4px,
-    100% calc(100% - 4px),
-    calc(100% - 4px) 100%,
-    4px 100%,
-    0 calc(100% - 4px),
-    0 4px
-  );
-}
-
-/* Variants that only chamfer specific edges (useful for the sticky header / footer
-   that meet the layout's vertical borders) */
-@utility chamfer-sm-bottom {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 4px),
-    calc(100% - 4px) 100%,
-    4px 100%,
-    0 calc(100% - 4px)
-  );
-}
-
-@utility chamfer-sm-top {
-  clip-path: polygon(
-    4px 0,
-    calc(100% - 4px) 0,
-    100% 4px,
-    100% 100%,
-    0 100%,
-    0 4px
-  );
-}
-
 @utility prose {
   --tw-prose-pre-bg: var(--color-surface);
   --tw-prose-td-borders: var(--color-outline);
@@ -83,7 +45,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
+  --primary: oklch(0.765 0.177 163.283);
   --primary-foreground: oklch(0.21 0.006 285.885);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
