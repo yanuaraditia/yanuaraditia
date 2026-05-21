@@ -8,7 +8,7 @@ const socials = [
   {
     name: 'LinkedIn',
     icon: 'mdi:linkedin',
-    url: 'https://linkedin.com/in/yan-ad'
+    url: 'https://linkedin.com/in/yanuaraditia'
   },
   {
     name: 'Instagram',
