@@ -1,8 +1,22 @@
-<script setup lang="ts"></script>
-
 <template>
-  <section class="border-b bg-background">
-    <div class="grid md:grid-cols-2 items-center lg:divide-x">
+  <section class="border-b bg-background relative">
+    <div class="absolute inset-0">
+      <EffectDotField
+        :dot-radius="1.5"
+        :dot-spacing="14"
+        :bulge-strength="67"
+        :glow-radius="160"
+        :sparkle="false"
+        :wave-amplitude="0"
+        :cursor-radius="500"
+        :cursor-force="0.1"
+        bulge-only
+        gradient-from="#35530e"
+        gradient-to="#A0FFBC"
+        glow-color="#120F17"
+      />
+    </div>
+    <div class="container mx-auto grid md:grid-cols-2 items-center relative">
       <div class="px-5 py-10 md:px-12 md:py-24">
         <Heading
           style="view-transition-name: entry-title"
@@ -42,7 +56,7 @@
 
       <!-- Right-side: animated terminal (desktop only) -->
       <div
-        class="hidden lg:flex h-full items-center justify-center relative bg-linear-to-t from-primary/5 px-6 py-12"
+        class="hidden lg:flex h-full items-center justify-center relative px-6 py-12"
         style="view-transition-name: entry-subs"
       >
         <HomeHeroTerminal />

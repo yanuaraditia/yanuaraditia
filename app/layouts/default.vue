@@ -12,9 +12,7 @@ const currentYear = useState('footer-year', () => new Date().getFullYear())
       backgroundSize: '20px 20px'
     }"
   >
-    <div
-      class="container mx-auto lg:border-x border-border/20 flex flex-col bg-muted"
-    >
+    <div class="flex flex-col">
       <!-- Top bar (sticky, full-width) -->
       <div class="sticky top-0 z-50">
         <AppBar />

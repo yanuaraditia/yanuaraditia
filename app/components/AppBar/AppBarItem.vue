@@ -14,10 +14,6 @@ const isActive = computed(() => {
   if (props.to === '/') return route.path === '/'
   return route.path === props.to || route.path.startsWith(props.to)
 })
-
-const icon = computed(() => (isActive.value ? props.activeIcon : props.icon))
-
-const { isLoading } = useLoadingIndicator()
 </script>
 
 <template>
@@ -25,7 +21,7 @@ const { isLoading } = useLoadingIndicator()
     :to="props.to"
     :class="
       cn(
-        'relative inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors',
+        'relative inline-flex items-center font-semibold font-display uppercase gap-1.5 px-3 py-1.5 text-sm rounded-md transition-colors',
         isActive
           ? 'text-primary'
           : 'text-on-surface-variant hover:text-on-surface'

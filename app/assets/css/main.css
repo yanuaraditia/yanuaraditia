@@ -35,8 +35,8 @@
 }
 
 :root {
-  --md-filter-chip-label-text-font: 'Inter';
-  --md-ref-typeface-plain: 'Inter';
+  --md-filter-chip-label-text-font: 'IBM Plex Sans';
+  --md-ref-typeface-plain: 'IBM Plex Sans';
   --md-sys-color-primary: #7d3eb9;
   --radius: 0.625rem;
   --background: oklch(0.141 0.005 285.823);
@@ -45,8 +45,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.765 0.177 163.283);
-  --primary-foreground: oklch(0.21 0.006 285.885);
+  --primary: oklch(0.897 0.179 126.7);
+  --primary-foreground: oklch(0.1 0.018 126.7);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
@@ -73,11 +73,11 @@
 }
 
 @theme {
-  --default-font-family: 'Bricolage Grotesque', sans-serif;
+  --default-font-family: 'IBM Plex Sans', sans-serif;
   --default-border-color: #ccc4ce;
-  --font-sans: 'Bricolage Grotesque', sans-serif;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-display: 'Stack Sans Notch', sans-serif;
+  --font-mono: 'Reddit Mono', monospace;
 }
 
 * {
