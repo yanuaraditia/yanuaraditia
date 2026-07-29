@@ -13,11 +13,13 @@ const { data: projects } = await useAsyncData('home-projects', () =>
 </script>
 
 <template>
-  <section id="projects">
+  <section id="projects" class="border-b py-10 lg:py-24">
     <div
-      class="border-b flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
+      class="container mx-auto flex flex-col gap-3 md:flex-row md:justify-between md:items-center"
     >
-      <h2 class="text-3xl font-bold font-display tracking-tight text-primary">
+      <h2
+        class="text-3xl font-bold font-display tracking-tight text-primary mb-5 lg:mb-10"
+      >
         Latest Projects
       </h2>
 
@@ -33,12 +35,14 @@ const { data: projects } = await useAsyncData('home-projects', () =>
       </UiButton>
     </div>
 
-    <div class="lg:grid lg:grid-cols-2 lg:gap-x-px">
-      <ProjectCard
-        v-for="project in projects"
-        :key="project.id"
-        :project="project"
-      />
+    <div class="container mx-auto">
+      <div class="lg:grid lg:grid-cols-2 divide-x divide-y border">
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+        />
+      </div>
     </div>
   </section>
 </template>

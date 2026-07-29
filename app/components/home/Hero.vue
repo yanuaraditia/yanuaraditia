@@ -1,5 +1,5 @@
 <template>
-  <section class="border-b bg-background relative">
+  <section class="border-b w-screen relative overflow-hidden px-6 md:px-10">
     <div class="absolute inset-0">
       <EffectDotField
         :dot-radius="1.5"
@@ -17,7 +17,7 @@
       />
     </div>
     <div class="container mx-auto grid md:grid-cols-2 items-center relative">
-      <div class="px-5 py-10 md:px-12 md:py-24">
+      <div class="py-10 md:py-24">
         <Heading
           style="view-transition-name: entry-title"
           class="text-3xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6"
@@ -48,7 +48,12 @@
           <UiButton as-child size="lg">
             <NuxtLink to="mailto:me@yan.ad">Contact Me</NuxtLink>
           </UiButton>
-          <UiButton variant="outline" as-child size="lg">
+          <UiButton
+            variant="outline"
+            class="backdrop-blur-md"
+            as-child
+            size="lg"
+          >
             <NuxtLink to="/project">See my Projects</NuxtLink>
           </UiButton>
         </div>

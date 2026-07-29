@@ -10,11 +10,13 @@ const { data: posts } = await useAsyncData('home-posts', () =>
 </script>
 
 <template>
-  <section id="articles">
+  <section id="articles" class="border-b py-10 lg:py-24">
     <div
-      class="border-b flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-background p-6 lg:p-10"
+      class="container mx-auto flex flex-col gap-3 md:flex-row md:justify-between md:items-center"
     >
-      <h2 class="text-3xl font-bold font-display text-primary tracking-tight">
+      <h2
+        class="text-3xl font-bold font-display tracking-tight text-primary mb-5 lg:mb-10"
+      >
         Latest Articles
       </h2>
 
@@ -26,6 +28,10 @@ const { data: posts } = await useAsyncData('home-posts', () =>
       </UiButton>
     </div>
 
-    <BlogCard v-for="post in posts" :key="post.id" :post="post" />
+    <div class="container mx-auto">
+      <div class="border divide-y">
+        <BlogCard v-for="post in posts" :key="post.id" :post="post" />
+      </div>
+    </div>
   </section>
 </template>

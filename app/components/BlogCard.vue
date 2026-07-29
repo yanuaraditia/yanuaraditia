@@ -29,7 +29,7 @@ const formatPostDate = (date?: string | Date) => {
     :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
   >
     <article
-      class="group border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
+      class="group bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
     >
       <div class="grid md:grid-cols-3 gap-5 lg:gap-12">
         <!-- Left: visual panel -->

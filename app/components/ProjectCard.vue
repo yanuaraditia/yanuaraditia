@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <article
-    class="group border-b bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10"
+    class="group bg-background transition-colors overflow-hidden p-5 md:p-8 lg:p-10 hover:bg-muted/30"
   >
     <div class="flex flex-col justify-between gap-6 md:col-span-2">
       <div>
