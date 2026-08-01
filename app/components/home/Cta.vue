@@ -1,41 +1,46 @@
-<template>
-  <section
-    class="relative overflow-hidden bg-background text-primary px-8 py-16 lg:py-24 text-center"
-  >
-    <!-- Radial highlight overlays -->
-    <div
-      class="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
-      style="
-        background:
-          radial-gradient(
-            circle at 30% 20%,
-            var(--color-primary),
-            transparent 60%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            var(--color-primary),
-            transparent 50%
-          );
-      "
-    />
+<script setup lang="ts">
+import { Motion } from 'motion-v'
+</script>
 
-    <div class="relative">
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-4"
+<template>
+  <section id="contact" class="section-shell border-t border-border/70 pb-28">
+    <Motion
+      tag="div"
+      class="relative overflow-hidden border border-border bg-surface px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20"
+      :initial="{ opacity: 0, y: 28 }"
+      :while-in-view="{ opacity: 1, y: 0 }"
+      :in-view-options="{ once: true, margin: '-10% 0px' }"
+      :transition="{ duration: 0.65 }"
+    >
+      <div class="technical-grid absolute inset-0 opacity-50" />
+      <div class="cta-glow" />
+      <div
+        class="relative z-10 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"
       >
-        Let's build something together
-      </h2>
-      <p class="text-base md:text-lg opacity-90 max-w-xl mx-auto mb-8">
-        Have an idea, a product to ship, or a team to scale? I'd love to hear
-        about it.
-      </p>
-      <UiButton size="lg" variant="default" as-child>
-        <NuxtLink to="mailto:me@yan.ad">
-          Get in touch
-          <Icon name="solar:arrow-right-linear" size="16px" class="ml-1" />
+        <div>
+          <p class="eyebrow">Open channel / 04</p>
+          <h2
+            class="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-6xl lg:text-7xl"
+          >
+            Have a hard technical problem worth solving?
+          </h2>
+          <p
+            class="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg"
+          >
+            I’m interested in consequential product and platform work—especially
+            where architecture, execution, and team effectiveness need to move
+            together.
+          </p>
+        </div>
+        <NuxtLink
+          to="mailto:hello@yan.ad"
+          external
+          class="button-primary shrink-0"
+        >
+          hello@yan.ad
+          <Icon name="solar:arrow-up-right-linear" class="size-4" />
         </NuxtLink>
-      </UiButton>
-    </div>
+      </div>
+    </Motion>
   </section>
 </template>

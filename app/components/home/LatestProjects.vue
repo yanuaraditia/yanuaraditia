@@ -1,48 +1,37 @@
 <script setup lang="ts">
-import type {
-  CollectionQueryBuilder,
-  ProjectCollectionItem
-} from '@nuxt/content'
-
-const { data: projects } = await useAsyncData('home-projects', () =>
-  (queryCollection('project') as CollectionQueryBuilder<ProjectCollectionItem>)
-    .order('month', 'DESC')
-    .limit(4)
-    .all()
+const { data: projects } = await useAsyncData('latest-project', () =>
+  queryCollection('project').order('month', 'DESC').limit(4).all()
 )
 </script>
 
 <template>
-  <section id="projects" class="border-b py-10 lg:py-24">
-    <div
-      class="container mx-auto flex flex-col gap-3 md:flex-row md:justify-between md:items-center"
-    >
-      <h2
-        class="text-3xl font-bold font-display tracking-tight text-primary mb-5 lg:mb-10"
-      >
-        Latest Projects
-      </h2>
-
-      <UiButton variant="outline" as-child>
-        <NuxtLink to="/project">
-          View all projects
-          <Icon
-            name="solar:round-arrow-right-linear"
-            size="16px"
-            class="ml-1"
-          />
+  <section id="work" class="section-shell border-t border-border/70">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected systems / 02</p>
+        <h2 class="section-title">Work that moves beyond the interface.</h2>
+      </div>
+      <div class="flex flex-col items-start gap-5 lg:items-end">
+        <p class="section-copy lg:text-right">
+          A selection of products and platforms spanning frontend systems,
+          mobile experiences, backend services, and delivery infrastructure.
+        </p>
+        <NuxtLink to="/project" class="text-link">
+          View project archive
+          <Icon name="solar:arrow-right-linear" class="size-4" />
         </NuxtLink>
-      </UiButton>
+      </div>
     </div>
 
-    <div class="container mx-auto">
-      <div class="lg:grid lg:grid-cols-2 divide-x divide-y border">
-        <ProjectCard
-          v-for="project in projects"
-          :key="project.id"
-          :project="project"
-        />
-      </div>
+    <div
+      class="mt-12 grid gap-px overflow-hidden border border-border bg-border lg:grid-cols-2"
+    >
+      <ProjectCard
+        v-for="(project, index) in projects"
+        :key="project.id"
+        :project="project"
+        :index="index"
+      />
     </div>
   </section>
 </template>

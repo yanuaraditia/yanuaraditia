@@ -1,21 +1,22 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Yanuar Aditia — Software Engineer',
-  description: 'Welcome to my personal website!',
-  ogUrl: '/'
+  title: 'Yanuar Aditya — Principal Engineer',
+  description:
+    'Principal engineer connecting product, architecture, cloud platforms, developer experience, and technical leadership.',
+  ogTitle: 'Yanuar Aditya — Principal Engineer',
+  ogDescription:
+    'Engineering the whole system: product, architecture, platform, and people.',
+  ogUrl: '/',
+  twitterCard: 'summary_large_image'
 })
 </script>
 
 <template>
-  <div
-    class="group flex flex-col"
-    :style="{
-      viewTransitionName: 'entry'
-    }"
-  >
+  <main>
     <HomeHero />
+    <HomeCapabilities />
     <HomeLatestProjects />
     <HomeLatestArticles />
     <HomeCta />
-  </div>
+  </main>
 </template>
