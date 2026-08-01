@@ -33,11 +33,12 @@ import { Motion } from 'motion-v'
           </p>
         </div>
         <NuxtLink
-          to="mailto:hello@yan.ad"
+          to="mailto:me@yan.ad"
           external
           class="button-primary shrink-0"
         >
-          hello@yan.ad
+          <Icon name="solar:letter-linear" class="size-4" />
+          me@yan.ad
           <Icon name="solar:arrow-up-right-linear" class="size-4" />
         </NuxtLink>
       </div>

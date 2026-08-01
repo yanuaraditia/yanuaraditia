@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Yanuar Aditya — Principal Engineer',
+  title: 'Yanuar Aditia — Principal Engineer',
   description:
     'Principal engineer connecting product, architecture, cloud platforms, developer experience, and technical leadership.',
-  ogTitle: 'Yanuar Aditya — Principal Engineer',
+  ogTitle: 'Yanuar Aditia — Principal Engineer',
   ogDescription:
     'Engineering the whole system: product, architecture, platform, and people.',
   ogUrl: '/',

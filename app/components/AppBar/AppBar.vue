@@ -1,9 +1,13 @@
 <script setup lang="ts">
 const links = [
-  { label: 'Overview', to: '/#overview' },
-  { label: 'Capabilities', to: '/#capabilities' },
-  { label: 'Work', to: '/#work' },
-  { label: 'Notes', to: '/#notes' }
+  { label: 'Overview', to: '/#overview', icon: 'solar:home-angle-linear' },
+  {
+    label: 'Capabilities',
+    to: '/#capabilities',
+    icon: 'solar:layers-minimalistic-linear'
+  },
+  { label: 'Work', to: '/#work', icon: 'solar:case-linear' },
+  { label: 'Notes', to: '/#notes', icon: 'solar:notebook-linear' }
 ]
 
 const isMenuOpen = ref(false)
@@ -21,7 +25,7 @@ function closeMenu() {
       <NuxtLink
         to="/"
         class="group flex items-center gap-3"
-        aria-label="Yanuar Aditya home"
+        aria-label="Yanuar Aditia home"
       >
         <span
           class="flex size-9 items-center justify-center border border-border bg-surface font-mono text-xs font-semibold text-primary transition-colors group-hover:border-primary/60"
@@ -31,7 +35,7 @@ function closeMenu() {
         <span class="hidden sm:block">
           <strong
             class="block text-sm font-semibold tracking-tight text-foreground"
-            >Yanuar Aditya</strong
+            >Yanuar Aditia</strong
           >
           <span
             class="block font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground"
@@ -50,16 +54,18 @@ function closeMenu() {
           :to="link.to"
           class="nav-link"
         >
+          <Icon :name="link.icon" class="size-3.5" />
           {{ link.label }}
         </NuxtLink>
       </nav>
 
       <div class="flex items-center gap-3">
         <NuxtLink
-          to="mailto:hello@yan.ad"
+          to="mailto:me@yan.ad"
           external
           class="hidden text-link sm:inline-flex"
         >
+          <Icon name="solar:letter-linear" class="size-4" />
           Let’s talk <span aria-hidden="true">↗</span>
         </NuxtLink>
         <button
@@ -95,7 +101,10 @@ function closeMenu() {
             class="border-b border-border py-4 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground last:border-0 hover:text-primary"
             @click="closeMenu"
           >
-            {{ link.label }}
+            <span class="flex items-center gap-3">
+              <Icon :name="link.icon" class="size-4 text-primary" />
+              {{ link.label }}
+            </span>
           </NuxtLink>
         </div>
       </nav>

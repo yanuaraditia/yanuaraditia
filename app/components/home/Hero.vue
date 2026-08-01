@@ -2,18 +2,30 @@
 import { Motion } from 'motion-v'
 
 const expertise = [
-  'Architecture',
-  'Web & mobile',
-  'Cloud platforms',
-  'Developer experience',
-  'Technical strategy',
-  'Team enablement'
+  { label: 'Architecture', icon: 'solar:structure-linear' },
+  { label: 'Web & mobile', icon: 'solar:devices-linear' },
+  { label: 'Cloud platforms', icon: 'solar:cloud-linear' },
+  { label: 'Developer experience', icon: 'solar:code-square-linear' },
+  { label: 'Technical strategy', icon: 'solar:compass-square-linear' },
+  { label: 'Team enablement', icon: 'solar:users-group-rounded-linear' }
 ]
 
 const metrics = [
-  { value: '15+', label: 'years building software' },
-  { value: '360°', label: 'product to platform scope' },
-  { value: 'IC+', label: 'hands-on technical leadership' }
+  {
+    value: '15+',
+    label: 'years building software',
+    icon: 'solar:history-linear'
+  },
+  {
+    value: '360°',
+    label: 'product to platform scope',
+    icon: 'solar:global-linear'
+  },
+  {
+    value: 'IC+',
+    label: 'hands-on technical leadership',
+    icon: 'solar:code-circle-linear'
+  }
 ]
 </script>
 
@@ -26,7 +38,7 @@ const metrics = [
     <div class="technical-grid absolute inset-0 opacity-35" />
 
     <div
-      class="page-shell relative grid min-h-[calc(100svh-5rem)] items-center gap-12 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-24"
+      class="page-shell relative grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:py-20"
     >
       <div>
         <Motion
@@ -34,7 +46,7 @@ const metrics = [
           :initial="{ opacity: 0, y: 18 }"
           :animate="{ opacity: 1, y: 0 }"
           :transition="{ duration: 0.55 }"
-          class="mb-8 flex flex-wrap items-center gap-3"
+          class="mb-7 flex flex-wrap items-center gap-3"
         >
           <span class="status-chip"><i /> available for high-impact work</span>
           <span
@@ -46,7 +58,7 @@ const metrics = [
 
         <Motion
           tag="p"
-          class="eyebrow mb-5"
+          class="eyebrow mb-4"
           :initial="{ opacity: 0, y: 18 }"
           :animate="{ opacity: 1, y: 0 }"
           :transition="{ duration: 0.55, delay: 0.08 }"
@@ -56,7 +68,7 @@ const metrics = [
 
         <Motion
           tag="h1"
-          class="max-w-5xl text-balance text-[clamp(3.3rem,9vw,8rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-foreground"
+          class="max-w-4xl text-balance text-[clamp(3rem,6.4vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-foreground"
           :initial="{ opacity: 0, y: 28, filter: 'blur(10px)' }"
           :animate="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
           :transition="{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }"
@@ -67,7 +79,7 @@ const metrics = [
 
         <Motion
           tag="p"
-          class="mt-8 max-w-2xl text-pretty text-base leading-8 text-muted-foreground sm:text-lg"
+          class="mt-7 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-[1.0625rem] sm:leading-8"
           :initial="{ opacity: 0, y: 20 }"
           :animate="{ opacity: 1, y: 0 }"
           :transition="{ duration: 0.6, delay: 0.28 }"
@@ -79,7 +91,7 @@ const metrics = [
 
         <Motion
           tag="div"
-          class="mt-10 flex flex-wrap items-center gap-3"
+          class="mt-8 flex flex-wrap items-center gap-3"
           :initial="{ opacity: 0, y: 16 }"
           :animate="{ opacity: 1, y: 0 }"
           :transition="{ duration: 0.55, delay: 0.38 }"
@@ -88,7 +100,8 @@ const metrics = [
             Explore selected work
             <Icon name="solar:arrow-right-linear" class="size-4" />
           </NuxtLink>
-          <NuxtLink to="mailto:hello@yan.ad" external class="button-secondary">
+          <NuxtLink to="mailto:me@yan.ad" external class="button-secondary">
+            <Icon name="solar:letter-linear" class="size-4" />
             Start a conversation
           </NuxtLink>
         </Motion>
@@ -131,9 +144,14 @@ const metrics = [
             <div class="terminal-row items-start">
               <span class="terminal-key">range</span>
               <div class="flex max-w-[16rem] flex-wrap justify-end gap-1.5">
-                <span v-for="item in expertise" :key="item" class="tech-tag">{{
-                  item
-                }}</span>
+                <span
+                  v-for="item in expertise"
+                  :key="item.label"
+                  class="tech-tag gap-1.5"
+                >
+                  <Icon :name="item.icon" class="size-3 text-primary" />
+                  {{ item.label }}
+                </span>
               </div>
             </div>
           </div>
@@ -163,12 +181,17 @@ const metrics = [
         :in-view-options="{ once: true }"
         :transition="{ duration: 0.5, delay: index * 0.08 }"
       >
-        <strong class="font-mono text-xl text-foreground">{{
-          metric.value
-        }}</strong>
-        <span class="ml-3 text-sm text-muted-foreground">{{
-          metric.label
-        }}</span>
+        <div class="flex items-center gap-3">
+          <Icon :name="metric.icon" class="size-5 shrink-0 text-primary" />
+          <div>
+            <strong class="font-mono text-xl text-foreground">{{
+              metric.value
+            }}</strong>
+            <span class="ml-3 text-sm text-muted-foreground">{{
+              metric.label
+            }}</span>
+          </div>
+        </div>
       </Motion>
     </div>
   </section>

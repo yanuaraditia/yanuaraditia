@@ -37,8 +37,14 @@ const publishedDate = computed(() =>
     <div
       class="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground"
     >
-      <span>note / {{ String(props.index + 1).padStart(2, '0') }}</span>
-      <time :datetime="String(post.date)">{{ publishedDate }}</time>
+      <span class="flex items-center gap-2">
+        <Icon name="solar:notebook-linear" class="size-3.5 text-primary" />
+        note / {{ String(props.index + 1).padStart(2, '0') }}
+      </span>
+      <time :datetime="String(post.date)" class="flex items-center gap-2">
+        <Icon name="solar:calendar-linear" class="size-3.5" />
+        {{ publishedDate }}
+      </time>
     </div>
 
     <div class="mt-auto pt-16">

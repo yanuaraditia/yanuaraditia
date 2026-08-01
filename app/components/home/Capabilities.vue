@@ -9,6 +9,7 @@ let animationScope: { revert: () => void } | undefined
 const capabilities = [
   {
     index: '01',
+    icon: 'solar:code-square-linear',
     title: 'Product engineering',
     description:
       'Translate ambiguous product goals into maintainable web and mobile systems with a fast feedback loop.',
@@ -16,6 +17,7 @@ const capabilities = [
   },
   {
     index: '02',
+    icon: 'solar:structure-linear',
     title: 'Platform & architecture',
     description:
       'Design boundaries, APIs, delivery paths, and cloud foundations that let teams ship without creating operational drag.',
@@ -23,6 +25,7 @@ const capabilities = [
   },
   {
     index: '03',
+    icon: 'solar:users-group-rounded-linear',
     title: 'Technical leadership',
     description:
       'Create clarity across teams through architecture decisions, pragmatic standards, mentoring, and hands-on delivery.',
@@ -94,10 +97,13 @@ onBeforeUnmount(() => animationScope?.revert())
             :in-view-options="{ once: true, margin: '-10% 0px' }"
             :transition="{ duration: 0.55, delay: index * 0.08 }"
           >
-            <div class="mb-4 flex items-baseline gap-4">
-              <span class="font-mono text-xs text-primary">{{
-                capability.index
-              }}</span>
+            <div class="mb-4 flex items-center gap-4">
+              <span class="capability-icon">
+                <Icon :name="capability.icon" class="size-5" />
+              </span>
+              <span class="font-mono text-xs text-primary">
+                {{ capability.index }}
+              </span>
               <h3
                 class="text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
               >
@@ -151,34 +157,38 @@ onBeforeUnmount(() => animationScope?.revert())
         </svg>
 
         <div class="absolute left-[8%] top-[26%] map-node">
-          <span>01</span>
+          <span><Icon name="solar:lightbulb-bolt-linear" /> 01</span>
           <strong>Product</strong>
           <small>intent + users</small>
         </div>
         <div class="absolute left-[8%] top-[49%] map-node">
-          <span>02</span>
+          <span><Icon name="solar:users-group-rounded-linear" /> 02</span>
           <strong>Teams</strong>
           <small>context + delivery</small>
         </div>
         <div class="absolute left-[8%] top-[72%] map-node">
-          <span>03</span>
+          <span><Icon name="solar:server-square-linear" /> 03</span>
           <strong>Platform</strong>
           <small>tools + constraints</small>
         </div>
         <div
           class="absolute left-[48%] top-[49%] -translate-x-1/2 map-node map-node-primary"
         >
-          <span class="signal-dot">●</span>
+          <span class="signal-dot"><Icon name="solar:structure-linear" /></span>
           <strong>Architecture</strong>
           <small>decisions + boundaries</small>
         </div>
         <div class="absolute right-[7%] top-[31%] map-node">
-          <span class="signal-dot">●</span>
+          <span class="signal-dot"
+            ><Icon name="solar:chart-square-linear"
+          /></span>
           <strong>Outcomes</strong>
           <small>value + velocity</small>
         </div>
         <div class="absolute right-[7%] top-[68%] map-node">
-          <span class="signal-dot">●</span>
+          <span class="signal-dot"
+            ><Icon name="solar:shield-check-linear"
+          /></span>
           <strong>Reliability</strong>
           <small>quality + operations</small>
         </div>

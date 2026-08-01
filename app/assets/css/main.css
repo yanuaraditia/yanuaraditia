@@ -133,7 +133,11 @@
   }
 
   .nav-link {
-    @apply px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary;
+    @apply inline-flex items-center gap-2 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary;
+  }
+
+  .capability-icon {
+    @apply flex size-10 shrink-0 items-center justify-center border border-primary/25 bg-primary/5 text-primary transition-colors group-hover:border-primary/60 group-hover:bg-primary group-hover:text-primary-foreground;
   }
 
   .status-chip {
@@ -166,7 +170,11 @@
   }
 
   .map-node > span {
-    @apply mb-2 font-mono text-[9px] text-primary;
+    @apply mb-2 flex items-center gap-1.5 font-mono text-[9px] text-primary;
+  }
+
+  .map-node > span svg {
+    @apply size-3.5;
   }
 
   .map-node strong {
